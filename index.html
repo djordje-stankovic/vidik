@@ -26,7 +26,7 @@
       <a href="kontrole.html">Kontrole</a>
       <a href="kako-radi.html">Kako radi</a>
       <a href="cene.html">Cene</a>
-      <a href="DEMO_ADRESA">Demo</a>
+      <a href="kontakt.html" data-vidik="demo" data-tekst="Demo" hidden>Demo</a>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
     </nav>
   </div>
@@ -46,8 +46,9 @@
         i sam javlja kada nešto ne štima.
       </p>
       <div class="hero-akcije">
-        <a href="DEMO_ADRESA" class="dugme dugme-glavni">Uđite u demo &mdash; bez registracije</a>
-        <a href="kontakt.html" class="dugme dugme-tihi">Zakažite prikaz uživo</a>
+        <a href="kontakt.html" class="dugme dugme-glavni"
+           data-vidik="demo" data-tekst="Uđite u demo — bez registracije">Zakažite prikaz uživo</a>
+        <a href="kontrole.html" class="dugme dugme-tihi">Vidite kako hvata greške</a>
       </div>
       <div class="hero-sitno">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -119,6 +120,12 @@
           </div>
         </div>
       </div>
+      <!-- Odakle brojevi. Bez ovoga mokap izgleda kao izmišljena ilustracija,
+           a on je jedino mesto na sajtu gde posetilac može da proveri tvrdnju. -->
+      <p class="mokap-izvor">
+        Brojevi su iz demo baze &mdash; prava PANTHEON baza sa izmišljenim imenima.
+        <a href="kontakt.html" data-vidik="demo" data-tekst="Otvorite je i proverite">Zakažite prikaz</a>
+      </p>
     </div>
   </div>
 </section>
@@ -141,9 +148,13 @@
       <div class="brojka-val">0</div>
       <div class="brojka-lab">portova otvorenih ka vašoj mreži<br>veza ide samo napolje</div>
     </div>
+    <!-- Ovde je stajalo „48 baza pod istim krovom". Tačno je, ali govori
+         agencijama, a ostala tri broja govore direktoru jedne firme — pa je u
+         nizu delovalo kao da se obraća nekom drugom. Agencijski deo je sada
+         među pitanjima ispod. -->
     <div class="brojka pojava k3">
-      <div class="brojka-val">48</div>
-      <div class="brojka-lab">baza pod istim krovom<br>za knjigovodstvene agencije</div>
+      <div class="brojka-val">0</div>
+      <div class="brojka-lab">vaših redova sačuvanih kod nas<br>prolaze do pregledača i nestaju</div>
     </div>
   </div>
 </section>
@@ -370,20 +381,60 @@
   </div>
 </section>
 
-<!-- ============================ CITAT =============================== -->
+<!-- ============================= PITANJA ============================
+     Ovde je ranije stajala preporuka „Milice J." Izmišljena je, a uz to je
+     ponavljala pravi nalaz sa žive baze jednog klijenta. Nemamo nijednu
+     stvarnu preporuku, a izmišljena je gora od nijedne — kad prvi klijent
+     pristane da ga citiramo, ide na ovo mesto.
+
+     U međuvremenu tu stoje pitanja koja stvarno stižu. Duži odgovori su na
+     „Kako radi". -->
 <section class="blok-tanak" style="background:var(--papir2);border-top:1px solid var(--linija)">
-  <div class="omot citat pojava">
-    <blockquote>
-      „Prvog dana nam je našao trideset hiljada dinara PDV-a koji nije ušao u POPDV.
-      Tražili smo to ručno, u dva Excela, svakog meseca."
-    </blockquote>
-    <div class="citat-ko">
-      <span class="citat-slovo">M</span>
-      <span class="citat-ime">
-        <b>Milica J.</b>
-        <span>šef računovodstva, trgovina na veliko</span>
-      </span>
+  <div class="omot usko">
+    <div class="pojava" style="margin-bottom:28px">
+      <span class="nadnaslov">Pitanja koja uvek stignu</span>
+      <h2>Ono što IT i računovodstvo pitaju prvo</h2>
     </div>
+    <div class="pojava">
+      <details class="pitanje" open>
+        <summary>Da li nešto upisujete u našu bazu?</summary>
+        <div class="pitanje-telo">
+          <p>Ne, ništa. Vidik je čist čitač, pa preporučujemo nalog
+          <code>db_datareader</code> — da to ne bude naše obećanje nego pravilo
+          koje sprovodi vaš SQL Server.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Idu li naši podaci kroz vaš server?</summary>
+        <div class="pitanje-telo">
+          <p>Kad otvorite ekran, red koji vidite putuje iz vaše baze kroz naš
+          servis do vašeg pregledača — drugačije se sa telefona ne vidi ništa.
+          Ali se ništa ne čuva: nema kopije vaše baze kod nas, nema noćnog
+          prepisivanja. Kad zatvorite ekran, kod nas ne ostaje nijedan red.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Da li usporava bazu?</summary>
+        <div class="pitanje-telo">
+          <p>Konektor drži najviše dve konekcije i zatvara ih posle deset minuta
+          mirovanja. Opterećenje je manje nego kad jedan korisnik otvori veći
+          ispis u samom ERP-u. Ako želite, pušta se na repliku.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Imamo više firmi u jednoj bazi. Radi li to?</summary>
+        <div class="pitanje-telo">
+          <p>Radi — jedan konektor vidi sve PANTHEON baze na instanci, a vi
+          štiklirate koje delite. Kod nas je na jednoj instanci 48 baza.
+          Knjigovodstvenim agencijama je to i osnovni način rada, pa se i cena
+          računa po firmi a ne po korisniku.</p>
+        </div>
+      </details>
+    </div>
+    <p style="margin-top:22px;font-size:14px;color:var(--tiho)">
+      Više pitanja — o konektor licenci, portovima i tome šta se vidi u dnevniku
+      — stoji na <a href="kako-radi.html#it" style="color:var(--terra)">Kako radi</a>.
+    </p>
   </div>
 </section>
 

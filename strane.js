@@ -1,7 +1,7 @@
 /* ===========================================================================
    strane.js — sadržaj podstranica. Pokreni `node napravi.js`.
    =========================================================================== */
-const { napravi, vrh, cta, DEMO, PREUZMI } = require('./napravi.js');
+const { napravi, vrh, cta } = require('./napravi.js');
 
 /* ===========================  MOGUĆNOSTI  ============================== */
 napravi('mogucnosti.html',
@@ -379,7 +379,8 @@ napravi('kako-radi.html',
               podešavanjem, ne izmenom programa</li>
         </ul>
         <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-          <a href="${PREUZMI}" class="dugme dugme-svetli">Preuzmite konektor</a>
+          <a href="kontakt.html" class="dugme dugme-svetli"
+             data-vidik="preuzmi" data-tekst="Preuzmite konektor">Zatražite konektor</a>
           <span style="font-size:13px;color:var(--tise)">
             Windows &middot; jedan fajl &middot; bez instalacije
           </span>

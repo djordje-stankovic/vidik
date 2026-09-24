@@ -8,6 +8,31 @@
 (function () {
   'use strict';
 
+  /* =======================================================================
+     ADRESA KOKPITA — jedino mesto koje se menja kad kokpit dobije domen.
+     -----------------------------------------------------------------------
+     Prazno = kokpit još nije javan. Tada dugmad za demo i preuzimanje ostaju
+     na `kontakt.html` i pišu „Zakažite prikaz" — nikad mrtav link.
+
+     Ranije je u HTML-u stajao doslovan `DEMO_ADRESA`; otišao je u objavu i
+     stajao na živom sajtu kao pokvareno dugme. Zato adresa više ne živi u
+     HTML-u nego ovde: jedan red, važi za svih šest stranica, bez ponovnog
+     generisanja. Dok je prazna, ne može da procuri ništa pokvareno.
+     ======================================================================= */
+  var KOKPIT = '';                       /* npr. 'https://kokpit.vidik.rs' */
+
+  if (KOKPIT) {
+    var koren = KOKPIT.replace(/\/+$/, '');
+    var veze = document.querySelectorAll('[data-vidik]');
+    for (var v = 0; v < veze.length; v++) {
+      var a = veze[v];
+      a.href = koren + (a.getAttribute('data-vidik') === 'preuzmi'
+                        ? '/preuzmi/konektor.exe' : '/prijava.html?demo');
+      if (a.getAttribute('data-tekst')) a.textContent = a.getAttribute('data-tekst');
+      a.hidden = false;        /* stavka „Demo" u meniju postoji tek sad */
+    }
+  }
+
   var mirno = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- navigacija: senka na skrol + meni na telefonu ---------- */

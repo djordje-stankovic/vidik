@@ -434,3 +434,11 @@ section{position:relative}
    postaje zaseban flex-item, pa se podebljani početak lomi u svoj red.     */
 .spisak li{display:block;position:relative;padding-left:31px}
 .spisak li::before{position:absolute;left:0;top:3px;margin:0}
+
+/* Odakle brojevi u mokapu — sitno ispod panela, da ilustracija ne izgleda
+   kao izmišljena. */
+.mokap-izvor{
+  margin-top:12px;font-size:12.5px;line-height:1.5;color:var(--tise);text-align:center;
+}
+.mokap-izvor a{color:var(--terra);text-decoration:none;font-weight:600}
+.mokap-izvor a:hover{text-decoration:underline}

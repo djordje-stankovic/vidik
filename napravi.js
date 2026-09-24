@@ -7,11 +7,13 @@
    =========================================================================== */
 const fs = require('fs');
 
-/* Adresa demoa i preuzimanja konektora — na jednom mestu, jer stoje na svakoj
-   stranici. Dok kokpit nema svoj domen, ovde stoji oznaka koja se vidi golim
-   okom da nije prava, da ne bi slučajno otišla u objavu. */
-const DEMO = process.env.VIDIK_DEMO || 'DEMO_ADRESA';
-const PREUZMI = process.env.VIDIK_PREUZMI || 'DEMO_ADRESA/preuzmi/konektor.exe';
+/* Adresa kokpita NIJE ovde nego u `js/vidik.js` (promenljiva `KOKPIT`).
+
+   Ranije je stajala ovde i pri nepostavljenoj vrednosti upisivala doslovan
+   `DEMO_ADRESA` u HTML — što je i otišlo u objavu i stajalo na živom sajtu kao
+   pokvareno dugme. Sada dugmad u HTML-u vode na `kontakt.html` i nose
+   `data-vidik`; skripta im promeni adresu i natpis tek kad kokpit dobije
+   domen. Nepodešen sajt tako nema nijedan mrtav link. */
 
 const STRANE = [
   ['index.html', 'Početna'],
@@ -46,7 +48,7 @@ const nav = tekuca => `
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
 ${STRANE.map(([f, i]) => `      <a href="${f}"${f === tekuca ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
-      <a href="${DEMO}">Demo</a>
+      <a href="kontakt.html" data-vidik="demo" data-tekst="Demo" hidden>Demo</a>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
     </nav>
   </div>
@@ -59,8 +61,9 @@ const cta = (naslov, tekst) => `
     <h2>${naslov}</h2>
     <p class="uvod">${tekst}</p>
     <div class="cta-akcije">
-      <a href="${DEMO}" class="dugme dugme-glavni">Uđite u demo</a>
-      <a href="kontakt.html" class="dugme dugme-tihi">Zakažite prikaz</a>
+      <a href="kontakt.html" class="dugme dugme-glavni"
+         data-vidik="demo" data-tekst="Uđite u demo">Zakažite prikaz</a>
+      <a href="cene.html" class="dugme dugme-tihi">Pogledajte cene</a>
     </div>
   </div>
 </section>`;
@@ -126,6 +129,6 @@ function napravi(fajl, naslovSajta, opis, telo) {
   console.log('  ' + fajl);
 }
 
-module.exports = { napravi, vrh, cta, STRANE, DEMO, PREUZMI };
+module.exports = { napravi, vrh, cta, STRANE };
 
 if (require.main === module) require('./strane.js');
