@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zakaži prikaz — Vidik</title>
+<meta name="description" content="Dvadeset minuta, na vašoj bazi, bez pripreme. Javite se i dogovorimo termin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><g fill='white'><rect x='7' y='18' width='4' height='7' rx='1'/><rect x='14' y='13' width='4' height='12' rx='1'/><rect x='21' y='8' width='4' height='17' rx='1'/></g></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="omot nav-red">
+    <a class="znak" href="index.html">
+      <span class="znak-ikona"></span>
+      <span class="znak-ime">Vid<span>ik</span></span>
+    </a>
+    <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-veze">
+      <a href="index.html">Početna</a>
+      <a href="mogucnosti.html">Mogućnosti</a>
+      <a href="kontrole.html">Kontrole</a>
+      <a href="kako-radi.html">Kako radi</a>
+      <a href="cene.html">Cene</a>
+      <a href="DEMO_ADRESA">Demo</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
+    </nav>
+  </div>
+</header>
+
+<section class="strana-vrh" style="padding-bottom:0">
+  <div class="aureola aureola-1"></div>
+  <div class="omot">
+    <span class="nadnaslov">Kontakt</span>
+    <h1>Dvadeset minuta, na vašim podacima</h1>
+    <p class="uvod">
+      Bez pripreme sa vaše strane i bez prezentacije sa naše. Povežemo se na vašu bazu,
+      otvorimo kontrole i gledamo zajedno šta nađu.
+    </p>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:start">
+
+      <!-- forma -->
+      <div class="pojava vidljiv">
+        <div class="kartica" style="padding:32px">
+          <h3 style="margin-bottom:6px">Javite se</h3>
+          <p style="color:var(--tiho);font-size:14.5px;margin-bottom:24px">
+            Odgovaramo istog radnog dana, obično u roku od dva sata.
+          </p>
+
+          <form id="forma" novalidate>
+            <div class="polje">
+              <label for="ime">Ime i prezime</label>
+              <input id="ime" name="ime" type="text" placeholder="Milica Jovanović" required>
+            </div>
+            <div class="polje">
+              <label for="firma">Firma</label>
+              <input id="firma" name="firma" type="text" placeholder="Naziv firme ili agencije" required>
+            </div>
+            <div class="mreza m-2" style="gap:14px">
+              <div class="polje">
+                <label for="mejl">Mejl</label>
+                <input id="mejl" name="mejl" type="email" placeholder="ime@firma.rs" required>
+              </div>
+              <div class="polje">
+                <label for="tel">Telefon</label>
+                <input id="tel" name="tel" type="tel" placeholder="060 123 4567">
+              </div>
+            </div>
+            <div class="polje">
+              <label for="sta">Šta vas najviše muči</label>
+              <select id="sta" name="sta">
+                <option>Ne vidim brojeve bez otvaranja ERP-a</option>
+                <option>PDV — knjiga računa i POPDV se ne slažu</option>
+                <option>Završni račun i bilansi</option>
+                <option>Naplata potraživanja</option>
+                <option>Vodim više firmi (agencija)</option>
+                <option>Nešto drugo</option>
+              </select>
+            </div>
+            <div class="polje">
+              <label for="poruka">Poruka <span style="font-weight:400;color:var(--tise)">(nije obavezno)</span></label>
+              <textarea id="poruka" name="poruka" placeholder="Ako imate konkretan period ili nalaz koji ne štima, napišite — pustićemo baš njega."></textarea>
+            </div>
+            <button type="submit" class="dugme dugme-glavni" style="width:100%">Pošalji</button>
+            <p style="font-size:12.5px;color:var(--tise);margin:14px 0 0;text-align:center">
+              Podatke koristimo samo da vam odgovorimo. Bez liste za slanje i bez prosleđivanja.
+            </p>
+          </form>
+
+          <div class="forma-poruka" id="formaPoruka" hidden></div>
+        </div>
+      </div>
+
+      <!-- bočna strana -->
+      <div class="pojava k1 vidljiv">
+        <h2 style="margin-bottom:20px">Kako izgleda prikaz</h2>
+        <div style="margin-bottom:30px">
+          <div class="korak"><span class="korak-br">1</span><span><b>Kratak poziv</b> — pitamo koji ERP, koliko baza i šta vas trenutno najviše košta vremena. Pet minuta.</span></div>
+          <div class="korak"><span class="korak-br">2</span><span><b>Konektor</b> — vaš IT ga pusti na serveru gde je baza. Nalog sme samo da čita. Petnaest minuta.</span></div>
+          <div class="korak"><span class="korak-br">3</span><span><b>Gledamo zajedno</b> — otvorimo kontrole na periodu koji vam ne zatvara i vidimo šta nađu.</span></div>
+          <div class="korak"><span class="korak-br">4</span><span><b>Odlučite posle</b> — prvi mesec je besplatan, bez kartice. Ako ne nastavite, konektor se skida.</span></div>
+        </div>
+
+        <div class="kartica" style="background:var(--papir2);border-style:dashed">
+          <h3 style="font-size:1.1rem;margin-bottom:12px">Radije bez sastanka?</h3>
+          <p style="margin-bottom:16px;font-size:14.6px">
+            Pošaljite jedan period koji vam ne štima — i dva ispisa koja se ne slažu.
+            Vratimo vam nalaz u pisanom obliku, bez poziva.
+          </p>
+          <a href="mailto:zdravo@vidik.rs" class="dugme dugme-tihi dugme-mali">zdravo@vidik.rs</a>
+        </div>
+
+        <div style="margin-top:30px;display:grid;gap:14px;font-size:14.6px;color:var(--tiho)">
+          <div style="display:flex;gap:11px;align-items:flex-start">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.8" stroke-linecap="round" style="margin-top:3px;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+            <span><b style="color:var(--tekst)">011 345 6789</b><br>radnim danima 8–17</span>
+          </div>
+          <div style="display:flex;gap:11px;align-items:flex-start">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--terra)" stroke-width="1.8" stroke-linecap="round" style="margin-top:3px;flex-shrink:0"><path d="M12 21s7-5.7 7-11a7 7 0 10-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span><b style="color:var(--tekst)">Beograd</b><br>dolazimo i uživo, ako je bliže</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje-mreza">
+      <div>
+        <a class="znak" href="index.html" style="text-decoration:none">
+          <span class="znak-ikona"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+        </a>
+        <p class="podnozje-o">
+          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
+          održavali te iste baze kod klijenata.
+        </p>
+      </div>
+      <div>
+        <h4>Proizvod</h4>
+        <a href="mogucnosti.html">Mogućnosti</a>
+        <a href="kontrole.html">Kontrole</a>
+        <a href="kako-radi.html">Kako radi</a>
+        <a href="cene.html">Cene</a>
+      </div>
+      <div>
+        <h4>Za koga</h4>
+        <a href="mogucnosti.html#direktor">Direktore</a>
+        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <a href="cene.html#agencije">Knjigovodstvene agencije</a>
+        <a href="kako-radi.html#it">IT službe</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="kontakt.html">Zakaži prikaz</a>
+        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
+        <a href="tel:+381113456789">011 345 6789</a>
+      </div>
+    </div>
+    <div class="podnozje-dno">
+      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vidik.js"></script>
+</body>
+</html>

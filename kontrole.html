@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontrole — Vidik</title>
+<meta name="description" content="Kontrole koje porede knjigu računa sa POPDV-om, konta sa bilansnim obrascima i module sa glavnom knjigom — i uvek kažu razlog razlike.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><g fill='white'><rect x='7' y='18' width='4' height='7' rx='1'/><rect x='14' y='13' width='4' height='12' rx='1'/><rect x='21' y='8' width='4' height='17' rx='1'/></g></svg>">
+</head>
+<body>
+<header class="nav">
+  <div class="omot nav-red">
+    <a class="znak" href="index.html">
+      <span class="znak-ikona"></span>
+      <span class="znak-ime">Vid<span>ik</span></span>
+    </a>
+    <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-veze">
+      <a href="index.html">Početna</a>
+      <a href="mogucnosti.html">Mogućnosti</a>
+      <a href="kontrole.html" class="tu">Kontrole</a>
+      <a href="kako-radi.html">Kako radi</a>
+      <a href="cene.html">Cene</a>
+      <a href="DEMO_ADRESA">Demo</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
+    </nav>
+  </div>
+</header>
+<section class="strana-vrh">
+  <div class="aureola aureola-1"></div>
+  <div class="omot">
+    <span class="nadnaslov">Kontrole</span>
+    <h1>Ne pokazuje samo <em style="font-style:normal;color:var(--terra)">šta</em> ne štima, nego i zašto</h1>
+    <p class="uvod">Ovo je deo koji ne postoji ni u jednom ERP ispisu. Kontrole ne prepisuju izveštaje — one ih porede međusobno i sa stvarnim dokumentima, pa razliku objasne i predlože popravku.</p>
+  </div>
+</section>
+
+<section class="blok-tanak">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:50px;align-items:start">
+      <div class="pojava">
+        <h2 style="margin-bottom:18px">Kontrola PDV-a</h2>
+        <p class="uvod" style="margin-bottom:20px">
+          Knjiga računa i POPDV nisu živi upit — oba su <b>snimljen rezultat obračuna</b>.
+          Kad se jedan obračun ponovi a drugi ne, ispisi se raziđu, i razlika se do sada
+          tražila izvozom oba u Excel.
+        </p>
+        <p class="uvod" style="margin-bottom:22px">
+          Vidik spaja tri izvora po ključu dokumenta — dokument u bazi, knjigu računa i
+          POPDV — i za svaki koji nije u sva tri daje razlog.
+        </p>
+        <ul class="spisak">
+          <li><b>Tip dokumenta nije mapiran</b> u POPDV — popravka je u podešavanjima, ne u obračunu</li>
+          <li><b>Nema pravila za tu vrstu artikla</b> — tip jeste mapiran, ali ne i ta kombinacija</li>
+          <li><b>Unet posle obračuna</b> — dokument je noviji od obračuna koji ga ne vidi</li>
+          <li><b>Obračun nije ni pokrenut</b> — nema šta da se poredi, i to se kaže odmah</li>
+          <li><b>Sistemski</b> — ceo tip se tako ponaša (npr. maloprodaja), pa se ne prijavljuje kao greška</li>
+        </ul>
+      </div>
+
+      <div class="pojava k1">
+        <div class="panel">
+          <div class="panel-traka">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">kontrola pdv &middot; 2023-12</span>
+          </div>
+          <div class="panel-telo">
+            <div class="vaga">
+              <div class="tas">
+                <div class="tas-ime">Knjiga računa</div>
+                <div class="tas-broj">250</div>
+                <div class="tas-sub">dokumenata</div>
+                <div class="tas-datum">obračunato 20.02.2024.</div>
+              </div>
+              <div class="vaga-razlika"><b>−20</b><span>razlika</span></div>
+              <div class="tas star">
+                <div class="tas-ime">POPDV</div>
+                <div class="tas-broj">270</div>
+                <div class="tas-sub">dokumenata</div>
+                <div class="tas-datum">obračunato 23.01.2024.<span class="znak-star">stariji</span></div>
+              </div>
+            </div>
+            <div style="padding:10px 13px;border-radius:9px;background:rgba(192,82,44,.1);border:1px solid rgba(192,82,44,.25);font-size:12.5px;margin-bottom:12px">
+              <b>POPDV je stariji 28 dana.</b> Sve što je uneto ili menjano u međuvremenu
+              vidi samo onaj drugi obračun.
+            </div>
+            <div class="nalaz">
+              <b>28.480,00</b>
+              <span>PDV-a na 10 dokumenata koji ne ulaze u oba obračuna</span>
+            </div>
+            <div style="margin-top:14px;padding:9px 12px;border-radius:9px;background:var(--papir2);font-size:12.5px">
+              <b>Šta uraditi:</b> ponovi obračun POPDV
+            </div>
+            <div class="tab-okvir">
+              <table class="tab-kontrola">
+                <thead><tr><th>Dokument</th><th>baza knj popdv</th><th>Tip</th><th class="desno">PDV</th></tr></thead>
+                <tbody>
+                  <tr><td class="kljuc">23-1200-000418</td><td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td><td>Računi troškova</td><td class="desno">34.200,00</td></tr>
+                  <tr><td class="kljuc">23-1200-000415</td><td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td><td>Računi troškova</td><td class="desno">−12.360,00</td></tr>
+                  <tr><td class="kljuc">23-1200-000417</td><td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td><td>Računi troškova</td><td class="desno">2.180,00</td></tr>
+                  <tr><td class="kljuc">23-1000-000402</td><td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td><td>Kupovina robe</td><td class="desno">840,00</td></tr>
+                  <tr style="font-weight:700;background:var(--papir2)"><td colspan="3">Ukupno — 10 dokumenata</td><td class="desno">28.480,00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok mrak">
+  <div class="omot">
+    <div class="usko pojava" style="margin-bottom:44px">
+      <span class="nadnaslov">Ostale kontrole</span>
+      <h2>Iste pare, druga mesta</h2>
+      <p class="uvod" style="margin-top:14px">
+        Isti pristup primenjen na ostale tačke gde se dva pogleda na istu stvar
+        razilaze — a razlika košta.
+      </p>
+    </div>
+
+    <div class="mreza m-2">
+      <div class="kartica pojava">
+        <h3>Završni račun</h3>
+        <p style="margin-bottom:14px">Bilans stanja i uspeha nisu zbir knjiženja nego zbir formula nad kontima.
+           Ako konto ima promet a nijedna formula ga ne hvata, iznos tiho nestane iz obrasca.</p>
+        <ul class="spisak" style="gap:9px">
+          <li>Konta sa prometom koja ne ulaze ni u jedan obrazac</li>
+          <li>Konta obuhvaćena dvaput — pa sabrana dvaput</li>
+          <li>Nalozi koji nisu u ravnoteži, uključujući zaključna knjiženja</li>
+          <li>Aktiva naspram pasive i rezultat iz bilansa uspeha naspram bilansa stanja</li>
+        </ul>
+      </div>
+      <div class="kartica pojava k1">
+        <h3>Moduli naspram glavne knjige</h3>
+        <p style="margin-bottom:14px">Saldakonti kupaca i konto glavne knjige moraju da daju isti broj.
+           Kad ne daju, razlika se traži danima — jer niko ne zna ni na kom je partneru.</p>
+        <ul class="spisak" style="gap:9px">
+          <li>Kupci i dobavljači naspram svojih konta</li>
+          <li>Zalihe naspram klase 1, po skladištu</li>
+          <li>Blagajna i izvodi naspram knjiženja</li>
+          <li>Razlika razložena do partnera i dokumenta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot usko">
+    <div class="pojava" style="margin-bottom:34px">
+      <span class="nadnaslov">Pošteno</span>
+      <h2>Šta kontrole ne rade</h2>
+    </div>
+    <div class="pojava">
+      <ul class="spisak" style="gap:16px">
+        <li><b style="color:var(--tekst)">Ne popravljaju same.</b>&nbsp; Vidik u vašu bazu ne upisuje ništa, nikad.
+            Obračun se i dalje pokreće u ERP-u — samo sada znate koji i zašto.</li>
+        <li><b style="color:var(--tekst)">Ne pogađaju uvek razlog.</b>&nbsp; Kad uzrok nije očigledan,
+            piše „razlika bez očiglednog uzroka" umesto izmišljenog objašnjenja. Tu i dalje
+            treba čovek.</li>
+        <li><b style="color:var(--tekst)">Ne zamenjuju računovođu.</b>&nbsp; Skraćuju traženje sa pola sata
+            na nekoliko sekundi, ali odluku šta je ispravno i dalje donosi onaj ko potpisuje.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot cta pojava">
+    <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
+    <h2>Pustite kontrole na svoj mesec koji ne štima</h2>
+    <p class="uvod">Donesite period koji vam trenutno ne zatvara. Ako Vidik nađe ono što ste već našli ručno — znate da radi.</p>
+    <div class="cta-akcije">
+      <a href="DEMO_ADRESA" class="dugme dugme-glavni">Uđite u demo</a>
+      <a href="kontakt.html" class="dugme dugme-tihi">Zakažite prikaz</a>
+    </div>
+  </div>
+</section>
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje-mreza">
+      <div>
+        <a class="znak" href="index.html" style="text-decoration:none">
+          <span class="znak-ikona"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+        </a>
+        <p class="podnozje-o">
+          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
+          održavali te iste baze kod klijenata.
+        </p>
+      </div>
+      <div>
+        <h4>Proizvod</h4>
+        <a href="mogucnosti.html">Mogućnosti</a>
+        <a href="kontrole.html">Kontrole</a>
+        <a href="kako-radi.html">Kako radi</a>
+        <a href="cene.html">Cene</a>
+      </div>
+      <div>
+        <h4>Za koga</h4>
+        <a href="mogucnosti.html#direktor">Direktore</a>
+        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <a href="cene.html#agencije">Knjigovodstvene agencije</a>
+        <a href="kako-radi.html#it">IT službe</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="kontakt.html">Zakaži prikaz</a>
+        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
+        <a href="tel:+381113456789">011 345 6789</a>
+      </div>
+    </div>
+    <div class="podnozje-dno">
+      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vidik.js"></script>
+</body>
+</html>

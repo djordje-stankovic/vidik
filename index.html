@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vidik — vaš ERP već zna odgovor</title>
+<meta name="description" content="Vidik je upravljački kokpit nad PANTHEON bazom. Odgovori bez otvaranja ERP-a, kontrole koje same nalaze greške u PDV-u i završnom računu, i podaci koji ostaju kod vas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><g fill='white'><rect x='7' y='18' width='4' height='7' rx='1'/><rect x='14' y='13' width='4' height='12' rx='1'/><rect x='21' y='8' width='4' height='17' rx='1'/></g></svg>">
+</head>
+<body>
+
+<header class="nav">
+  <div class="omot nav-red">
+    <a class="znak" href="index.html">
+      <span class="znak-ikona"></span>
+      <span class="znak-ime">Vid<span>ik</span></span>
+    </a>
+    <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-veze">
+      <a href="index.html" class="tu">Početna</a>
+      <a href="mogucnosti.html">Mogućnosti</a>
+      <a href="kontrole.html">Kontrole</a>
+      <a href="kako-radi.html">Kako radi</a>
+      <a href="cene.html">Cene</a>
+      <a href="DEMO_ADRESA">Demo</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="aureola aureola-1"></div>
+  <div class="aureola aureola-2"></div>
+  <div class="omot hero-mreza">
+    <div class="pojava vidljiv">
+      <span class="nadnaslov">Nadgradnja za PANTHEON</span>
+      <h1>Vaš ERP već zna odgovor. <em>Samo vam ga ne kaže.</em></h1>
+      <p class="uvod">
+        Podaci o naplati, marži, zalihama i PDV-u već postoje u vašoj bazi. Do njih se
+        stiže kroz stablo izveštaja, filtere i štampač. Vidik ih iznosi na jedan ekran —
+        i sam javlja kada nešto ne štima.
+      </p>
+      <div class="hero-akcije">
+        <a href="DEMO_ADRESA" class="dugme dugme-glavni">Uđite u demo &mdash; bez registracije</a>
+        <a href="kontakt.html" class="dugme dugme-tihi">Zakažite prikaz uživo</a>
+      </div>
+      <div class="hero-sitno">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Baza ostaje kod vas &middot; bez otvaranja portova &middot; svaki upit stoji u dnevniku
+      </div>
+    </div>
+
+    <!-- živi mokap -->
+    <div class="pojava k1">
+      <div class="panel">
+        <div class="panel-traka">
+          <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+          <span class="panel-naslov">vidik &middot; pregled</span>
+        </div>
+        <div class="panel-telo">
+          <div class="kpi-red">
+            <!-- Brojevi su iz demo baze koju otvara dugme u zaglavlju. Namerno:
+                 ko klikne, vidi isto ovo. Izmišljen mokap koji se ne poklapa sa
+                 demoom je prva stvar koju čovek primeti. -->
+            <div class="kpi">
+              <div class="kpi-lab">Promet 12m</div>
+              <div class="kpi-val">40,8 mil</div>
+              <div class="kpi-pod pad">▼ 30,0%</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lab">Dospelo</div>
+              <div class="kpi-val">135,9 mil</div>
+              <div class="kpi-pod pad">99% potraživanja</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-lab">Marža</div>
+              <div class="kpi-val">54,2%</div>
+              <div class="kpi-pod rast">▲ 1,7 p.p.</div>
+            </div>
+          </div>
+
+          <div class="graf-okvir">
+            <div class="graf-vrh"><b>Promet po mesecima</b><span>12 meseci</span></div>
+            <svg viewBox="0 0 320 96" width="100%" height="96" role="img" aria-label="Kretanje prometa kroz godinu">
+              <g stroke="#e0d4c3" stroke-width="1">
+                <line x1="0" y1="24" x2="320" y2="24"/>
+                <line x1="0" y1="52" x2="320" y2="52"/>
+                <line x1="0" y1="80" x2="320" y2="80"/>
+              </g>
+              <path class="crtaj" d="M4,74 L30,66 L56,70 L82,54 L108,58 L134,42 L160,46 L186,32 L212,38 L238,24 L264,28 L290,14 L314,18"
+                    fill="none" stroke="#c0522c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="314" cy="18" r="4" fill="#c0522c"/>
+              <circle cx="314" cy="18" r="8" fill="#c0522c" opacity=".18"/>
+            </svg>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;align-items:end;height:66px">
+            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
+              <div class="stub" data-v="8" data-k="0" style="background:#e7c9b6;border-radius:5px 5px 0 0"></div>
+              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">&lt;30</div>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
+              <div class="stub" data-v="5" data-k=".1" style="background:#dda98c;border-radius:5px 5px 0 0"></div>
+              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">30–60</div>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
+              <div class="stub" data-v="4" data-k=".2" style="background:#cf8259;border-radius:5px 5px 0 0"></div>
+              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">60–90</div>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
+              <div class="stub" data-v="100" data-k=".3" style="background:#c0522c;border-radius:5px 5px 0 0"></div>
+              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">90+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BROJEVI ============================= -->
+<section class="brojke">
+  <div class="omot brojke-mreza">
+    <div class="brojka pojava">
+      <div class="brojka-val">8 s</div>
+      <div class="brojka-lab">do odgovora na pitanje<br>koje je juče trajalo pola sata</div>
+    </div>
+    <!-- Ovde je ranije stajao nalaz sa žive baze jednog klijenta. Zamenjeno
+         brojem iz demoa: ko klikne na demo, vidi isti taj nalaz. Nijedan broj
+         na sajtu ne sme da dolazi iz tuđe baze. -->
+    <div class="brojka pojava k1">
+      <div class="brojka-val">16 od 18</div>
+      <div class="brojka-lab">perioda u kojima se knjiga računa<br>i POPDV ne slažu &mdash; u demo bazi</div>
+    </div>
+    <div class="brojka pojava k2">
+      <div class="brojka-val">0</div>
+      <div class="brojka-lab">portova otvorenih ka vašoj mreži<br>veza ide samo napolje</div>
+    </div>
+    <div class="brojka pojava k3">
+      <div class="brojka-val">48</div>
+      <div class="brojka-lab">baza pod istim krovom<br>za knjigovodstvene agencije</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROBLEM ============================= -->
+<section class="blok">
+  <div class="omot">
+    <div class="usko pojava" style="margin-bottom:46px">
+      <span class="nadnaslov">Zašto ovo postoji</span>
+      <h2>Izveštaj postoji. Samo ga niko ne gleda.</h2>
+      <p class="uvod" style="margin-top:16px">
+        ERP je napravljen da se u njega unosi i da se iz njega štampa. Kad direktor
+        hoće da vidi ko duguje, put je uvek isti: otvori program, nađi izveštaj u stablu,
+        podesi filtere, odštampaj. Pet minuta po pitanju — pa se pitanje ne postavi.
+      </p>
+    </div>
+
+    <div class="mreza m-3">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3>Odgovor košta previše</h3>
+        <p>Dok se izveštaj nađe i podesi, pitanje je već zastarelo. Ljudi prestanu da pitaju,
+           pa se odluke donose po osećaju.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Greška se traži u Excelu</h3>
+        <p>Kad se dva ispisa ne slažu, oba se izvezu u Excel i redovi se upoređuju ručno.
+           Nađe se <em>šta</em> fali, ali ne i <em>zašto</em>.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3.4"/></svg>
+        </div>
+        <h3>Sve staje na jednom čoveku</h3>
+        <p>Onaj ko zna gde se šta nalazi postaje usko grlo. Kad je na godišnjem,
+           firma ne vidi ništa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRE / POSLE ========================= -->
+<section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot">
+    <div class="usko pojava" style="margin-bottom:42px">
+      <span class="nadnaslov">Konkretno</span>
+      <h2>„Zašto mi se knjiga računa i POPDV ne slažu?"</h2>
+    </div>
+
+    <div class="uporedo">
+      <div class="strana strana-lose pojava">
+        <span class="strana-oznaka oznaka-lose">Dosadašnji put &middot; ~40 minuta</span>
+        <div class="korak"><span class="korak-br">1</span><span>Otvori PDV obračun, odštampaj knjigu računa u Excel</span></div>
+        <div class="korak"><span class="korak-br">2</span><span>Otvori POPDV pregled, odštampaj i njega</span></div>
+        <div class="korak"><span class="korak-br">3</span><span>Poređaj oba po broju dokumenta</span></div>
+        <div class="korak"><span class="korak-br">4</span><span>Traži redove kojih ima u jednom a nema u drugom</span></div>
+        <div class="korak"><span class="korak-br">5</span><span>Nađeš deset dokumenata — i dalje ne znaš zašto ispadaju</span></div>
+      </div>
+
+      <div class="strelica pojava k1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="strana pojava k2">
+        <span class="strana-oznaka oznaka-dobro">Sa Vidikom &middot; 8 sekundi</span>
+        <div class="korak"><span class="korak-br">1</span><span>Otvoriš karticu <b>Kontrola PDV</b> i izabereš mesec</span></div>
+        <div class="korak"><span class="korak-br">2</span><span>Ekran kaže: <b>POPDV je stariji 28 dana</b></span></div>
+        <div class="korak"><span class="korak-br">3</span><span>Ispod stoji spisak sa razlogom i iznosom</span></div>
+        <div class="korak"><span class="korak-br">4</span><span>I šta da uradiš: <b>ponovi obračun POPDV</b></span></div>
+        <div class="korak"><span class="korak-br">5</span><span>Klik na dokument otvara sve o njemu</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ KONTROLE ============================ -->
+<section class="blok mrak">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:center">
+      <div class="pojava">
+        <span class="nadnaslov">Ono što ERP nema</span>
+        <h2>Kontrole koje same traže grešku</h2>
+        <p class="uvod" style="margin:16px 0 26px">
+          Vidik ne prepisuje izveštaje koje već imate. Radi ono što nijedan ispis ne radi:
+          poredi dva obračuna međusobno i sa stvarnim dokumentima, pa kaže gde se razilaze
+          — i, što je važnije, <b style="color:#fdfaf5">zbog čega</b>.
+        </p>
+        <ul class="spisak" style="margin-bottom:30px">
+          <li>Knjiga računa naspram POPDV-a, dokument po dokument</li>
+          <li>Konta koja imaju promet a ne ulaze ni u jedan bilansni obrazac</li>
+          <li>Nalozi koji nisu u ravnoteži i zaključna knjiženja</li>
+          <li>Zalihe u minusu i artikli ispod minimuma</li>
+        </ul>
+        <a href="kontrole.html" class="dugme dugme-svetli">Sve kontrole</a>
+      </div>
+
+      <div class="pojava k1">
+        <div class="panel" style="background:var(--ugalj2);border-color:rgba(240,231,218,.12)">
+          <div class="panel-traka" style="background:rgba(240,231,218,.05);border-color:rgba(240,231,218,.1)">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">kontrola pdv &middot; 2023-12</span>
+          </div>
+          <!-- Primer je oblik ekrana, ne snimak tuđe baze: brojevi i oznake
+               dokumenata su izmišljeni. Pravi nalaz se vidi u demou. -->
+          <div class="panel-telo" style="background:var(--papir)">
+            <div class="vaga">
+              <div class="tas">
+                <div class="tas-ime">Knjiga računa</div>
+                <div class="tas-broj">250</div>
+                <div class="tas-sub">dokumenata</div>
+                <div class="tas-datum">obračunato 20.02.2024.</div>
+              </div>
+              <div class="vaga-razlika"><b>−20</b><span>razlika</span></div>
+              <div class="tas star">
+                <div class="tas-ime">POPDV</div>
+                <div class="tas-broj">270</div>
+                <div class="tas-sub">dokumenata</div>
+                <div class="tas-datum">obračunato 23.01.2024.<span class="znak-star">stariji</span></div>
+              </div>
+            </div>
+            <div class="nalaz">
+              <b>28.480,00</b>
+              <span>PDV-a na 10 dokumenata koji ne ulaze u oba obračuna</span>
+            </div>
+            <div class="tab-okvir">
+              <table class="tab-kontrola">
+                <thead><tr><th>Dokument</th><th>baza knj popdv</th><th>Razlog</th><th class="desno">PDV</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="kljuc">23-1200-000418</td>
+                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
+                    <td>unet posle obračuna</td>
+                    <td class="desno">34.200,00</td>
+                  </tr>
+                  <tr>
+                    <td class="kljuc">23-1200-000415</td>
+                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
+                    <td>unet posle obračuna</td>
+                    <td class="desno">−12.360,00</td>
+                  </tr>
+                  <tr>
+                    <td class="kljuc">23-1201-000206</td>
+                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
+                    <td>unet posle obračuna</td>
+                    <td class="desno">840,00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MOGUĆNOSTI ========================== -->
+<section class="blok">
+  <div class="omot">
+    <div class="usko pojava" style="margin-bottom:46px">
+      <span class="nadnaslov">Šta dobijate</span>
+      <h2>Sedam ekrana koji pokrivaju ono što se pita svaki dan</h2>
+    </div>
+
+    <div class="mreza m-3">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg>
+        </div>
+        <h3>Pregled</h3>
+        <p>Projekcija priliva i odliva po dospeću, starost duga i promet — na jednom ekranu,
+           čim se otvori.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/></svg>
+        </div>
+        <h3>Novac</h3>
+        <p>Ko duguje i koliko dugo, šta se plaća ove nedelje, prihodi naspram troškova
+           po godinama.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4 8 4 8-4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg>
+        </div>
+        <h3>Zalihe</h3>
+        <p>Negativna stanja koja odaju grešku u knjiženju, artikli ispod minimuma i roba
+           koja stoji.</p>
+      </div>
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.7L3 9l6-1 3-6z"/></svg>
+        </div>
+        <h3>Rizik i prilike</h3>
+        <p>Kupci koji su prestali da kupuju, i oni koji duguju a odavno ništa nisu uzeli.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        </div>
+        <h3>Blokada računa</h3>
+        <p>Kupac koji duguje i kasni je jedno; isti kupac sa računom u blokadi 54 dana
+           je sasvim drugo. Vidik to proverava kod NBS-a i upisuje u karton &mdash;
+           podatak koga u ERP-u nema.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 01-2-2v-3a2 2 0 012-2h16a2 2 0 012 2v3a2 2 0 01-2 2h-2"/></svg>
+        </div>
+        <h3>Ispisi po meri</h3>
+        <p>Jedan širok izvor po oblasti, a ispis je izbor kolona i filtera. Korisnik ga sam
+           sklopi, sačuva i podeli — bez programera.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px" class="pojava">
+      <a href="mogucnosti.html" class="dugme dugme-tihi">Detaljno o svakom ekranu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CITAT =============================== -->
+<section class="blok-tanak" style="background:var(--papir2);border-top:1px solid var(--linija)">
+  <div class="omot citat pojava">
+    <blockquote>
+      „Prvog dana nam je našao trideset hiljada dinara PDV-a koji nije ušao u POPDV.
+      Tražili smo to ručno, u dva Excela, svakog meseca."
+    </blockquote>
+    <div class="citat-ko">
+      <span class="citat-slovo">M</span>
+      <span class="citat-ime">
+        <b>Milica J.</b>
+        <span>šef računovodstva, trgovina na veliko</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA =============================== -->
+<section class="blok">
+  <div class="omot cta pojava">
+    <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
+    <h2>Pustite ga na svoju bazu i vidite šta nađe</h2>
+    <p class="uvod">
+      Prikaz traje dvadeset minuta i radi se na vašim podacima, ne na demou.
+      Ako ništa ne nađe, rekli smo vam da je sve u redu — i to je nešto.
+    </p>
+    <div class="cta-akcije">
+      <a href="kontakt.html" class="dugme dugme-glavni">Zakaži prikaz</a>
+      <a href="cene.html" class="dugme dugme-tihi">Pogledaj cene</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PODNOŽJE ============================ -->
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje-mreza">
+      <div>
+        <a class="znak" href="index.html" style="text-decoration:none">
+          <span class="znak-ikona"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+        </a>
+        <p class="podnozje-o">
+          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
+          održavali te iste baze kod klijenata.
+        </p>
+      </div>
+      <div>
+        <h4>Proizvod</h4>
+        <a href="mogucnosti.html">Mogućnosti</a>
+        <a href="kontrole.html">Kontrole</a>
+        <a href="kako-radi.html">Kako radi</a>
+        <a href="cene.html">Cene</a>
+      </div>
+      <div>
+        <h4>Za koga</h4>
+        <a href="mogucnosti.html#direktor">Direktore</a>
+        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <a href="cene.html#agencije">Knjigovodstvene agencije</a>
+        <a href="kako-radi.html#it">IT službe</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="kontakt.html">Zakaži prikaz</a>
+        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
+        <a href="tel:+381113456789">011 345 6789</a>
+      </div>
+    </div>
+    <div class="podnozje-dno">
+      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vidik.js"></script>
+</body>
+</html>

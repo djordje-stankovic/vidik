@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kako radi — Vidik</title>
+<meta name="description" content="Konektor kod klijenta, odlazna veza na 443, bez otvaranja portova. Nalog samo za čitanje, i dnevnik u kom vidite svaki izvršeni upit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><g fill='white'><rect x='7' y='18' width='4' height='7' rx='1'/><rect x='14' y='13' width='4' height='12' rx='1'/><rect x='21' y='8' width='4' height='17' rx='1'/></g></svg>">
+</head>
+<body>
+<header class="nav">
+  <div class="omot nav-red">
+    <a class="znak" href="index.html">
+      <span class="znak-ikona"></span>
+      <span class="znak-ime">Vid<span>ik</span></span>
+    </a>
+    <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-veze">
+      <a href="index.html">Početna</a>
+      <a href="mogucnosti.html">Mogućnosti</a>
+      <a href="kontrole.html">Kontrole</a>
+      <a href="kako-radi.html" class="tu">Kako radi</a>
+      <a href="cene.html">Cene</a>
+      <a href="DEMO_ADRESA">Demo</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
+    </nav>
+  </div>
+</header>
+<section class="strana-vrh">
+  <div class="aureola aureola-1"></div>
+  <div class="omot">
+    <span class="nadnaslov">Kako radi</span>
+    <h1>Ne morate nam verovati na reč</h1>
+    <p class="uvod">Najčešće pitanje nije „šta ume" nego „gde su nam podaci". Odgovor nije obećanje nego tri stvari koje možete da proverite sami: nalog koji ne sme da piše, program koji odbija svaki upis, i dnevnik u kom stoji svaki upit koji je izvršen.</p>
+  </div>
+</section>
+
+<section class="blok-tanak" id="it">
+  <div class="omot">
+    <div class="mreza m-3">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>1. Konektor kod vas</h3>
+        <p>Jedan program na serveru gde je već baza &mdash; jedini koji je uopšte
+           dodiruje. Preporučeni nalog je <code>db_datareader</code>: pravo čitanja
+           i ništa više. To sprovodi sam SQL Server, pa važi i ako nama nešto pukne.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </div>
+        <h3>2. Veza ide napolje</h3>
+        <p>Konektor sam otvara odlaznu vezu na portu 443. Ka vašoj mreži se ne otvara
+           nijedan port, nema VPN-a ni probijanja zaštite.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/></svg>
+        </div>
+        <h3>3. Svaki upit stoji u dnevniku</h3>
+        <p>Konektor zapisuje svaki upit koji je izvršio &mdash; vidite ga u svom panelu,
+           na svom serveru. Odbija sve što pokušava da piše. Kad hoćete da prestane,
+           „Prekini pristup" gasi vezu odmah, bez nas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:center">
+      <div class="pojava">
+        <span class="nadnaslov">Postavljanje</span>
+        <h2>Radi isto popodne</h2>
+        <p class="uvod" style="margin:16px 0 22px">
+          Nema migracije, nema promene u načinu rada, nema dodatnog unosa. Vidik čita
+          ono što vaši ljudi ionako unose svakog dana.
+        </p>
+        <ul class="spisak">
+          <li>Jedan <code>.exe</code> &mdash; nema instalacije Node-a, baze ni servera</li>
+          <li>Sam pronalazi SQL instance na mašini i prepoznaje PANTHEON baze</li>
+          <li>Vi štiklirate koje baze delite; ostale ne postoje za nas</li>
+          <li>Konektor vam pokaže ključ, vi ga nalepite u Vidik &mdash; i to je sve.
+              Ključ pravi vaš server, ne mi</li>
+          <li>Razlike među klijentima (druga konta, drugi tipovi dokumenata) rešavaju se
+              podešavanjem, ne izmenom programa</li>
+        </ul>
+        <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a href="DEMO_ADRESA/preuzmi/konektor.exe" class="dugme dugme-svetli">Preuzmite konektor</a>
+          <span style="font-size:13px;color:var(--tise)">
+            Windows &middot; jedan fajl &middot; bez instalacije
+          </span>
+        </div>
+        <p style="margin-top:14px;font-size:13px;color:var(--tise)">
+          Program nije potpisan sertifikatom, pa će Windows prvi put pitati
+          „Ipak pokreni". Kažemo to unapred da ne bude iznenađenje na serveru.
+        </p>
+      </div>
+      <div class="pojava k1">
+        <div class="panel">
+          <div class="panel-traka">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">konektor &middot; status</span>
+          </div>
+          <div class="panel-telo" style="font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:12.5px;line-height:1.95">
+            <div><span style="color:#4e7c34">●</span> veza sa servisom &nbsp;<span style="color:#9a8d7f">aktivna, 443/TLS</span></div>
+            <div><span style="color:#4e7c34">●</span> baze pronađene &nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">48</span></div>
+            <div><span style="color:#4e7c34">●</span> nalog &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">samo čitanje</span></div>
+            <div><span style="color:#4e7c34">●</span> dolazni portovi &nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">nijedan</span></div>
+            <div><span style="color:#c99a2e">●</span> poslednji prenos &nbsp;<span style="color:#9a8d7f">pre 40 s &middot; 3,1 kB</span></div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--linija);color:#6f6358">
+              <div style="margin-bottom:6px;color:#221d18"><b>dnevnik upita</b> &nbsp;<span style="color:#9a8d7f">poslednja 3</span></div>
+              <div>14:22:07 &nbsp;<span style="color:#9a8d7f">pregled</span> &nbsp;SELECT &hellip; tHE_AcctTransItem</div>
+              <div>14:22:07 &nbsp;<span style="color:#9a8d7f">pregled</span> &nbsp;SELECT &hellip; tHE_Move</div>
+              <div>14:19:41 &nbsp;<span style="color:#9a8d7f">ispis</span> &nbsp;&nbsp;&nbsp;SELECT &hellip; tHE_Stock</div>
+              <div style="margin-top:8px"><span style="color:#b03c2c">●</span> odbijeno upisa: <b style="color:#221d18">0</b> &nbsp;<span style="color:#9a8d7f">(sve što piše se odbija)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot usko">
+    <div class="pojava" style="margin-bottom:30px">
+      <span class="nadnaslov">Pitanja koja uvek stignu</span>
+      <h2>Bez zaobilaženja</h2>
+    </div>
+    <div class="pojava">
+      <details class="pitanje" open>
+        <summary>Da li nešto upisujete u našu bazu?</summary>
+        <div class="pitanje-telo">
+          <p>Ne. Nijedan ekran, kontrola ni ispis ne piše po vašoj bazi &mdash; Vidik je
+          čist čitač. Zato i preporučujemo nalog <code>db_datareader</code>: da to ne
+          bude naše obećanje nego pravilo koje sprovodi vaš SQL Server.</p>
+          <p>Uz to, i sam konektor odbija svaki upit koji pokušava da piše, pre nego što
+          ga uopšte pošalje bazi. Dve brave, nezavisne jedna od druge.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Idu li naši podaci kroz vaš server?</summary>
+        <div class="pitanje-telo">
+          <p>Da, i red je da to kažemo otvoreno: kad otvorite ekran, red koji vidite
+          putuje iz vaše baze kroz naš servis do vašeg pregledača. Drugačije se sa
+          telefona ne može videti ništa.</p>
+          <p>Ono što se <b>ne</b> dešava: ništa od toga se ne čuva. Nema kopije vaše
+          baze kod nas, nema noćnog prepisivanja, nema skladišta izveštaja. Kad
+          zatvorite ekran, kod nas ne ostaje ni jedan red.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Šta ako nam pukne internet?</summary>
+        <div class="pitanje-telo">
+          <p>Vidik je veb aplikacija i bez veze ne radi &mdash; isto kao mejl ili
+          e-faktura. To je svesna odluka: poenta je da direktor vidi brojke sa telefona,
+          iz automobila, bez ulaska u firmu.</p>
+          <p>Ako veza padne, ne gubi se ništa: konektor se sam javi čim se vrati, a u
+          međuvremenu vaš ERP radi kao i pre. Vidik ništa ne drži i ništa ne zaključava.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Ko sme šta da vidi?</summary>
+        <div class="pitanje-telo">
+          <p>Svako ko ima nalog u vašoj firmi vidi sve ekrane. Naplata je po firmi, ne po
+          korisniku, pa nema razloga da ljudi dele lozinke &mdash; a baš to deljenje kvari
+          svaku podelu prava.</p>
+          <p>Ako vam treba da komercijalista vidi samo svoje kupce, recite nam &mdash;
+          to je odluka koju donosimo prema tome koliko firmi je traži, a ne unapred.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Da li usporava bazu?</summary>
+        <div class="pitanje-telo">
+          <p>Upiti idu nad indeksiranim kolonama, a konektor drži najviše dve konekcije
+          i zatvara ih posle deset minuta mirovanja. U praksi je opterećenje manje nego
+          kad jedan korisnik otvori veći ispis u samom ERP-u.</p>
+          <p>Ako želite, konektor se pusti na repliku umesto na produkciju.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>PANTHEON prijavljuje spoljnu vezu na bazu. Šta s tim?</summary>
+        <div class="pitanje-telo">
+          <p>Tačno, i to nećemo da zaobilazimo. PANTHEON prepoznaje svaku spoljnu vezu i
+          traži Konektor licencu. Prikrivanje te veze bi vas stavilo u prekršaj ugovora
+          sa DataLab-om &mdash; a to bi se videlo prvog dana kad partner dođe na
+          održavanje.</p>
+          <p>Ono što radimo umesto toga jeste da veza bude <b>jedna</b>: jedan konektor
+          po firmi, bez obzira koliko ljudi gleda Vidik sa telefona. Trošak licence
+          ulazi u ponudu otvoreno i dogovara se sa vašim PANTHEON partnerom.</p>
+        </div>
+      </details>
+      <details class="pitanje">
+        <summary>Šta ako se predomislimo?</summary>
+        <div class="pitanje-telo">
+          <p>Konektor se deinstalira i nema više ničega. Ništa nije promenjeno u bazi, pa
+          nema šta da se vraća. Ugovor je mesečni — bez odustanice i bez obaveze na godinu.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot cta pojava">
+    <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
+    <h2>Pozovite i svog IT čoveka na prikaz</h2>
+    <p class="uvod">Volimo ta pitanja — arhitektura je i pravljena tako da na njih postoji kratak odgovor.</p>
+    <div class="cta-akcije">
+      <a href="DEMO_ADRESA" class="dugme dugme-glavni">Uđite u demo</a>
+      <a href="kontakt.html" class="dugme dugme-tihi">Zakažite prikaz</a>
+    </div>
+  </div>
+</section>
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje-mreza">
+      <div>
+        <a class="znak" href="index.html" style="text-decoration:none">
+          <span class="znak-ikona"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+        </a>
+        <p class="podnozje-o">
+          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
+          održavali te iste baze kod klijenata.
+        </p>
+      </div>
+      <div>
+        <h4>Proizvod</h4>
+        <a href="mogucnosti.html">Mogućnosti</a>
+        <a href="kontrole.html">Kontrole</a>
+        <a href="kako-radi.html">Kako radi</a>
+        <a href="cene.html">Cene</a>
+      </div>
+      <div>
+        <h4>Za koga</h4>
+        <a href="mogucnosti.html#direktor">Direktore</a>
+        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <a href="cene.html#agencije">Knjigovodstvene agencije</a>
+        <a href="kako-radi.html#it">IT službe</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="kontakt.html">Zakaži prikaz</a>
+        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
+        <a href="tel:+381113456789">011 345 6789</a>
+      </div>
+    </div>
+    <div class="podnozje-dno">
+      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vidik.js"></script>
+</body>
+</html>

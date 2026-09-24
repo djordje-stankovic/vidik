@@ -1,0 +1,18 @@
+# Interne beleške — cene, spisak pre objave, šta je ispravljeno.
+# Repo sajta je kandidat da bude JAVAN (GitHub Pages besplatno traži javan
+# repo), pa ovo ne sme unutra.
+INTERNO.md
+
+# Program za klijenta je ~88 MB — GitHub traži LFS preko 50 MB, a fajl ionako
+# pripada Railway-u ili GitHub Release-u, ne repou sajta.
+*.exe
+*.zip
+
+node_modules/
+
+# Windows / editori
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.DS_Store
