@@ -104,6 +104,7 @@ section{position:relative}
 }
 .nav-veze a:hover{color:var(--tekst);background:var(--papir2)}
 .nav-veze a.tu{color:var(--tekst);font-weight:600}
+.nav-veze a.nav-ulaz{margin-left:10px}   /* odvaja akcije od menija */
 .nav-veze a.tu::after{
   content:"";display:block;height:2px;background:var(--terra);
   border-radius:2px;margin:5px 2px -6px

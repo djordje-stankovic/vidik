@@ -21,15 +21,23 @@
      ======================================================================= */
   var KOKPIT = 'https://cockpit-production-0d8f.up.railway.app';
 
+  /* Tri razlicite namere, ne jedna: ko nema nalog hoce da vidi (demo), ko ga
+     ima hoce unutra (prijava), a program skida tek onaj ko je vec uparen —
+     zato preuzimanje i stoji u podnozju, ne gore.                          */
+  var PUTANJE = {
+    demo:    '/prijava.html?demo',
+    prijava: '/prijava.html',
+    preuzmi: '/preuzmi/konektor.exe'
+  };
+
   if (KOKPIT) {
     var koren = KOKPIT.replace(/\/+$/, '');
     var veze = document.querySelectorAll('[data-vidik]');
     for (var v = 0; v < veze.length; v++) {
       var a = veze[v];
-      a.href = koren + (a.getAttribute('data-vidik') === 'preuzmi'
-                        ? '/preuzmi/konektor.exe' : '/prijava.html?demo');
+      a.href = koren + (PUTANJE[a.getAttribute('data-vidik')] || PUTANJE.demo);
       if (a.getAttribute('data-tekst')) a.textContent = a.getAttribute('data-tekst');
-      a.hidden = false;        /* stavka „Demo" u meniju postoji tek sad */
+      a.hidden = false;        /* Prijava, Demo i preuzimanje postoje tek sad */
     }
   }
 
