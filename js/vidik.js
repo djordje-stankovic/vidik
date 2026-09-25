@@ -19,7 +19,7 @@
      HTML-u nego ovde: jedan red, važi za svih šest stranica, bez ponovnog
      generisanja. Dok je prazna, ne može da procuri ništa pokvareno.
      ======================================================================= */
-  var KOKPIT = '';                       /* npr. 'https://kokpit.vidik.rs' */
+  var KOKPIT = 'https://cockpit-production-0d8f.up.railway.app';
 
   if (KOKPIT) {
     var koren = KOKPIT.replace(/\/+$/, '');
