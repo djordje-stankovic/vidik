@@ -443,3 +443,48 @@ section{position:relative}
 }
 .mokap-izvor a{color:var(--terra);text-decoration:none;font-weight:600}
 .mokap-izvor a:hover{text-decoration:underline}
+
+/* =======================================================================
+   TELEFON — sadrzaj ne sme da izlazi iz ekrana
+   -----------------------------------------------------------------------
+   Mereno 25.09.2026 na sirini 320 px: sadrzaj je bio 375 px sirok, a 76
+   elemenata je izlazilo van ekrana. Kako se ne bi videlo, `body` je imao
+   `overflow-x:hidden` — to je sakrivalo posledicu, ne uzrok: tekst je
+   ostajao odsecen, a covek nije mogao ni da doskroluje do njega.
+
+   Tri uzroka, svaki resen ispod:
+
+     1. grid i flex stavke se po standardu NE skupljaju ispod svog sadrzaja
+        (`min-width:auto`), pa jedno dugme ili duga rec izgura celu mrezu
+     2. dekorativni krugovi su fiksnih 520 px
+     3. `clamp()` za naslove ima FIKSNU donju granicu (2.6rem = 41.6px),
+        pa ispod ~740 px sirine `vw` deo vise ne radi nista
+   ======================================================================= */
+
+/* --- 1. stavke smeju da se skupe ------------------------------------- */
+.hero-mreza > *, .m-2 > *, .m-3 > *, .m-4 > *,
+.uporedo > *, .podnozje-mreza > *, .kpi-red > *,
+.contact-layout > *, .vaga > * { min-width: 0 }
+
+@media (max-width:560px){
+  /* --- 2. dekoracija se sklanja, nije sadrzaj --- */
+  .aureola { display: none }
+
+  /* --- 3. naslovi srazmerni ekranu --- */
+  h1 { font-size: clamp(1.95rem, 8.2vw, 4.4rem) }
+  h2 { font-size: clamp(1.55rem, 6.4vw, 3rem) }
+  h3 { font-size: clamp(1.15rem, 4.8vw, 1.6rem) }
+
+  /* --- 4. dugmad preko cele sirine umesto da izlaze --- */
+  .hero-akcije { flex-direction: column; align-items: stretch }
+  .hero-akcije .dugme { width: 100%; text-align: center }
+
+  /* --- 5. duge reci (sifre, adrese, nazivi kolona) se lome --- */
+  h1, h2, h3, p, li, td, th { overflow-wrap: break-word }
+
+  /* Kod i oznake dokumenata ne smeju da nose ceo red van ekrana. */
+  code, .oznaka { overflow-wrap: anywhere }
+}
+
+/* --- 6. sto nikad ne staje, dobija svoj skrol ----------------------- */
+.tab-okvir, .tabela-okvir { overflow-x: auto; -webkit-overflow-scrolling: touch }
