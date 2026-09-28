@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Izvor za og.png (slika koja se vidi kad se link podeli na Viberu, LinkedInu, mejlu).
+     Ponovo se pravi ovako (iz foldera vidik-sajt):
+     "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --hide-scrollbars
+       --window-size=1200,630 --screenshot="%CD%\og.png" "file:///%CD%/og/kartica.html"                          -->
+<html lang="sr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{width:1200px;height:630px;background:#faf6f0;font-family:Inter,sans-serif;color:#221d18;position:relative;overflow:hidden}
+  .aur{position:absolute;width:640px;height:640px;border-radius:50%;background:#f0cdb8;filter:blur(90px);opacity:.6;right:-160px;top:-220px}
+  .levo{position:absolute;left:72px;top:70px;width:560px}
+  .znak{display:flex;align-items:center;gap:14px;font:700 34px Fraunces,serif}
+  .znak i{width:48px;height:48px;border-radius:12px;background:#c0522c;display:grid;place-items:center}
+  .znak span{color:#c0522c}
+  h1{font:700 64px/1.02 Fraunces,serif;letter-spacing:-.02em;margin-top:56px}
+  h1 em{font-style:normal;color:#c0522c}
+  p{font-size:24px;color:#6f6358;margin-top:26px;line-height:1.4}
+  .dno{position:absolute;left:72px;bottom:56px;font:500 18px "JetBrains Mono",monospace;color:#9a8d7f}
+  .dno b{color:#221d18;font-weight:500}
+  .panel{position:absolute;right:64px;top:118px;width:470px;background:#fff;border-radius:18px;box-shadow:0 30px 70px rgba(60,40,25,.18);overflow:hidden;border:1px solid #e9dfd1}
+  .traka{background:#f2ebe1;padding:12px 16px;display:flex;gap:7px;align-items:center;font:500 13px "JetBrains Mono",monospace;color:#6f6358}
+  .traka i{width:10px;height:10px;border-radius:50%;background:#e0d4c3}.traka i:first-child{background:#c0522c}
+  .telo{padding:20px}
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .k{border:1px solid #e9dfd1;border-radius:10px;padding:12px;background:#faf6f0}
+  .k small{display:block;font-size:11px;font-weight:600;color:#6f6358;text-transform:uppercase;letter-spacing:.05em}
+  .k b{display:block;font:700 22px Fraunces,serif;margin:4px 0 2px}
+  .k .p{font-size:12px;font-weight:600;color:#c0522c}.k .r{font-size:12px;font-weight:600;color:#4e7c34}
+  .upoz{margin-top:14px;padding:14px;border-radius:10px;background:#fff4ee;border:1px solid #f3cdb9;font-size:15px}
+  .upoz b{color:#a3401f}
+</style></head>
+<body>
+  <div class="aur"></div>
+  <div class="levo">
+    <div class="znak"><i><svg width="28" height="28" viewBox="0 0 32 32"><g fill="#fff"><rect x="5" y="18" width="5" height="9" rx="1"/><rect x="13.5" y="12" width="5" height="15" rx="1"/><rect x="22" y="6" width="5" height="21" rx="1"/></g></svg></i><b style="font-weight:700">Vid<span>ik</span></b></div>
+    <h1>Vaš ERP već zna odgovor. <em>Samo vam ga ne kaže.</em></h1>
+    <p>Naplata, marža, zalihe i PDV iz PANTHEON baze — na jednom ekranu, na telefonu.</p>
+  </div>
+  <div class="panel">
+    <div class="traka"><i></i><i></i><i></i>&nbsp; vidik · pregled</div>
+    <div class="telo">
+      <div class="kpi">
+        <div class="k"><small>Promet 12m</small><b>40,8 mil</b><span class="p">▼ 30,0%</span></div>
+        <div class="k"><small>Dospelo</small><b>135,9 mil</b><span class="p">99% potraž.</span></div>
+        <div class="k"><small>Marža</small><b>54,2%</b><span class="r">▲ 1,7 p.p.</span></div>
+      </div>
+      <svg viewBox="0 0 430 120" width="100%" height="120" style="margin-top:14px">
+        <g stroke="#e0d4c3"><line x1="0" y1="30" x2="430" y2="30"/><line x1="0" y1="65" x2="430" y2="65"/><line x1="0" y1="100" x2="430" y2="100"/></g>
+        <path d="M6,24 L40,32 L75,27 L110,42 L145,37 L180,52 L215,47 L250,62 L285,57 L320,72 L355,67 L390,84 L424,88" fill="none" stroke="#c0522c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="424" cy="88" r="5" fill="#c0522c"/>
+      </svg>
+      <div class="upoz"><b>POPDV je stariji 28 dana.</b> 10 dokumenata ne ulazi u oba obračuna.</div>
+    </div>
+  </div>
+  <div class="dno"><b>Nadgradnja za PANTHEON</b> · baza ostaje kod vas · svaki upit u dnevniku</div>
+</body></html>

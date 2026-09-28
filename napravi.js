@@ -30,6 +30,12 @@ const glava = (naslov, opis) => `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${naslov}</title>
 <meta name="description" content="${opis}">
+<meta property="og:title" content="${naslov}">
+<meta property="og:description" content="${opis}">
+<meta property="og:image" content="https://djordje-stankovic.github.io/vidik/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -48,8 +54,8 @@ const nav = tekuca => `
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
 ${STRANE.map(([f, i]) => `      <a href="${f}"${f === tekuca ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
-      <a href="kontakt.html" data-vidik="demo" data-tekst="Demo" hidden>Demo</a>
-      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Zakaži prikaz</a>
+      <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
     </nav>
   </div>
 </header>`;
@@ -88,6 +94,7 @@ const podnozje = `
         <a href="kontrole.html">Kontrole</a>
         <a href="kako-radi.html">Kako radi</a>
         <a href="cene.html">Cene</a>
+        <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>
         <h4>Za koga</h4>

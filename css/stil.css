@@ -133,11 +133,11 @@ section{position:relative}
 .hero{padding:clamp(52px,7vw,96px) 0 clamp(60px,8vw,110px);position:relative;overflow:hidden}
 .hero-mreza{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
 .hero h1{margin-bottom:22px}
-.hero h1 em{font-style:normal;color:var(--terra);position:relative;white-space:nowrap}
-.hero h1 em::after{
-  content:"";position:absolute;left:0;right:0;bottom:.08em;height:.14em;
-  background:rgba(192,82,44,.18);border-radius:3px;z-index:-1
-}
+/* podvlaka je pozadina, ne ::after — tako se lomi zajedno sa tekstom i
+   naslov nikad ne ulazi u mokap (ranije je white-space:nowrap guralo red preko) */
+.hero h1 em{font-style:normal;color:var(--terra);
+  background:linear-gradient(transparent 78%,rgba(192,82,44,.18) 78%,rgba(192,82,44,.18) 92%,transparent 92%);
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hero .uvod{max-width:30em;margin-bottom:30px}
 .hero-akcije{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:26px}
 .hero-sitno{font-size:13.5px;color:var(--tise);display:flex;align-items:center;gap:8px}
