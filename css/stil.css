@@ -488,3 +488,21 @@ section{position:relative}
 
 /* --- 6. sto nikad ne staje, dobija svoj skrol ----------------------- */
 .tab-okvir, .tabela-okvir { overflow-x: auto; -webkit-overflow-scrolling: touch }
+
+/* „Preuzmi konektor" u meniju: da se ne traži po podnožju */
+.nav-veze a.nav-preuzmi{display:inline-flex;align-items:center;gap:6px}
+.nav-veze a.nav-preuzmi::before{content:"";width:14px;height:14px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M12 3v12M7 10l5 5 5-5M5 21h14%27/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M12 3v12M7 10l5 5 5-5M5 21h14%27/%3E%3C/svg%3E") center/contain no-repeat}
+.nav-veze a.nav-preuzmi[hidden]{display:none}
+/* između 821 i 1180px nema mesta za ceo natpis — ostaje samo strelica */
+@media (min-width:821px) and (max-width:1180px){
+  .nav-veze a.nav-preuzmi{font-size:0;gap:0;padding-left:8px;padding-right:8px}
+  .nav-veze a.nav-preuzmi::before{width:17px;height:17px}
+}
+
+/* mrlja iza naslova podstrane virila je 120px van ekrana */
+.strana-vrh{overflow-x:clip}
+.hero{overflow-x:clip}
+@media (min-width:821px) and (max-width:920px){
+  .nav-veze{gap:2px}
+  .nav-veze a{padding-left:7px;padding-right:7px}
+}

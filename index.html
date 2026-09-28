@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/stil.css">
+<link rel="stylesheet" href="css/zivo.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><g fill='white'><rect x='7' y='18' width='4' height='7' rx='1'/><rect x='14' y='13' width='4' height='12' rx='1'/><rect x='21' y='8' width='4' height='17' rx='1'/></g></svg>">
 </head>
 <body>
@@ -32,6 +33,7 @@
       <a href="kontrole.html">Kontrole</a>
       <a href="kako-radi.html">Kako radi</a>
       <a href="cene.html">Cene</a>
+      <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
     </nav>
@@ -56,20 +58,34 @@
            data-vidik="demo" data-tekst="Uđite u demo — bez registracije">Zakažite prikaz uživo</a>
         <a href="kontrole.html" class="dugme dugme-tihi">Vidite kako hvata greške</a>
       </div>
+      <a class="preuzmi-link" href="#probajte" data-vidik="preuzmi" data-tekst="" hidden>
+        <span class="preuzmi-ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
+        <span><b>Preuzmite konektor</b> i probajte na svojoj bazi <small>Windows &middot; jedan fajl &middot; 89 MB</small></span>
+      </a>
       <div class="hero-sitno">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Baza ostaje kod vas &middot; bez otvaranja portova &middot; svaki upit stoji u dnevniku
       </div>
     </div>
 
-    <!-- živi mokap -->
-    <div class="pojava k1">
-      <div class="panel">
+    <!-- živi mokap: tri scene se smenjuju (pregled → kontrola PDV → novac),
+         a telefon pokazuje isti Vidik u pregledaču sa nalazima koji pristižu.
+         Sve je iz demo baze ili iz teksta koji aplikacija stvarno ispisuje. -->
+    <div class="pojava k1 hero-scena">
+      <div class="panel panel-zivi">
         <div class="panel-traka">
           <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
-          <span class="panel-naslov">vidik &middot; pregled</span>
+          <span class="panel-naslov">vidik &middot; <span class="scena-ime">pregled</span></span>
+          <span class="uzivo"><i></i>demo baza</span>
         </div>
-        <div class="panel-telo">
+        <div class="scena-tabovi" role="tablist" aria-label="Ekrani Vidika">
+          <button class="tu" data-scena="0">Pregled</button>
+          <button data-scena="1">Kontrola PDV</button>
+          <button data-scena="2">Novac</button>
+          <span class="scena-traka"></span>
+        </div>
+        <div class="panel-telo scene">
+          <div class="scena aktivna" data-ime="pregled">
           <div class="kpi-red">
             <!-- Brojevi su iz demo baze koju otvara dugme u zaglavlju. Namerno:
                  ko klikne, vidi isto ovo. Izmišljen mokap koji se ne poklapa sa
@@ -124,6 +140,65 @@
               <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">90+</div>
             </div>
           </div>
+          </div>
+
+          <!-- scena 2: kontrola PDV (isti primer kao niže na strani) -->
+          <div class="scena" data-ime="kontrola pdv · 2023-12">
+            <div class="mini-vaga">
+              <div class="mini-tas"><span>Knjiga računa</span><b>250</b><small>obračunato 20.02.2024.</small></div>
+              <div class="mini-razlika"><b>−20</b><small>razlika</small></div>
+              <div class="mini-tas star"><span>POPDV</span><b>270</b><small>obračunato 23.01.2024. <em>stariji</em></small></div>
+            </div>
+            <div class="mini-nalaz"><b>POPDV je stariji 28 dana.</b> 28.480,00 PDV-a na 10 dokumenata ne ulazi u oba obračuna.</div>
+            <div class="mini-redovi">
+              <div class="mini-red"><span class="mono">23-1200-000418</span><span>unet posle obračuna</span><b>34.200,00</b></div>
+              <div class="mini-red"><span class="mono">23-1200-000415</span><span>unet posle obračuna</span><b>−12.360,00</b></div>
+              <div class="mini-red"><span class="mono">23-1201-000206</span><span>unet posle obračuna</span><b>840,00</b></div>
+            </div>
+            <div class="mini-akcija">Šta uraditi: <b>ponovi obračun POPDV</b></div>
+          </div>
+
+          <!-- scena 3: novac (imena iz generatora demo baze) -->
+          <div class="scena" data-ime="novac">
+            <div class="mini-starost">
+              <div style="flex:12"><i style="background:#e7c9b6"></i><small>u roku</small></div>
+              <div style="flex:9"><i style="background:#dda98c"></i><small>1–30</small></div>
+              <div style="flex:18"><i style="background:#cf8259"></i><small>31–90</small></div>
+              <div style="flex:31"><i style="background:#c0522c"></i><small>90+</small></div>
+            </div>
+            <div class="mini-redovi">
+              <div class="mini-red glava"><span>Kupac</span><span>Kasni</span><b>Duguje</b></div>
+              <div class="mini-red"><span>Vrelo Trade ad</span><span class="kasni crveno">124 dana</span><b>842.300,00</b></div>
+              <div class="mini-red"><span>Morava Logistika szr</span><span class="kasni crveno">96 dana</span><b>511.480,00</b></div>
+              <div class="mini-red"><span>Dunav Trade doo</span><span class="kasni">41 dan</span><b>318.900,00</b></div>
+              <div class="mini-red"><span>Lipa Grupa szr</span><span class="kasni zeleno">u roku</span><b>205.140,00</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- telefon: poenta nije obaveštenje nego to da se isti podaci gledaju
+           sa telefona — PANTHEON je desktop program i tamo to ne ide.
+           Ekran se sam lista kao pod palcem. Brojevi su isti kao na panelu. -->
+      <div class="telefon" aria-hidden="true">
+        <div class="telefon-ekran">
+          <div class="telefon-status"><span class="telefon-sat">9:41</span><span class="telefon-adresa">vidik</span></div>
+          <div class="telefon-okvir">
+            <div class="telefon-lista">
+              <div class="t-naslov">Pregled</div>
+              <div class="t-kpi"><small>Promet 12m</small><b>40,8 mil</b><span class="pad">▼ 30,0%</span></div>
+              <div class="t-kpi"><small>Dospelo</small><b>135,9 mil</b><span class="pad">99% potraživanja</span></div>
+              <div class="t-kpi"><small>Marža</small><b>54,2%</b><span class="rast">▲ 1,7 p.p.</span></div>
+              <div class="t-naslov">Ko duguje</div>
+              <div class="t-red"><span>Vrelo Trade ad</span><b>842.300</b><em class="crveno">124 d</em></div>
+              <div class="t-red"><span>Morava Logistika</span><b>511.480</b><em class="crveno">96 d</em></div>
+              <div class="t-red"><span>Dunav Trade</span><b>318.900</b><em>41 d</em></div>
+              <div class="t-naslov">Kontrola PDV</div>
+              <div class="t-nalaz"><b>POPDV je stariji 28 dana</b>10 dokumenata ne ulazi u oba obračuna</div>
+              <div class="t-red"><span>Lipa Grupa</span><b>205.140</b><em class="zeleno">u roku</em></div>
+            </div>
+          </div>
+          <span class="palac"></span>
         </div>
       </div>
       <!-- Odakle brojevi. Bez ovoga mokap izgleda kao izmišljena ilustracija,
@@ -215,9 +290,10 @@
       <h2>„Zašto mi se knjiga računa i POPDV ne slažu?"</h2>
     </div>
 
-    <div class="uporedo">
+    <div class="uporedo trka">
       <div class="strana strana-lose pojava">
         <span class="strana-oznaka oznaka-lose">Dosadašnji put &middot; ~40 minuta</span>
+        <div class="stoperica lose"><span class="stoperica-vreme" data-do="2400" data-trajanje="9000">00:00</span><small>min</small></div>
         <div class="korak"><span class="korak-br">1</span><span>Otvori PDV obračun, odštampaj knjigu računa u Excel</span></div>
         <div class="korak"><span class="korak-br">2</span><span>Otvori POPDV pregled, odštampaj i njega</span></div>
         <div class="korak"><span class="korak-br">3</span><span>Poređaj oba po broju dokumenta</span></div>
@@ -231,6 +307,7 @@
 
       <div class="strana pojava k2">
         <span class="strana-oznaka oznaka-dobro">Sa Vidikom &middot; 8 sekundi</span>
+        <div class="stoperica dobro"><span class="stoperica-vreme" data-do="8" data-trajanje="1800">00:00</span><small>s</small><em class="gotovo">gotovo ✓</em></div>
         <div class="korak"><span class="korak-br">1</span><span>Otvoriš karticu <b>Kontrola PDV</b> i izabereš mesec</span></div>
         <div class="korak"><span class="korak-br">2</span><span>Ekran kaže: <b>POPDV je stariji 28 dana</b></span></div>
         <div class="korak"><span class="korak-br">3</span><span>Ispod stoji spisak sa razlogom i iznosom</span></div>
@@ -444,6 +521,49 @@
   </div>
 </section>
 
+<!-- =========================== PROBAJTE ============================= -->
+<!-- Preuzimanje je ranije stajalo samo u podnožju i na „Kako radi", pa ga
+     niko nije nalazio. Ovde je ceo put: nalog → konektor → ključ. -->
+<section class="blok mrak" id="probajte">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:60px;align-items:center">
+      <div class="pojava">
+        <span class="nadnaslov">Probajte sami</span>
+        <h2>Na svojoj bazi, za jedno popodne</h2>
+        <p class="uvod" style="margin:16px 0 30px">Bez prikaza i bez čekanja na nas. Prvih 30 dana je besplatno, bez kartice.</p>
+        <ol class="put">
+          <li><b>Napravite nalog</b><span>Mejl i lozinka — minut posla.</span>
+            <a href="kontakt.html" class="put-veza" data-vidik="prijava" data-tekst="Napravite nalog →" hidden>Napravite nalog →</a></li>
+          <li><b>Pustite konektor na server</b><span>Tamo gde je PANTHEON baza. Jedan <span class="mono">.exe</span>, bez instalacije, nalog samo za čitanje.</span>
+            <a href="kako-radi.html" class="dugme dugme-glavni dugme-preuzmi" data-vidik="preuzmi" data-tekst="" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+              Preuzmite konektor <small>Windows · 89 MB</small></a></li>
+          <li><b>Nalepite ključ</b><span>Konektor pokaže ključ, vi ga nalepite u Vidik — i podaci su tu.</span></li>
+        </ol>
+        <p style="margin-top:22px;font-size:13px;color:rgba(240,231,218,.55)">Program nije potpisan sertifikatom, pa će Windows prvi put pitati „Ipak pokreni".</p>
+      </div>
+
+      <!-- konektor: pronađe baze, napravi ključ, poveže se -->
+      <div class="pojava k1">
+        <div class="panel konektor-prozor" style="background:var(--ugalj2);border-color:rgba(240,231,218,.12)">
+          <div class="panel-traka" style="background:rgba(240,231,218,.05);border-color:rgba(240,231,218,.1)">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">konektor</span>
+          </div>
+          <div class="panel-telo konektor-telo">
+            <div class="k-red" data-k="0"><i></i>Tražim SQL instance na ovoj mašini…<b class="k-ok">nađena</b></div>
+            <div class="k-red" data-k="1"><i></i>PANTHEON baze<b class="k-ok">prepoznate</b></div>
+            <div class="k-red" data-k="2"><i></i>Nalog<b class="k-ok">samo čitanje</b></div>
+            <div class="k-red" data-k="3"><i></i>Veza napolje, 443/TLS<b class="k-ok">aktivna</b></div>
+            <div class="k-kljuc"><small>Vaš ključ — nalepite ga u Vidik</small><code class="k-kljuc-tekst">&nbsp;</code></div>
+            <div class="k-status"><span class="k-tacka"></span><span class="k-status-tekst">čeka uparivanje…</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================== CTA =============================== -->
 <section class="blok">
   <div class="omot cta pojava">
@@ -504,5 +624,6 @@
 </footer>
 
 <script src="js/vidik.js"></script>
+<script src="js/zivo.js"></script>
 </body>
 </html>

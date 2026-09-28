@@ -1,0 +1,230 @@
+/* ===========================================================================
+   VIDIK — živi delovi početne strane
+   Sve što se pomera je ovde, odvojeno od stil.css. Pravilo ostaje isto:
+   ništa ne sme da obeća više nego što proizvod radi, i svaki broj je iz
+   demo baze. Pokret služi da pokaže tok (pregled → nalaz → akcija), ne da
+   ukrašava. Sve se gasi uz prefers-reduced-motion.
+   =========================================================================== */
+
+/* ---------- hero: panel sa scenama ---------- */
+.hero-scena{position:relative}
+.panel-zivi .panel-traka{position:relative}
+.panel-zivi .panel-naslov .scena-ime{display:inline-block;transition:opacity .3s}
+.uzivo{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font:500 11px "JetBrains Mono",monospace;color:var(--tise)}
+.uzivo i{width:7px;height:7px;border-radius:50%;background:var(--masl);box-shadow:0 0 0 0 rgba(78,124,52,.5);animation:zivo-puls 2s infinite}
+@keyframes zivo-puls{0%{box-shadow:0 0 0 0 rgba(78,124,52,.45)}70%{box-shadow:0 0 0 7px rgba(78,124,52,0)}100%{box-shadow:0 0 0 0 rgba(78,124,52,0)}}
+
+.scena-tabovi{position:relative;display:flex;gap:4px;padding:8px 12px 0;border-bottom:1px solid var(--linija);background:#fffdfa}
+.scena-tabovi button{font:600 12px "Inter",sans-serif;color:var(--tise);background:none;border:0;padding:7px 10px 9px;cursor:pointer;border-radius:8px 8px 0 0;transition:color .25s,background .25s}
+.scena-tabovi button:hover{color:var(--tekst);background:var(--papir2)}
+.scena-tabovi button.tu{color:var(--terra)}
+.scena-traka{position:absolute;bottom:-1px;left:0;height:2px;background:var(--terra);border-radius:2px;transition:left .45s cubic-bezier(.22,.61,.36,1),width .45s cubic-bezier(.22,.61,.36,1)}
+.scena-traka::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.6);transform-origin:left;transform:scaleX(0)}
+.scena-traka.tece::after{animation:zivo-tece var(--trajanje,6.5s) linear forwards}
+@keyframes zivo-tece{to{transform:scaleX(1)}}
+
+.scene{display:grid}
+.scena{grid-area:1/1;opacity:0;transform:translateY(10px) scale(.99);transition:opacity .55s ease,transform .6s cubic-bezier(.22,.61,.36,1);pointer-events:none}
+.scena.aktivna{opacity:1;transform:none;pointer-events:auto}
+
+/* elementi scene ulaze jedan za drugim svaki put kad se scena pojavi */
+.scena .kpi,.scena .graf-okvir,.scena .mini-tas,.scena .mini-razlika,.scena .mini-nalaz,.scena .mini-red,.scena .mini-akcija,.scena .mini-starost{
+  opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .5s cubic-bezier(.22,.61,.36,1)}
+.scena.aktivna .kpi,.scena.aktivna .graf-okvir,.scena.aktivna .mini-tas,.scena.aktivna .mini-razlika,.scena.aktivna .mini-nalaz,
+.scena.aktivna .mini-red,.scena.aktivna .mini-akcija,.scena.aktivna .mini-starost{opacity:1;transform:none}
+.scena.aktivna :nth-child(2){transition-delay:.08s}.scena.aktivna :nth-child(3){transition-delay:.16s}
+.scena.aktivna :nth-child(4){transition-delay:.24s}.scena.aktivna :nth-child(5){transition-delay:.32s}
+.scena.aktivna .mini-nalaz{transition-delay:.3s}.scena.aktivna .mini-akcija{transition-delay:.75s}
+.scena.aktivna .mini-redovi .mini-red:nth-child(1){transition-delay:.4s}
+.scena.aktivna .mini-redovi .mini-red:nth-child(2){transition-delay:.5s}
+.scena.aktivna .mini-redovi .mini-red:nth-child(3){transition-delay:.6s}
+.scena.aktivna .mini-redovi .mini-red:nth-child(4){transition-delay:.7s}
+.scena.aktivna .mini-redovi .mini-red:nth-child(5){transition-delay:.8s}
+
+/* linija prometa se iscrta kad scena dođe */
+.scena .graf-okvir path{stroke-dasharray:420;stroke-dashoffset:420}
+.scena.aktivna .graf-okvir path{animation:zivo-crtaj 1.4s .25s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes zivo-crtaj{to{stroke-dashoffset:0}}
+.scena .graf-okvir circle{opacity:0;transition:opacity .3s 1.5s}
+.scena.aktivna .graf-okvir circle{opacity:1}
+.scena.aktivna .graf-okvir circle[r="8"]{animation:zivo-kruzi 2s 1.6s infinite}
+@keyframes zivo-kruzi{0%,100%{r:8;opacity:.18}50%{r:12;opacity:.05}}
+
+/* scena 2 — kontrola PDV */
+.mini-vaga{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:12px}
+.mini-tas{background:var(--papir2);border-radius:var(--r-s);padding:12px 14px}
+.mini-tas span{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--tise)}
+.mini-tas b{display:block;font:700 1.6rem "Fraunces",Georgia,serif;line-height:1.1;margin:3px 0}
+.mini-tas small{font-size:10.5px;color:var(--tise)}
+.mini-tas em{font-style:normal;background:var(--terra);color:#fff;border-radius:5px;padding:1px 6px;font-weight:700;margin-left:3px}
+.mini-tas.star{box-shadow:inset 0 0 0 1.5px rgba(192,82,44,.5)}
+.mini-razlika{text-align:center}
+.mini-razlika b{display:block;font:700 1.25rem "Fraunces",Georgia,serif;color:var(--terra)}
+.mini-razlika small{font-size:10px;color:var(--tise)}
+.mini-nalaz{background:#fff4ee;border:1px solid #f3cdb9;border-radius:var(--r-s);padding:10px 12px;font-size:12.5px;margin-bottom:10px}
+.mini-nalaz b{color:var(--terra-tamna)}
+.mini-redovi{display:grid;gap:0;font-size:12px}
+.mini-red{display:grid;grid-template-columns:1.3fr 1fr auto;gap:10px;padding:7px 2px;border-bottom:1px solid var(--linija);align-items:center}
+.mini-red:last-child{border-bottom:0}
+.mini-red b{text-align:right;font-family:"JetBrains Mono",monospace;font-weight:500}
+.mini-red.glava{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--tise)}
+.mini-red.glava b{font-family:inherit;font-weight:600}
+.mini-red .mono{font-family:"JetBrains Mono",monospace;font-size:11.5px}
+.mini-red span:nth-child(2){color:var(--tiho)}
+.kasni.crveno{color:var(--terra)!important;font-weight:600}
+.kasni.zeleno{color:var(--masl)!important;font-weight:600}
+.mini-akcija{margin-top:10px;font-size:12.5px;padding:9px 12px;border-radius:var(--r-s);background:rgba(78,124,52,.1);color:var(--masl)}
+
+/* scena 3 — novac */
+.mini-starost{display:flex;gap:4px;margin-bottom:12px}
+.mini-starost>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.mini-starost i{display:block;height:26px;border-radius:6px;transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.scena.aktivna .mini-starost i{transform:scaleX(1)}
+.scena.aktivna .mini-starost>div:nth-child(2) i{transition-delay:.1s}
+.scena.aktivna .mini-starost>div:nth-child(3) i{transition-delay:.2s}
+.scena.aktivna .mini-starost>div:nth-child(4) i{transition-delay:.3s}
+.mini-starost small{font-size:10px;color:var(--tise);white-space:nowrap}
+
+/* ---------- telefon ---------- */
+.telefon{position:absolute;right:-118px;bottom:-56px;width:172px;height:348px;border-radius:32px;background:#1b1714;padding:9px;
+  box-shadow:0 30px 60px rgba(40,25,15,.35),inset 0 0 0 1.5px #3a322c;z-index:3;
+  transform:rotate(4deg);animation:zivo-lebdi 7s ease-in-out infinite}
+@keyframes zivo-lebdi{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.telefon::before{content:"";position:absolute;top:15px;left:50%;width:54px;height:14px;border-radius:10px;background:#1b1714;transform:translateX(-50%);z-index:4}
+.telefon-ekran{position:relative;height:100%;border-radius:24px;background:var(--papir);overflow:hidden;display:flex;flex-direction:column}
+.telefon-status{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 4px;font:600 10px "Inter",sans-serif;color:var(--tekst)}
+.telefon-adresa{font:500 9px "JetBrains Mono",monospace;color:var(--tise);background:var(--papir2);padding:2px 8px;border-radius:99px}
+.telefon-okvir{flex:1;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(#000 85%,transparent);mask-image:linear-gradient(#000 85%,transparent)}
+.telefon-lista{padding:6px 10px 20px;animation:zivo-listaj 14s cubic-bezier(.45,0,.2,1) infinite}
+@keyframes zivo-listaj{0%,14%{transform:translateY(0)}28%,44%{transform:translateY(-150px)}58%,74%{transform:translateY(-292px)}88%,100%{transform:translateY(0)}}
+.t-naslov{font:700 12px "Fraunces",Georgia,serif;margin:10px 2px 6px}
+.t-naslov:first-child{margin-top:4px;font-size:15px}
+.t-kpi{background:#fff;border:1px solid var(--linija);border-radius:10px;padding:7px 9px;margin-bottom:5px}
+.t-kpi small{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--tise)}
+.t-kpi b{font:700 14px "Fraunces",Georgia,serif;margin-right:5px}
+.t-kpi span{font-size:9px;font-weight:600}
+.t-red{display:grid;grid-template-columns:1fr auto;gap:0 6px;background:#fff;border:1px solid var(--linija);border-radius:9px;padding:6px 8px;margin-bottom:4px;font-size:9.5px}
+.t-red b{font-family:"JetBrains Mono",monospace;font-weight:500;text-align:right}
+.t-red em{grid-column:1/-1;font-style:normal;font-size:8.5px;color:var(--tise)}
+.t-red em.crveno{color:var(--terra);font-weight:600}
+.t-red em.zeleno{color:var(--masl);font-weight:600}
+.t-nalaz{background:#fff4ee;border:1px solid #f3cdb9;border-radius:9px;padding:7px 8px;font-size:9px;color:var(--tiho)}
+.t-nalaz b{display:block;color:var(--terra-tamna);font-size:9.5px}
+/* palac: kružić koji "dodirne" ekran kad lista krene */
+.palac{position:absolute;left:58%;top:62%;width:34px;height:34px;border-radius:50%;background:rgba(34,29,24,.16);border:2px solid rgba(34,29,24,.22);opacity:0;pointer-events:none;
+  animation:zivo-palac 14s cubic-bezier(.45,0,.2,1) infinite}
+@keyframes zivo-palac{
+  0%,12%{opacity:0;transform:translateY(40px) scale(.7)}
+  15%{opacity:1;transform:translateY(40px) scale(1)}
+  27%{opacity:1;transform:translateY(-60px) scale(1)}
+  30%,54%{opacity:0;transform:translateY(-60px) scale(.8)}
+  57%{opacity:1;transform:translateY(40px) scale(1)}
+  71%{opacity:1;transform:translateY(-60px) scale(1)}
+  74%,100%{opacity:0;transform:translateY(-60px) scale(.8)}}
+.hero-scena .mokap-izvor{padding-right:40px}
+
+/* ---------- hero: link za preuzimanje ---------- */
+.preuzmi-link{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--tekst);margin:-6px 0 22px;padding:8px 16px 8px 8px;border-radius:14px;
+  border:1px dashed var(--linija);transition:border-color .25s,background .25s,transform .3s}
+.preuzmi-link:hover{border-color:var(--terra);background:#fff;transform:translateY(-2px)}
+.preuzmi-link[hidden]{display:none}
+.preuzmi-ikona{width:36px;height:36px;border-radius:10px;background:var(--terra);color:#fff;display:grid;place-items:center;flex-shrink:0}
+.preuzmi-ikona svg{width:18px;height:18px}
+.preuzmi-link:hover .preuzmi-ikona svg{animation:zivo-skok .6s ease}
+@keyframes zivo-skok{40%{transform:translateY(3px)}70%{transform:translateY(-1px)}}
+.preuzmi-link b{font-weight:700}
+.preuzmi-link span{font-size:14px;line-height:1.35}
+.preuzmi-link small{display:block;font-size:12px;color:var(--tise)}
+
+/* ---------- trka: 40 minuta naspram 8 sekundi ---------- */
+.stoperica{display:flex;align-items:baseline;gap:6px;margin:-4px 0 14px}
+.stoperica-vreme{font:600 2rem "JetBrains Mono",monospace;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stoperica small{font-size:12px;color:var(--tise);font-weight:600}
+.stoperica.lose .stoperica-vreme{color:var(--terra-tamna)}
+.stoperica.dobro .stoperica-vreme{color:var(--masl)}
+.stoperica .gotovo{font-style:normal;margin-left:8px;font-size:12px;font-weight:700;color:#fff;background:var(--masl);padding:3px 9px;border-radius:99px;opacity:0;transform:scale(.6);transition:opacity .3s,transform .45s cubic-bezier(.34,1.56,.64,1)}
+.trka .strana.zavrsio .gotovo{opacity:1;transform:none}
+.trka .strana .korak{opacity:.3;transition:opacity .35s ease,transform .35s ease;transform:translateX(-4px)}
+.trka .strana .korak.prosao{opacity:1;transform:none}
+.trka .strana.zavrsio{box-shadow:0 0 0 2px rgba(78,124,52,.35),var(--senka)}
+.trka .strana-lose .korak.prosao .korak-br{background:rgba(192,82,44,.18);color:var(--terra-tamna)}
+
+/* ---------- probajte: put u tri koraka ---------- */
+.put{list-style:none;margin:0;padding:0;counter-reset:p;position:relative}
+.put::before{content:"";position:absolute;left:17px;top:18px;bottom:30px;width:2px;
+  background:repeating-linear-gradient(rgba(240,231,218,.35) 0 6px,transparent 6px 12px);background-size:2px 24px;animation:zivo-teci 1.2s linear infinite}
+@keyframes zivo-teci{to{background-position:0 24px}}
+.put li{counter-increment:p;position:relative;padding:0 0 26px 56px}
+.put li::before{content:counter(p);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ugalj);border:2px solid var(--terra);color:#fdfaf5;font:700 14px "Inter",sans-serif}
+.put li b{display:block;color:#fdfaf5;font-size:1.08rem;margin-bottom:3px}
+.put li>span{display:block;color:rgba(240,231,218,.7);font-size:14.5px}
+.put .mono{font-family:"JetBrains Mono",monospace}
+.put-veza{display:inline-block;margin-top:8px;color:#e8a07c;font-weight:600;font-size:14px;text-decoration:none}
+.put-veza:hover{text-decoration:underline}
+.dugme-preuzmi{margin-top:14px;gap:10px}
+.dugme-preuzmi svg{width:18px;height:18px}
+.dugme-preuzmi small{font-weight:500;opacity:.75;font-size:12px}
+.dugme-preuzmi[hidden],.put-veza[hidden]{display:none}
+
+/* konektor prozor */
+.konektor-telo{background:#15110e;color:#e9dfd1;font:13px/1.5 "JetBrains Mono",monospace}
+.k-red{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(240,231,218,.08);opacity:.25;transition:opacity .4s}
+.k-red i{width:14px;height:14px;border-radius:50%;border:2px solid rgba(240,231,218,.3);flex-shrink:0;transition:all .3s}
+.k-red b{margin-left:auto;font-weight:500;color:#9cc27f;opacity:0;transition:opacity .3s}
+.k-red.radi{opacity:1}
+.k-red.radi i{border-color:#e8a07c;border-top-color:transparent;animation:zivo-vrti .7s linear infinite}
+.k-red.gotov{opacity:1}
+.k-red.gotov i{border-color:#9cc27f;background:#9cc27f;animation:none}
+.k-red.gotov b{opacity:1}
+@keyframes zivo-vrti{to{transform:rotate(360deg)}}
+.k-kljuc{margin:16px 0 12px;padding:12px 14px;border-radius:10px;border:1px dashed rgba(240,231,218,.25);background:rgba(240,231,218,.04)}
+.k-kljuc small{display:block;font-size:11px;color:rgba(240,231,218,.5);margin-bottom:6px;font-family:"Inter",sans-serif}
+.k-kljuc code{font:600 15px "JetBrains Mono",monospace;color:#f3c9a8;letter-spacing:.06em;min-height:1.4em;display:block}
+.k-kljuc code.kuca::after{content:"▋";animation:zivo-kursor 1s steps(1) infinite;color:#e8a07c;margin-left:2px}
+@keyframes zivo-kursor{50%{opacity:0}}
+.k-status{display:flex;align-items:center;gap:9px;font-size:12.5px;color:rgba(240,231,218,.6)}
+.k-tacka{width:9px;height:9px;border-radius:50%;background:#e8a07c;animation:zivo-treperi 1.2s infinite}
+@keyframes zivo-treperi{50%{opacity:.3}}
+.k-status.upareno{color:#9cc27f}
+.k-status.upareno .k-tacka{background:#9cc27f;animation:none;box-shadow:0 0 0 0 rgba(156,194,127,.6);animation:zivo-puls2 1.8s infinite}
+@keyframes zivo-puls2{0%{box-shadow:0 0 0 0 rgba(156,194,127,.5)}70%{box-shadow:0 0 0 8px rgba(156,194,127,0)}100%{box-shadow:0 0 0 0 rgba(156,194,127,0)}}
+
+/* ---------- kontrole: redovi tabele ulaze, ✗ pulsira ---------- */
+.mrak .tab-kontrola tbody tr{opacity:0;transform:translateX(12px);transition:opacity .45s,transform .5s cubic-bezier(.22,.61,.36,1)}
+.vidljiv .tab-kontrola tbody tr{opacity:1;transform:none}
+.vidljiv .tab-kontrola tbody tr:nth-child(1){transition-delay:.5s}
+.vidljiv .tab-kontrola tbody tr:nth-child(2){transition-delay:.65s}
+.vidljiv .tab-kontrola tbody tr:nth-child(3){transition-delay:.8s}
+.vidljiv .c.nema{animation:zivo-nema 2.4s 1.2s ease-in-out infinite}
+@keyframes zivo-nema{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.vidljiv .znak-star{display:inline-block;animation:zivo-pecat .5s .9s cubic-bezier(.2,1.6,.4,1) both}
+@keyframes zivo-pecat{from{opacity:0;transform:scale(2.2) rotate(-8deg)}to{opacity:1;transform:none}}
+
+/* ---------- širine ---------- */
+@media (max-width:1439px){
+  .telefon{right:-46px;bottom:-34px}
+  .hero-scena .mokap-izvor{padding-right:150px}
+}
+@media (max-width:1100px){
+  .telefon{right:-18px;width:150px;height:304px}
+  .hero-scena .mokap-izvor{padding-right:130px}
+}
+@media (max-width:900px){
+  .hero-scena{margin-right:60px}
+  .telefon{right:-64px;bottom:-24px}
+}
+@media (max-width:600px){
+  .hero-scena{margin-right:0}
+  .telefon{display:none}
+  .hero-scena .mokap-izvor{padding-right:0}
+  .mini-red{grid-template-columns:1.2fr .9fr auto;font-size:11px;gap:6px}
+  .mini-tas b{font-size:1.3rem}
+  .scena-tabovi button{padding:7px 7px 9px;font-size:11px}
+  .stoperica-vreme{font-size:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .telefon,.telefon-lista,.palac,.put::before,.uzivo i,.k-tacka{animation:none!important}
+  .scena,.scena *{transition:none!important}
+  .scena .graf-okvir path{stroke-dashoffset:0;animation:none!important}
+}

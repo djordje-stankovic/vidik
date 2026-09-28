@@ -54,6 +54,7 @@ const nav = tekuca => `
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
 ${STRANE.map(([f, i]) => `      <a href="${f}"${f === tekuca ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
+      <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
     </nav>
