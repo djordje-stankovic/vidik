@@ -41,6 +41,20 @@
     }
   }
 
+  /* PANTHEON shop - drugi proizvod, isti konektor. Isto pravilo kao gore:
+     prazno = dugmad ostaju na kontakt.html.                              */
+  var SHOP = 'https://pantheon-shop-production.up.railway.app';
+  var SHOP_PUTANJE = { demo: '/s/demo/', napravi: '/admin/' };
+  if (SHOP) {
+    var sk = SHOP.replace(/\/+$/, '');
+    var sv = document.querySelectorAll('[data-shop]');
+    for (var s = 0; s < sv.length; s++) {
+      sv[s].href = sk + (SHOP_PUTANJE[sv[s].getAttribute('data-shop')] || SHOP_PUTANJE.demo);
+      if (sv[s].getAttribute('data-tekst')) sv[s].textContent = sv[s].getAttribute('data-tekst');
+      sv[s].hidden = false;
+    }
+  }
+
   var mirno = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- navigacija: senka na skrol + meni na telefonu ---------- */

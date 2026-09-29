@@ -352,7 +352,8 @@ napravi('kako-radi.html',
         </div>
         <h3>3. Svaki upit stoji u dnevniku</h3>
         <p>Konektor zapisuje svaki upit koji je izvršio &mdash; vidite ga u svom panelu,
-           na svom serveru. Odbija sve što pokušava da piše. Kad hoćete da prestane,
+           na svom serveru. Odbija sve što pokušava da piše &mdash; jedini izuzetak je narudžbina sa
+           <a href="prodavnica.html">online prodavnice</a>, i to samo ako je sami uključite. Kad hoćete da prestane,
            „Prekini pristup" gasi vezu odmah, bez nas.</p>
       </div>
     </div>
@@ -651,5 +652,123 @@ napravi('cene.html',
 </section>
 ` + cta('Počnite od besplatnog meseca',
         'Bez kartice i bez obaveze. Dogovorimo prikaz, pustimo konektor i vidimo šta nađe.'));
+
+
+/* ===========================  PRODAVNICA (shop)  ======================== */
+const shopDugmad = (glavni) => `
+      <div class="cta-akcije" style="justify-content:${glavni ? 'center' : 'flex-start'}">
+        <a href="kontakt.html" class="dugme dugme-glavni" data-shop="demo" data-tekst="Pogledajte demo prodavnicu">Zakažite prikaz</a>
+        <a href="kontakt.html" class="dugme dugme-tihi" data-shop="napravi" data-tekst="Napravite svoju" hidden>Napravite svoju</a>
+      </div>`;
+
+napravi('prodavnica.html',
+  'Online prodavnica nad PANTHEON-om — Vidik',
+  'Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Isti konektor kao Vidik.',
+  vrh('Drugi proizvod · PANTHEON shop',
+      'Online prodavnica koja je već popunjena',
+      'Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca, sa rezervacijom robe. Radi preko istog konektora kao Vidik.') + `
+
+<section class="blok-tanak">
+  <div class="omot">
+    ${shopDugmad(false)}
+    <div class="mreza m-3" style="margin-top:40px">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16l-1.5 12a2 2 0 0 1-2 1.8h-9a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+        </div>
+        <h3>Katalog se ne unosi</h3>
+        <p>Šta je u šifarniku označeno kao „artikal za web shop", to je na sajtu &mdash;
+           sa slikom iz PANTHEON-a, cenom sa PDV-om i zalihom sa skladišta koje izaberete.
+           Promenite cenu u PANTHEON-u i sajt je ima za minut.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7.5"/></svg>
+        </div>
+        <h3>Narudžbina ide u PANTHEON</h3>
+        <p>Kao narudžbina kupca, sa rezervacijom robe, kroz PANTHEON-ove procedure.
+           Radnik je pretvara u račun ili maloprodaju kako je navikao &mdash; fiskalizacija
+           ostaje u PANTHEON-u.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Isti konektor kao Vidik</h3>
+        <p>Imate Vidik? Nalepite isti ključ i prodavnica radi &mdash; bez nove instalacije i
+           bez druge konektor licence. Nemate? Konektor se postavlja jednom, za oba.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:center">
+      <div class="pojava">
+        <span class="nadnaslov">Postavljanje</span>
+        <h2>Četiri koraka, i izlog je živ</h2>
+        <ul class="spisak" style="margin-top:20px">
+          <li><b>Nalog prodavnice</b> &mdash; naziv firme postaje adresa, npr. <code>/s/vasa-firma</code></li>
+          <li><b>Ključ konektora</b> &mdash; isti onaj koji ide u Vidik</li>
+          <li><b>Jedna baza</b> &mdash; firma koja prodaje. Posle ovog koraka izlog već prikazuje vašu robu, sa vašim logom i bojom</li>
+          <li><b>Podešavanja iz PANTHEON-a</b> &mdash; skladište, tip narudžbine, kupac za web. Sve se bira sa spiska, ništa se ne kuca</li>
+        </ul>
+        <p style="margin-top:18px;font-size:14px;color:var(--tise)">
+          Upis narudžbina je <b>isključen dok ga sami ne uključite</b> u panelu konektora. To je
+          jedino mesto gde konektor piše u bazu &mdash; Vidik i dalje samo čita.
+        </p>
+      </div>
+      <div class="pojava k1">
+        <div class="panel">
+          <div class="panel-traka">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">narudžbina sa sajta &rarr; PANTHEON</span>
+          </div>
+          <div class="panel-telo" style="font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:12.5px;line-height:1.95">
+            <div><span style="color:#4e7c34">●</span> kupac poručio &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">WEB 683551397 &middot; 3 stavke</span></div>
+            <div><span style="color:#4e7c34">●</span> zaliha proverena &nbsp;<span style="color:#9a8d7f">skladište VP</span></div>
+            <div><span style="color:#4e7c34">●</span> narudžbina kupca &nbsp;<span style="color:#9a8d7f">26-0100-000024</span></div>
+            <div><span style="color:#4e7c34">●</span> roba rezervisana &nbsp;<span style="color:#9a8d7f">2 + 3 kom</span></div>
+            <div><span style="color:#c99a2e">●</span> mejl kupcu i firmi <span style="color:#9a8d7f">poslat</span></div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--linija);color:#6f6358">
+              Račun i fiskalizacija &mdash; u PANTHEON-u, kao i do sada.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot usko">
+    <span class="nadnaslov">Pitanja</span>
+    <h2>Šta se pita pre nego što se uključi</h2>
+    <div class="mreza m-2" style="margin-top:28px;gap:26px">
+      <div><h3>Da li kupac mora da se registruje?</h3>
+        <p>Da &mdash; kao na svakom sajtu sa kog se poručuje: ime, telefon i adresa za dostavu,
+           po želji firma i PIB za račun na firmu. Tako znate kome šaljete, a kupac vidi svoje narudžbine.</p></div>
+      <div><h3>Kako se plaća?</h3>
+        <p>Pouzećem ili uplatnicom. Kartično plaćanje za sada ne postoji.</p></div>
+      <div><h3>Šta ako konektor ne radi?</h3>
+        <p>Izlog javi da trenutno nema podataka. Narudžbina koja ne može u PANTHEON
+           ne propada &mdash; čuva se u prodavnici, a firma dobija mejl da je treba uneti.</p></div>
+      <div><h3>Imam već sajt.</h3>
+        <p>Prodavnica ima svoju adresu i može da stoji uz postojeći sajt kao link
+           „Prodavnica" „Prodavnica". Kupac klikne i nastavlja kod vas, sa vašim logom i bojom.mdash; kupac klikne i nastavlja kod vas, sa vašim logom i bojom.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot cta pojava">
+    <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
+    <h2>Pogledajte kako izgleda na pravoj bazi</h2>
+    <p class="uvod">Demo prodavnica radi nad istom demo bazom kao Vidik demo &mdash; prava roba, slike i zalihe. Narudžbine se u demou ne šalju nikome.</p>
+    ${shopDugmad(true)}
+  </div>
+</section>
+`);
 
 console.log('\\n  Gotovo.\\n');
