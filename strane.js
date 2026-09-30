@@ -432,6 +432,13 @@ napravi('kako-radi.html',
           bude naše obećanje nego pravilo koje sprovodi vaš SQL Server.</p>
           <p>Uz to, i sam konektor odbija svaki upit koji pokušava da piše, pre nego što
           ga uopšte pošalje bazi. Dve brave, nezavisne jedna od druge.</p>
+          <p>Jedan izuzetak, i on je vaša odluka: <a href="prodavnica.html">online
+          prodavnica</a> ume da upiše narudžbinu kupca u PANTHEON. Taj upis nije
+          SQL koji stiže spolja nego jedna operacija zapisana u samom konektoru,
+          i radi tek kad u panelu uključite „Primaj narudžbine sa sajta" &mdash;
+          podrazumevano je isključen. Za nju nalog mora da sme da pokrene
+          PANTHEON-ove procedure za narudžbine, pa uz <code>db_datareader</code>
+          ostaje isključena sama od sebe.</p>
         </div>
       </details>
       <details class="pitanje">
@@ -845,8 +852,9 @@ napravi('prodavnica.html',
     <h2>Šta se pita pre nego što se uključi</h2>
     <div class="mreza m-2" style="margin-top:28px;gap:26px">
       <div><h3>Da li kupac mora da se registruje?</h3>
-        <p>Da &mdash; kao na svakom sajtu sa kog se poručuje: ime, telefon i adresa za dostavu,
-           po želji firma i PIB za račun na firmu. Tako znate kome šaljete, a kupac vidi svoje narudžbine.</p></div>
+        <p>Ne mora. Poruči kao gost: ime, telefon, e-pošta i adresa za dostavu, po želji firma
+           i PIB za račun na firmu. Posle narudžbine mu se ponudi nalog sa već upisanim podacima &mdash;
+           samo doda lozinku, i sledeći put vidi svoje narudžbine i poručuje jednim klikom.</p></div>
       <div><h3>Kako se plaća?</h3>
         <p>Pouzećem ili uplatnicom. Kartično plaćanje za sada ne postoji.</p></div>
       <div><h3>Označio sam artikal, a nema ga na sajtu.</h3>

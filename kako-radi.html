@@ -153,6 +153,13 @@
           bude naše obećanje nego pravilo koje sprovodi vaš SQL Server.</p>
           <p>Uz to, i sam konektor odbija svaki upit koji pokušava da piše, pre nego što
           ga uopšte pošalje bazi. Dve brave, nezavisne jedna od druge.</p>
+          <p>Jedan izuzetak, i on je vaša odluka: <a href="prodavnica.html">online
+          prodavnica</a> ume da upiše narudžbinu kupca u PANTHEON. Taj upis nije
+          SQL koji stiže spolja nego jedna operacija zapisana u samom konektoru,
+          i radi tek kad u panelu uključite „Primaj narudžbine sa sajta" &mdash;
+          podrazumevano je isključen. Za nju nalog mora da sme da pokrene
+          PANTHEON-ove procedure za narudžbine, pa uz <code>db_datareader</code>
+          ostaje isključena sama od sebe.</p>
         </div>
       </details>
       <details class="pitanje">
