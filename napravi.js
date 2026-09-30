@@ -20,7 +20,7 @@ const STRANE = [
   ['mogucnosti.html', 'Mogućnosti'],
   ['kontrole.html', 'Kontrole'],
   ['kako-radi.html', 'Kako radi'],
-  ['prodavnica.html', 'Prodavnica'],
+  ['prodavnica.html', 'Izlog'],
   ['cene.html', 'Cene']
 ];
 
@@ -96,7 +96,7 @@ const podnozje = `
         <a href="kontrole.html">Kontrole</a>
         <a href="kako-radi.html">Kako radi</a>
         <a href="cene.html">Cene</a>
-        <a href="prodavnica.html">Online prodavnica</a>
+        <a href="prodavnica.html">Izlog — online prodavnica</a>
         <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>

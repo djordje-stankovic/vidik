@@ -669,9 +669,9 @@ const shopDugmad = (glavni) => `
       </div>`;
 
 napravi('prodavnica.html',
-  'Online prodavnica nad PANTHEON-om — Vidik',
+  'Izlog — online prodavnica nad PANTHEON-om',
   'Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik.',
-  vrh('Drugi proizvod · PANTHEON shop',
+  vrh('Drugi proizvod · Izlog',
       'Online prodavnica koja je već popunjena',
       'Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Prodavnicu pravite sami, bez nas: uputstvo je ispod, korak po korak.') + `
 
@@ -801,7 +801,7 @@ napravi('prodavnica.html',
     <h2>Pet tema, različitih po načinu kupovine</h2>
     <p class="uvod" style="margin:14px 0 30px;max-width:720px">Ne samo druga boja &mdash; drugi raspored. Boja firme se sama uzme iz logotipa u PANTHEON-u.</p>
     <div class="mreza m-3">
-      <div class="kartica pojava"><h3>Izlog</h3><p>Opšta prodaja. Istaknuti proizvodi na vrhu, kategorije kao pločice sa slikom, kartice sa brzim dodavanjem.</p></div>
+      <div class="kartica pojava"><h3>Vitrina</h3><p>Opšta prodaja. Istaknuti proizvodi na vrhu, kategorije kao pločice sa slikom, kartice sa brzim dodavanjem.</p></div>
       <div class="kartica pojava k1"><h3>Katalog</h3><p>Delovi, tehnika, veliki asortiman. Spisak sa šifrom, stanjem i cenom; količina se kuca u redu. Radi i bez ijedne slike.</p></div>
       <div class="kartica pojava k2"><h3>Butik</h3><p>Kozmetika, moda, pokloni. Krupne fotografije, klasičan serif, puno vazduha.</p></div>
       <div class="kartica pojava"><h3>Pijaca</h3><p>Pekara, hrana, piće. „Dodaj" na svakoj kartici i korpa kao traka na dnu ekrana &mdash; kao aplikacije za dostavu.</p></div>
@@ -861,7 +861,7 @@ napravi('prodavnica.html',
         <p>Skoro uvek nema maloprodajnu cenu ili nije aktivan. U podešavanjima kataloga piše tačno
            koji artikal i zašto. Kad upišete cenu, pojavi se za minut.</p></div>
       <div><h3>Šta ako konektor ne radi?</h3>
-        <p>Izlog javi da trenutno nema podataka. Narudžbina koja ne može u PANTHEON
+        <p>Prodavnica javi da trenutno nema podataka. Narudžbina koja ne može u PANTHEON
            ne propada &mdash; čuva se u prodavnici, a firma dobija mejl da je treba uneti.</p></div>
       <div><h3>Imam već sajt.</h3>
         <p>Prodavnica ima svoju adresu i stoji uz postojeći sajt kao link „Prodavnica".
