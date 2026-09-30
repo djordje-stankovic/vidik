@@ -506,3 +506,20 @@ section{position:relative}
   .nav-veze{gap:2px}
   .nav-veze a{padding-left:7px;padding-right:7px}
 }
+
+/* ---------- prodavnica: koraci „napravite je sami" ---------- */
+.koraci-shop{list-style:none;counter-reset:k;margin:0;padding:0;display:grid;gap:14px}
+.koraci-shop > li{counter-increment:k;position:relative;padding:22px 24px 20px 78px;background:var(--papir);border:1px solid var(--linija);border-radius:var(--r)}
+.koraci-shop > li::before{content:counter(k);position:absolute;left:22px;top:20px;width:38px;height:38px;border-radius:50%;
+  background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.koraci-shop h3{margin:4px 0 8px;font-size:19px}
+.koraci-shop p{margin:0 0 10px;color:var(--tiho);line-height:1.65}
+.koraci-shop p:last-child{margin-bottom:0}
+.koraci-shop .spisak{margin:6px 0 12px;gap:8px}
+.koraci-shop code{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:.92em;background:var(--papir2);padding:1px 6px;border-radius:5px}
+.koraci-shop a{color:var(--terra-tamna)}
+.tiho-red{font-size:14px;color:var(--tise) !important}
+@media (max-width:640px){
+  .koraci-shop > li{padding:60px 18px 18px}
+  .koraci-shop > li::before{left:18px;top:16px}
+}

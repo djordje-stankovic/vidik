@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Online prodavnica nad PANTHEON-om — Vidik</title>
-<meta name="description" content="Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Isti konektor kao Vidik.">
+<meta name="description" content="Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik.">
 <meta property="og:title" content="Online prodavnica nad PANTHEON-om — Vidik">
-<meta property="og:description" content="Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Isti konektor kao Vidik.">
+<meta property="og:description" content="Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik.">
 <meta property="og:image" content="https://djordje-stankovic.github.io/vidik/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -43,7 +43,7 @@
   <div class="omot">
     <span class="nadnaslov">Drugi proizvod · PANTHEON shop</span>
     <h1>Online prodavnica koja je već popunjena</h1>
-    <p class="uvod">Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca, sa rezervacijom robe. Radi preko istog konektora kao Vidik.</p>
+    <p class="uvod">Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Prodavnicu pravite sami, bez nas: uputstvo je ispod, korak po korak.</p>
   </div>
 </section>
 
@@ -60,18 +60,17 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16l-1.5 12a2 2 0 0 1-2 1.8h-9a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
         </div>
         <h3>Katalog se ne unosi</h3>
-        <p>Šta je u šifarniku označeno kao „artikal za web shop", to je na sajtu &mdash;
-           sa slikom iz PANTHEON-a, cenom sa PDV-om i zalihom sa skladišta koje izaberete.
-           Promenite cenu u PANTHEON-u i sajt je ima za minut.</p>
+        <p>Šta je u šifarniku označeno „Web prodavnica", to je na sajtu &mdash; sa slikom iz
+           PANTHEON-a, cenom sa PDV-om i zalihom sa skladišta koja izaberete. Promenite cenu u
+           PANTHEON-u i sajt je ima za minut.</p>
       </div>
       <div class="kartica pojava k1">
         <div class="kartica-ikona">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7.5"/></svg>
         </div>
         <h3>Narudžbina ide u PANTHEON</h3>
-        <p>Kao narudžbina kupca, sa rezervacijom robe, kroz PANTHEON-ove procedure.
-           Radnik je pretvara u račun ili maloprodaju kako je navikao &mdash; fiskalizacija
-           ostaje u PANTHEON-u.</p>
+        <p>Kao narudžbina kupca, kroz PANTHEON-ove procedure. Radnik je pretvara u račun ili
+           maloprodaju kako je navikao &mdash; fiskalizacija i e-faktura ostaju u PANTHEON-u.</p>
       </div>
       <div class="kartica pojava k2">
         <div class="kartica-ikona">
@@ -85,22 +84,121 @@
   </div>
 </section>
 
+<section class="blok" id="napravi" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot usko">
+    <span class="nadnaslov">Napravite je sami</span>
+    <h2>Od preuzimanja do prve narudžbine</h2>
+    <p class="uvod" style="margin:14px 0 26px">Za sve ispod vam ne trebamo mi. Ako zapne, <a href="kontakt.html">pišite nam</a> &mdash; ali ekran vam na svakom koraku kaže šta fali.</p>
+
+    <ol class="koraci-shop">
+      <li class="pojava">
+        <h3>Pokrenite konektor na računaru gde je PANTHEON baza</h3>
+        <p><a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmite konektor">Preuzmite konektor</a> (jedan program, ništa se ne instalira uz njega) i pokrenite ga na serveru ili računaru gde radi SQL Server sa PANTHEON bazom. Otvoriće se panel u pregledaču.</p>
+        <p>U panelu upišite SQL server i prijavu, pa kliknite <b>„Proveri i sačuvaj"</b>. Panel kaže na koji server se spojio, koliko baza tamo ima i koliko ih ta prijava vidi. Štiklirajte bazu firme koja prodaje.</p>
+        <p class="tiho-red">Imate već Vidik? Konektor je već tu &mdash; preskočite na korak 2.</p>
+      </li>
+      <li class="pojava">
+        <h3>Kopirajte ključ iz panela</h3>
+        <p>Panel pokazuje ključ oblika <code>XXXX-XXXX-XXXX-XXXX</code>. To je veza između tog računara i vaše prodavnice &mdash; čuvajte ga kao lozinku.</p>
+      </li>
+      <li class="pojava">
+        <h3>Napravite nalog prodavnice</h3>
+        <p><a href="kontakt.html" data-shop="napravi" data-tekst="Otvorite stranicu za vlasnike">Otvorite stranicu za vlasnike</a> i upišite naziv firme, svoje ime, e-poštu i lozinku. Od naziva firme nastaje adresa prodavnice, npr. <code>/s/vasa-firma</code> &mdash; vidi se dok kucate.</p>
+      </li>
+      <li class="pojava">
+        <h3>Nalepite ključ i izaberite bazu</h3>
+        <p>Posle ovog koraka izlog je <b>već živ</b>: vaša roba, slike, logo i boja firme iz PANTHEON-a. Dok ne podesite ništa drugo, prikazuju se artikli označeni za web (ili, ako nijedan nije označen, svi sa cenom i zalihom).</p>
+      </li>
+      <li class="pojava">
+        <h3>Podesite katalog i narudžbine</h3>
+        <p>Sve se bira sa spiska iz vašeg PANTHEON-a, ništa se ne kuca napamet:</p>
+        <ul class="spisak">
+          <li><b>Katalog</b> &mdash; „označeni za web shop" (preporučeno) ili „svi sa cenom i zalihom"</li>
+          <li><b>Skladišta</b> &mdash; jedno ili više; na sajtu je zbir zaliha sa izabranih</li>
+          <li><b>Tip narudžbine</b> &mdash; npr. 0100 narudžbina kupca</li>
+          <li><b>U šta se pretvara</b> &mdash; npr. 3200 maloprodaja; uputstvo radniku</li>
+          <li><b>Kupac za web</b> &mdash; subjekat pod kojim ulaze narudžbine sa sajta, npr. „Web kupac"</li>
+          <li><b>PANTHEON korisnik</b> &mdash; upisuje se kao autor narudžbine</li>
+          <li><b>E-pošta firme</b> &mdash; gde stiže „nova narudžbina iz prodavnice"</li>
+        </ul>
+        <p>Na vrhu ekrana je krug sa proverama &mdash; kad su sve zelene, prodavnica je spremna.</p>
+      </li>
+      <li class="pojava">
+        <h3>Izaberite izgled</h3>
+        <p>U kartici <b>„Izgled"</b> birate jednu od pet tema i odmah je vidite nad svojim artiklima, na računaru i na telefonu. Kupci vide promenu tek kad kliknete „Postavi ovu temu".</p>
+      </li>
+      <li class="pojava">
+        <h3>Uključite prijem narudžbina u konektoru</h3>
+        <p>U panelu konektora uključite <b>„Primaj narudžbine sa sajta"</b>. Dok je isključeno, izlog radi, ali narudžbina ne ulazi u PANTHEON &mdash; čuva se u prodavnici i firma dobija mejl da je treba uneti. To je jedino mesto gde konektor piše u bazu; Vidik i dalje samo čita.</p>
+      </li>
+      <li class="pojava">
+        <h3>Pošaljite adresu kupcima</h3>
+        <p>Stavite link <code>/s/vasa-firma</code> na svoj sajt, u potpis mejla, na Instagram. To je sve.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:start">
+      <div class="pojava">
+        <span class="nadnaslov">Priprema u PANTHEON-u</span>
+        <h2>Šta artikal treba da ima</h2>
+        <ul class="spisak" style="margin-top:20px">
+          <li><b>Štiklirano „Web prodavnica"</b> u šifarniku artikala</li>
+          <li><b>Maloprodajnu cenu</b> &mdash; artikal bez cene se <b>ne prikazuje</b>, jer narudžbina bez cene u PANTHEON-u ne može da nastane</li>
+          <li><b>Aktivan</b> &mdash; neaktivan artikal nije na sajtu</li>
+          <li><b>Sliku</b> u šifarniku &mdash; nije obavezna; bez nje sajt pokaže uredno polje sa nazivom</li>
+          <li><b>Primarnu klasifikaciju</b> &mdash; od nje nastaju kategorije na sajtu</li>
+          <li><b>Opis</b> &mdash; po želji, vidi se kad kupac otvori proizvod</li>
+        </ul>
+        <p style="margin-top:18px;font-size:14px;color:var(--tise)">
+          Ne vidite neki artikal? U podešavanjima kataloga piše koliko je označeno, koliko se vidi,
+          i koji se ne vide &mdash; sa razlogom (nema cenu, nije aktivan).
+        </p>
+      </div>
+      <div class="pojava k1">
+        <span class="nadnaslov">Skladišta</span>
+        <h2>Jedno ili više</h2>
+        <p class="uvod" style="margin:16px 0 18px">Na sajtu je zbir zaliha sa skladišta koja štiklirate &mdash; npr. pet od deset.</p>
+        <ul class="spisak">
+          <li><b>Jedno skladište</b> &mdash; roba se rezerviše čim kupac poruči; ako je nema dovoljno, kupac to vidi odmah</li>
+          <li><b>Više skladišta</b> &mdash; narudžbina se otvara na glavnom, bez rezervacije, a u napomeni stoji koliko čega ima na kom skladištu. Radnik bira odakle šalje</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot">
+    <span class="nadnaslov">Izgled</span>
+    <h2>Pet tema, različitih po načinu kupovine</h2>
+    <p class="uvod" style="margin:14px 0 30px;max-width:720px">Ne samo druga boja &mdash; drugi raspored. Boja firme se sama uzme iz logotipa u PANTHEON-u.</p>
+    <div class="mreza m-3">
+      <div class="kartica pojava"><h3>Izlog</h3><p>Opšta prodaja. Istaknuti proizvodi na vrhu, kategorije kao pločice sa slikom, kartice sa brzim dodavanjem.</p></div>
+      <div class="kartica pojava k1"><h3>Katalog</h3><p>Delovi, tehnika, veliki asortiman. Spisak sa šifrom, stanjem i cenom; količina se kuca u redu. Radi i bez ijedne slike.</p></div>
+      <div class="kartica pojava k2"><h3>Butik</h3><p>Kozmetika, moda, pokloni. Krupne fotografije, klasičan serif, puno vazduha.</p></div>
+      <div class="kartica pojava"><h3>Pijaca</h3><p>Pekara, hrana, piće. „Dodaj" na svakoj kartici i korpa kao traka na dnu ekrana &mdash; kao aplikacije za dostavu.</p></div>
+      <div class="kartica pojava k1"><h3>Klasik</h3><p>Ozbiljna firma, oprezni kupci. Adresa i PIB na vrhu, meni u boji firme, krupnije slovo.</p></div>
+      <div class="kartica pojava k2"><h3>Po meri</h3><p>Nijedna ne odgovara? Napravićemo izgled vaše firme &mdash; nad istim katalogom i istim narudžbinama. <a href="kontakt.html">Pišite nam.</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
   <div class="omot">
     <div class="mreza m-2" style="gap:54px;align-items:center">
       <div class="pojava">
-        <span class="nadnaslov">Postavljanje</span>
-        <h2>Četiri koraka, i izlog je živ</h2>
+        <span class="nadnaslov">Kad kupac poruči</span>
+        <h2>Šta se dešava, redom</h2>
         <ul class="spisak" style="margin-top:20px">
-          <li><b>Nalog prodavnice</b> &mdash; naziv firme postaje adresa, npr. <code>/s/vasa-firma</code></li>
-          <li><b>Ključ konektora</b> &mdash; isti onaj koji ide u Vidik</li>
-          <li><b>Jedna baza</b> &mdash; firma koja prodaje. Posle ovog koraka izlog već prikazuje vašu robu, sa vašim logom i bojom</li>
-          <li><b>Podešavanja iz PANTHEON-a</b> &mdash; skladište, tip narudžbine, kupac za web. Sve se bira sa spiska, ništa se ne kuca</li>
+          <li>Cena i PDV se uvek računaju u PANTHEON-u &mdash; sajt ih nikad ne određuje</li>
+          <li>Ime, telefon, e-pošta i adresa kupca upisuju se u napomenu narudžbine</li>
+          <li>Kupac dobija potvrdu mejlom, firma obaveštenje sa stavkama i brojem u PANTHEON-u</li>
+          <li>Kupac u „Moje narudžbine" vidi svaku svoju narudžbinu</li>
         </ul>
-        <p style="margin-top:18px;font-size:14px;color:var(--tise)">
-          Upis narudžbina je <b>isključen dok ga sami ne uključite</b> u panelu konektora. To je
-          jedino mesto gde konektor piše u bazu &mdash; Vidik i dalje samo čita.
-        </p>
       </div>
       <div class="pojava k1">
         <div class="panel">
@@ -124,7 +222,7 @@
   </div>
 </section>
 
-<section class="blok">
+<section class="blok" style="padding-top:0">
   <div class="omot usko">
     <span class="nadnaslov">Pitanja</span>
     <h2>Šta se pita pre nego što se uključi</h2>
@@ -134,12 +232,17 @@
            po želji firma i PIB za račun na firmu. Tako znate kome šaljete, a kupac vidi svoje narudžbine.</p></div>
       <div><h3>Kako se plaća?</h3>
         <p>Pouzećem ili uplatnicom. Kartično plaćanje za sada ne postoji.</p></div>
+      <div><h3>Označio sam artikal, a nema ga na sajtu.</h3>
+        <p>Skoro uvek nema maloprodajnu cenu ili nije aktivan. U podešavanjima kataloga piše tačno
+           koji artikal i zašto. Kad upišete cenu, pojavi se za minut.</p></div>
       <div><h3>Šta ako konektor ne radi?</h3>
         <p>Izlog javi da trenutno nema podataka. Narudžbina koja ne može u PANTHEON
            ne propada &mdash; čuva se u prodavnici, a firma dobija mejl da je treba uneti.</p></div>
       <div><h3>Imam već sajt.</h3>
-        <p>Prodavnica ima svoju adresu i može da stoji uz postojeći sajt kao link
-           „Prodavnica" „Prodavnica". Kupac klikne i nastavlja kod vas, sa vašim logom i bojom.mdash; kupac klikne i nastavlja kod vas, sa vašim logom i bojom.</p></div>
+        <p>Prodavnica ima svoju adresu i stoji uz postojeći sajt kao link „Prodavnica".
+           Kupac klikne i nastavlja kod vas, sa vašim logom i bojom.</p></div>
+      <div><h3>Mogu li da promenim izgled kasnije?</h3>
+        <p>Kad god hoćete, u kartici „Izgled". Narudžbine, kupci i podešavanja ostaju kakvi su.</p></div>
     </div>
   </div>
 </section>
