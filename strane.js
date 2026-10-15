@@ -671,7 +671,7 @@ const shopDugmad = (glavni) => `
 napravi('prodavnica.html',
   'Izlog — online prodavnica nad PANTHEON-om',
   'Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik.',
-  vrh('Drugi proizvod · Izlog',
+  vrh('<svg class="znak-izlog" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4858"/><path d="M6.5 7.5h19v3.4a2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0z" fill="#fbf3e8"/><rect x="8.4" y="16.2" width="15.2" height="9.6" rx="2.4" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><circle cx="16" cy="21" r="2.3" fill="#fbf3e8"/></svg>Drugi proizvod · Izlog',
       'Online prodavnica koja je već popunjena',
       'Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Prodavnicu pravite sami, bez nas: uputstvo je ispod, korak po korak.') + `
 

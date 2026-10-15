@@ -82,17 +82,11 @@ section{position:relative}
 .nav-red{display:flex;align-items:center;gap:36px;height:74px}
 
 .znak{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+/* znak „V u dolini" (15.10.2026): slovo V od dve padine, sunce u useku -
+   vidik = pogled do horizonta. Isti crtez kao kokpit public/znak.svg. */
 .znak-ikona{
   width:30px;height:30px;border-radius:8px;flex-shrink:0;
-  background:linear-gradient(145deg,var(--terra),#e08a5f);
-  position:relative;overflow:hidden
-}
-.znak-ikona::after{
-  content:"";position:absolute;left:5px;right:5px;bottom:6px;height:11px;
-  background:
-    linear-gradient(to top,rgba(255,255,255,.95) 0 3px,transparent 3px) bottom left/5px 11px no-repeat,
-    linear-gradient(to top,rgba(255,255,255,.95) 0 7px,transparent 7px) bottom center/5px 11px no-repeat,
-    linear-gradient(to top,rgba(255,255,255,.95) 0 11px,transparent 11px) bottom right/5px 11px no-repeat
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c0522c'/%3E%3Cpath d='M5.5 11.5 16 24.5 26.5 11.5' fill='none' stroke='%23fbf3e8' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='10.6' r='3.3' fill='%23fbf3e8'/%3E%3C/svg%3E") center/100% 100% no-repeat
 }
 .znak-ime{font-family:"Fraunces",Georgia,serif;font-size:1.32rem;font-weight:600;letter-spacing:-.02em}
 .znak-ime span{color:var(--terra)}
@@ -523,3 +517,6 @@ section{position:relative}
   .koraci-shop > li{padding:60px 18px 18px}
   .koraci-shop > li::before{left:18px;top:16px}
 }
+/* znak Izloga (15.10.2026) - ista porodica kao Vidikov, skriljac umesto terakote */
+.nadnaslov:has(.znak-izlog)::before{display:none}
+.znak-izlog{flex:none;border-radius:6px}
