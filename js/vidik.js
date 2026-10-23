@@ -55,6 +55,20 @@
     }
   }
 
+  /* Fioka - treci proizvod (racuni sa telefona), isti konektor. Isto pravilo:
+     prazno = dugmad ostaju na kontakt.html.                              */
+  var FIOKA = 'https://fioka-production.up.railway.app';
+  var FIOKA_PUTANJE = { otvori: '/' };
+  if (FIOKA) {
+    var fk = FIOKA.replace(/\/+$/, '');
+    var fv = document.querySelectorAll('[data-fioka]');
+    for (var f = 0; f < fv.length; f++) {
+      fv[f].href = fk + (FIOKA_PUTANJE[fv[f].getAttribute('data-fioka')] || FIOKA_PUTANJE.otvori);
+      if (fv[f].getAttribute('data-tekst')) fv[f].textContent = fv[f].getAttribute('data-tekst');
+      fv[f].hidden = false;
+    }
+  }
+
   var mirno = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- navigacija: senka na skrol + meni na telefonu ---------- */

@@ -34,6 +34,7 @@
       <a href="kako-radi.html">Kako radi</a>
       <a href="cene.html">Cene</a>
       <a href="prodavnica.html">Izlog</a>
+      <a href="fioka.html">Fioka</a>
       <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
@@ -486,11 +487,11 @@
           <p>Vidik — ništa. On je čist čitač, pa preporučujemo nalog
           <code>db_datareader</code> — da to ne bude naše obećanje nego pravilo
           koje sprovodi vaš SQL Server.</p>
-          <p>Jedini upis u celom sistemu je narudžbina iz
-          <a href="prodavnica.html">online prodavnice</a>, i to tek kad ga u
-          panelu konektora sami uključite („Primaj narudžbine sa sajta").
-          Podrazumevano je isključen. Ako prodavnicu ne koristite, taj prekidač
-          nikad ne dirate.</p>
+          <p>Upisuju samo dva proizvoda, i to tek kad ih u panelu konektora sami
+          uključite: <a href="prodavnica.html">online prodavnica</a> narudžbinu kupca
+          („Primaj narudžbine sa sajta") i <a href="fioka.html">Fioka</a> ulazni račun
+          troška („Primaj račune iz Fioke"). Podrazumevano su isključeni. Ako ih ne
+          koristite, te prekidače nikad ne dirate.</p>
         </div>
       </details>
       <details class="pitanje">
@@ -527,18 +528,18 @@
   </div>
 </section>
 
-<!-- =========================== DVA PROIZVODA ======================== -->
-<!-- Isti konektor nosi i Vidik i online prodavnicu - jedna instalacija,
-     jedna konektor licenca. Oba imaju demo nad istom demo bazom. -->
+<!-- =========================== TRI PROIZVODA ======================== -->
+<!-- Isti konektor nosi Vidik, online prodavnicu i Fioku - jedna instalacija,
+     jedna konektor licenca. -->
 <section class="blok" id="proizvodi">
   <div class="omot">
     <div class="pojava" style="max-width:760px">
-      <span class="nadnaslov">Dva proizvoda, jedan konektor</span>
-      <h2>Vidik gleda brojeve. Prodavnica ih prodaje.</h2>
-      <p class="uvod" style="margin-top:14px">Isti program kod vas, isti ključ. Uzmite jedno ili oba &mdash;
-        drugi se dodaje bez nove instalacije i bez druge konektor licence.</p>
+      <span class="nadnaslov">Tri proizvoda, jedan konektor</span>
+      <h2>Vidik gleda brojeve. Izlog prodaje. Fioka skuplja račune.</h2>
+      <p class="uvod" style="margin-top:14px">Isti program kod vas, isti ključ. Uzmite jedan ili sva tri &mdash;
+        svaki sledeći se dodaje bez nove instalacije i bez druge konektor licence.</p>
     </div>
-    <div class="mreza m-2" style="margin-top:36px;gap:22px">
+    <div class="mreza m-3" style="margin-top:36px;gap:22px">
       <div class="kartica pojava">
         <div class="kartica-ikona">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/></svg>
@@ -561,6 +562,18 @@
         <div class="cta-akcije" style="justify-content:flex-start;margin-top:18px">
           <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-shop="demo" data-tekst="Pogledajte demo">Zakažite prikaz</a>
           <a href="prodavnica.html" class="dugme dugme-tihi dugme-mali">Kako radi</a>
+        </div>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 11h18M10 15h4"/></svg>
+        </div>
+        <h3>Fioka <small style="font-weight:500;opacity:.7">· računi sa telefona</small></h3>
+        <p>Zaposleni skenira QR sa fiskalnog računa, Poreska daje stavke i PDV, a Fioka u
+           PANTHEON-u napravi ulazni račun troška &mdash; i dobavljača iz APR-a.</p>
+        <div class="cta-akcije" style="justify-content:flex-start;margin-top:18px">
+          <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-fioka="otvori" data-tekst="Otvorite Fioku">Zakažite prikaz</a>
+          <a href="fioka.html" class="dugme dugme-tihi dugme-mali">Kako radi</a>
         </div>
       </div>
     </div>
@@ -647,6 +660,7 @@
         <a href="kako-radi.html">Kako radi</a>
         <a href="cene.html">Cene</a>
         <a href="prodavnica.html">Izlog — online prodavnica</a>
+        <a href="fioka.html">Fioka — računi sa telefona</a>
         <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>

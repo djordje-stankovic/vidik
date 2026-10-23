@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fioka — računi sa telefona pravo u PANTHEON</title>
+<meta name="description" content="Zaposleni skenira QR sa fiskalnog računa, Poreska daje ceo račun, a Fioka u PANTHEON-u napravi ulazni račun troška — i dobavljača iz APR-a ako ga nema. Bez prekucavanja.">
+<meta property="og:title" content="Fioka — računi sa telefona pravo u PANTHEON">
+<meta property="og:description" content="Zaposleni skenira QR sa fiskalnog računa, Poreska daje ceo račun, a Fioka u PANTHEON-u napravi ulazni račun troška — i dobavljača iz APR-a ako ga nema. Bez prekucavanja.">
+<meta property="og:image" content="https://djordje-stankovic.github.io/vidik/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><path d='M5.5 11.5 16 24.5 26.5 11.5' fill='none' stroke='%23fbf3e8' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='10.6' r='3.3' fill='%23fbf3e8'/></svg>">
+</head>
+<body>
+<header class="nav">
+  <div class="omot nav-red">
+    <a class="znak" href="index.html">
+      <span class="znak-ikona"></span>
+      <span class="znak-ime">Vid<span>ik</span></span>
+    </a>
+    <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-veze">
+      <a href="index.html">Početna</a>
+      <a href="mogucnosti.html">Mogućnosti</a>
+      <a href="kontrole.html">Kontrole</a>
+      <a href="kako-radi.html">Kako radi</a>
+      <a href="prodavnica.html">Izlog</a>
+      <a href="fioka.html" class="tu">Fioka</a>
+      <a href="cene.html">Cene</a>
+      <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
+      <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
+    </nav>
+  </div>
+</header>
+<section class="strana-vrh">
+  <div class="aureola aureola-1"></div>
+  <div class="omot">
+    <span class="nadnaslov"><svg class="znak-izlog" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f6f5c"/><rect x="6" y="8.5" width="20" height="16" rx="3" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><path d="M6 15.5h20" stroke="#fbf3e8" stroke-width="2.4"/><rect x="12.5" y="18.6" width="7" height="2.4" rx="1.2" fill="#fbf3e8"/></svg>Treći proizvod · Fioka</span>
+    <h1>Račun iz džepa, u PANTHEON-u za minut</h1>
+    <p class="uvod">Gorivo, parking, prevoz, sitna nabavka &mdash; računi koje zaposleni plaćaju za firmu. Skeniraju QR telefonom, a podatke daje Poreska uprava: prodavac, PIB, stavke i PDV po stopama. Knjigovođa dobije račun razvrstan, a Fioka ga jednim klikom upiše u PANTHEON.</p>
+  </div>
+</section>
+
+<section class="blok-tanak">
+  <div class="omot">
+    
+      <div class="cta-akcije" style="justify-content:flex-start">
+        <a href="kontakt.html" class="dugme dugme-glavni" data-fioka="otvori" data-tekst="Otvorite Fioku">Zakažite prikaz</a>
+        <a href="kako-radi.html" class="dugme dugme-tihi" data-vidik="preuzmi" data-tekst="Preuzmite konektor">Kako radi konektor</a>
+      </div>
+    <div class="mreza m-3" style="margin-top:40px">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3M21 14v7h-7"/></svg>
+        </div>
+        <h3>Ništa se ne prekucava</h3>
+        <p>QR na fiskalnom računu vodi do Poreske uprave, a tamo je ceo račun. Fioka uzme
+           odatle prodavca, PIB, broj, vreme, stavke i PDV po stopama &mdash; isto što piše
+           na papiru, samo bez greške u kucanju.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 9.5 17 19 7.5"/></svg>
+        </div>
+        <h3>Račun troška u PANTHEON-u</h3>
+        <p>Ulazni račun sa svakom stavkom posebno i PDV-om po stopi, na tip dokumenta i
+           skladište koje firma već koristi. Dobavljača koga nema u šifarniku Fioka doda sama
+           &mdash; pun naziv i matični broj iz APR-a.</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        </div>
+        <h3>Zaposleni bez lozinke</h3>
+        <p>Vlasnik pošalje link, zaposleni ga otvori na telefonu, upiše ime &mdash; i skenira.
+           Vidi samo svoje račune. Isti konektor kao Vidik i Izlog, bez nove instalacije.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
+  <div class="omot usko">
+    <span class="nadnaslov">Kako ide</span>
+    <h2>Od papira do knjige</h2>
+    <ol class="koraci-shop" style="margin-top:26px">
+      <li class="pojava">
+        <h3>Zaposleni skenira</h3>
+        <p>Uperi telefon u QR na dnu računa i Fioka ga pročita sama, ili slika račun pa
+           pročita sa slike. Ima i mesto za sliku iz galerije, a na računaru prevuci sliku u prozor.</p>
+      </li>
+      <li class="pojava">
+        <h3>Izabere šta je to</h3>
+        <p>Gorivo, prevoz, parking, reprezentacija &mdash; jedno dugme. Za prodavca kog je već
+           unosio, Fioka zapamti vrstu i odeljenje i sledeći put su već izabrani.</p>
+      </li>
+      <li class="pojava">
+        <h3>Knjigovođa preuzme</h3>
+        <p>Na jednom mestu vidi sve račune firme, ko ih je doneo i gde idu. Vrati račun uz
+           razlog kad nešto nije u redu, ili ga preuzme &mdash; kao CSV za Excel ili pravo u PANTHEON.</p>
+      </li>
+      <li class="pojava">
+        <h3>Fioka napravi dokument u PANTHEON-u</h3>
+        <p>Ulazni račun troška, kroz PANTHEON-ove procedure. „Probaj bez upisa" prođe ceo put
+           pa sve poništi &mdash; da vidite šta bi nastalo pre nego što bilo šta ostane u bazi.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px;align-items:center">
+      <div class="pojava">
+        <span class="nadnaslov">Šta ide u PANTHEON</span>
+        <h2>Kao da ga je knjigovođa uneo</h2>
+        <ul class="spisak" style="margin-top:20px">
+          <li><b>Tip dokumenta, skladište, PDV šifre</b> &mdash; predlog iz onoga što firma već koristi na računima troškova; vi potvrdite jednom</li>
+          <li><b>Svaka stavka posebno</b> &mdash; naziv, količina, cena i stopa sa računa, sa artiklom vrste troška; niko ništa ne povezuje ručno</li>
+          <li><b>Broj računa</b> &mdash; PFR broj, pa isti račun ne može da uđe dvaput</li>
+          <li><b>Novi dobavljač</b> &mdash; naziv, adresa, PIB i matični iz APR-a, šifra po pravilu vaše baze</li>
+        </ul>
+      </div>
+      <div class="pojava k1">
+        <div class="panel">
+          <div class="panel-traka">
+            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
+            <span class="panel-naslov">račun sa telefona &rarr; PANTHEON</span>
+          </div>
+          <div class="panel-telo" style="font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:12.5px;line-height:1.95">
+            <div><span style="color:#4e7c34">●</span> QR pročitan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">gradski prevoz &middot; 100,00</span></div>
+            <div><span style="color:#4e7c34">●</span> Poreska uprava &nbsp;&nbsp;<span style="color:#9a8d7f">1 stavka &middot; PDV 10%</span></div>
+            <div><span style="color:#c99a2e">●</span> dobavljač &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">nov &mdash; podaci iz APR-a</span></div>
+            <div><span style="color:#4e7c34">●</span> račun troška &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#9a8d7f">90,91 + PDV 9,09</span></div>
+            <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--linija);color:#6f6358">
+              Knjiženje i plaćanje &mdash; u PANTHEON-u, kao i do sada.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blok" style="padding-top:0">
+  <div class="omot usko">
+    <span class="nadnaslov">Pitanja</span>
+    <h2>Šta se pita pre nego što se uključi</h2>
+    <div class="mreza m-2" style="margin-top:28px;gap:26px">
+      <div><h3>Treba li aplikacija iz prodavnice?</h3>
+        <p>Ne. Fioka se otvara u pregledaču na telefonu i može da se doda na početni ekran
+           kao aplikacija. Ništa se ne instalira i ne ažurira ručno.</p></div>
+      <div><h3>A račun bez QR-a?</h3>
+        <p>Svaki fiskalni račun od 2022. ima QR. Kad je papir toliko oštećen ili izbledeo da se
+           QR ne čita ni sa slike, takav račun za sada unosite u PANTHEON kao i do sada.</p></div>
+      <div><h3>Prodavac još nije poslao stavke Poreskoj?</h3>
+        <p>Dešava se kad kasa radi bez veze sa Poreskom. Fioka uzme zaglavlje i iznos, a stopu
+           PDV-a birate sami. Posle sama proverava svaki dan i javi samo ako se PDV ne slaže.</p></div>
+      <div><h3>Ko sme da upiše u PANTHEON?</h3>
+        <p>Samo vlasnik i onaj kome on da „vidi sve" &mdash; najčešće knjigovođa. I samo kad je
+           u panelu konektora uključeno „Primaj račune iz Fioke"; podrazumevano je isključeno.</p></div>
+      <div><h3>Da li zaposleni vidi tuđe račune?</h3>
+        <p>Ne. Vidi samo ono što je sam doneo. Vlasnik može da ga isključi jednim klikom i pristup
+           prestaje odmah.</p></div>
+      <div><h3>Mogu li bez PANTHEON upisa?</h3>
+        <p>Mogu. Fioka radi i kao sanduče računa: razvrstavanje, odobravanje i CSV za Excel.
+           Upis se uključuje kad budete spremni.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blok">
+  <div class="omot cta pojava">
+    <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
+    <h2>Probajte na jednom računu</h2>
+    <p class="uvod">Napravite fioku firme, skenirajte prvi račun i pogledajte šta Poreska vrati. Za upis u PANTHEON treba isti konektor kao za Vidik.</p>
+    
+      <div class="cta-akcije" style="justify-content:center">
+        <a href="kontakt.html" class="dugme dugme-glavni" data-fioka="otvori" data-tekst="Otvorite Fioku">Zakažite prikaz</a>
+        <a href="kako-radi.html" class="dugme dugme-tihi" data-vidik="preuzmi" data-tekst="Preuzmite konektor">Kako radi konektor</a>
+      </div>
+  </div>
+</section>
+
+<footer class="podnozje">
+  <div class="omot">
+    <div class="podnozje-mreza">
+      <div>
+        <a class="znak" href="index.html" style="text-decoration:none">
+          <span class="znak-ikona"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+        </a>
+        <p class="podnozje-o">
+          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
+          održavali te iste baze kod klijenata.
+        </p>
+      </div>
+      <div>
+        <h4>Proizvod</h4>
+        <a href="mogucnosti.html">Mogućnosti</a>
+        <a href="kontrole.html">Kontrole</a>
+        <a href="kako-radi.html">Kako radi</a>
+        <a href="cene.html">Cene</a>
+        <a href="prodavnica.html">Izlog — online prodavnica</a>
+        <a href="fioka.html">Fioka — računi sa telefona</a>
+        <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
+      </div>
+      <div>
+        <h4>Za koga</h4>
+        <a href="mogucnosti.html#direktor">Direktore</a>
+        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <a href="cene.html#agencije">Knjigovodstvene agencije</a>
+        <a href="kako-radi.html#it">IT službe</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="kontakt.html">Zakaži prikaz</a>
+        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
+        <a href="tel:+381113456789">011 345 6789</a>
+      </div>
+    </div>
+    <div class="podnozje-dno">
+      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vidik.js"></script>
+</body>
+</html>

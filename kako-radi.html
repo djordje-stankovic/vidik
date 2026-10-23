@@ -31,6 +31,7 @@
       <a href="kontrole.html">Kontrole</a>
       <a href="kako-radi.html" class="tu">Kako radi</a>
       <a href="prodavnica.html">Izlog</a>
+      <a href="fioka.html">Fioka</a>
       <a href="cene.html">Cene</a>
       <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
@@ -73,8 +74,9 @@
         </div>
         <h3>3. Svaki upit stoji u dnevniku</h3>
         <p>Konektor zapisuje svaki upit koji je izvršio &mdash; vidite ga u svom panelu,
-           na svom serveru. Odbija sve što pokušava da piše &mdash; jedini izuzetak je narudžbina sa
-           <a href="prodavnica.html">online prodavnice</a>, i to samo ako je sami uključite. Kad hoćete da prestane,
+           na svom serveru. Odbija sve što pokušava da piše &mdash; izuzeci su narudžbina sa
+           <a href="prodavnica.html">online prodavnice</a> i ulazni račun iz <a href="fioka.html">Fioke</a>,
+           i to samo ako ih sami uključite. Kad hoćete da prestane,
            „Prekini pristup" gasi vezu odmah, bez nas.</p>
       </div>
     </div>
@@ -153,13 +155,13 @@
           bude naše obećanje nego pravilo koje sprovodi vaš SQL Server.</p>
           <p>Uz to, i sam konektor odbija svaki upit koji pokušava da piše, pre nego što
           ga uopšte pošalje bazi. Dve brave, nezavisne jedna od druge.</p>
-          <p>Jedan izuzetak, i on je vaša odluka: <a href="prodavnica.html">online
-          prodavnica</a> ume da upiše narudžbinu kupca u PANTHEON. Taj upis nije
-          SQL koji stiže spolja nego jedna operacija zapisana u samom konektoru,
-          i radi tek kad u panelu uključite „Primaj narudžbine sa sajta" &mdash;
-          podrazumevano je isključen. Za nju nalog mora da sme da pokrene
-          PANTHEON-ove procedure za narudžbine, pa uz <code>db_datareader</code>
-          ostaje isključena sama od sebe.</p>
+          <p>Dva izuzetka, i oba su vaša odluka: <a href="prodavnica.html">online
+          prodavnica</a> ume da upiše narudžbinu kupca, a <a href="fioka.html">Fioka</a>
+          ulazni račun troška (i novog dobavljača, sa podacima iz APR-a). Ti upisi nisu
+          SQL koji stiže spolja nego operacije zapisane u samom konektoru, i rade tek
+          kad ih u panelu uključite („Primaj narudžbine sa sajta", „Primaj račune iz
+          Fioke") &mdash; podrazumevano su isključeni. Za njih nalog mora da sme da
+          piše, pa uz <code>db_datareader</code> ostaju isključeni sami od sebe.</p>
         </div>
       </details>
       <details class="pitanje">
@@ -257,6 +259,7 @@
         <a href="kako-radi.html">Kako radi</a>
         <a href="cene.html">Cene</a>
         <a href="prodavnica.html">Izlog — online prodavnica</a>
+        <a href="fioka.html">Fioka — računi sa telefona</a>
         <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>

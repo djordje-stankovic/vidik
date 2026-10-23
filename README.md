@@ -14,6 +14,8 @@ sajt — sama aplikacija je odvojena.
 | `mogucnosti.html` | ekrani, razdvojeno na „za direktora" i „za računovodstvo" |
 | `kontrole.html` | kontrola PDV-a, završni račun, moduli naspram glavne knjige |
 | `kako-radi.html` | konektor, bezbednost, postavljanje, pitanja IT službe |
+| `prodavnica.html` | Izlog — online prodavnica (drugi proizvod) |
+| `fioka.html` | Fioka — računi sa telefona u PANTHEON (treći proizvod) |
 | `cene.html` | paketi i pitanja oko cene |
 | `kontakt.html` | forma |
 
