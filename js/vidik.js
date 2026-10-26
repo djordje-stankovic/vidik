@@ -176,7 +176,7 @@
         })
         .catch(function () {
           poruka.innerHTML = '<b>Poruka nije otišla.</b> Pišite nam direktno na ' +
-            '<a href="mailto:info@sajtpro.rs">info@sajtpro.rs</a> ili pozovite 062 102 5376.';
+            '<a href="mailto:info@sajtpro.rs">info@sajtpro.rs</a>.';
         })
         .then(function () {
           if (dugme) { dugme.disabled = false; dugme.textContent = dugme.dataset.tekst; }
