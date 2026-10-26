@@ -19,7 +19,7 @@
      HTML-u nego ovde: jedan red, važi za svih šest stranica, bez ponovnog
      generisanja. Dok je prazna, ne može da procuri ništa pokvareno.
      ======================================================================= */
-  var KOKPIT = 'https://cockpit-production-0d8f.up.railway.app';
+  var KOKPIT = 'https://vidik.sajtpro.rs';
 
   /* Tri razlicite namere, ne jedna: ko nema nalog hoce da vidi (demo), ko ga
      ima hoce unutra (prijava), a program skida tek onaj ko je vec uparen —
@@ -43,7 +43,7 @@
 
   /* PANTHEON shop - drugi proizvod, isti konektor. Isto pravilo kao gore:
      prazno = dugmad ostaju na kontakt.html.                              */
-  var SHOP = 'https://pantheon-shop-production.up.railway.app';
+  var SHOP = 'https://izlog.sajtpro.rs';
   var SHOP_PUTANJE = { demo: '/s/demo/', napravi: '/admin/' };
   if (SHOP) {
     var sk = SHOP.replace(/\/+$/, '');
@@ -57,7 +57,7 @@
 
   /* Fioka - treci proizvod (racuni sa telefona), isti konektor. Isto pravilo:
      prazno = dugmad ostaju na kontakt.html.                              */
-  var FIOKA = 'https://fioka-production.up.railway.app';
+  var FIOKA = 'https://fioka.sajtpro.rs';
   var FIOKA_PUTANJE = { otvori: '/' };
   if (FIOKA) {
     var fk = FIOKA.replace(/\/+$/, '');
