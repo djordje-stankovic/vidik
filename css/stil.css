@@ -520,3 +520,10 @@ section{position:relative}
 /* znak Izloga (15.10.2026) - ista porodica kao Vidikov, skriljac umesto terakote */
 .nadnaslov:has(.znak-izlog)::before{display:none}
 .znak-izlog{flex:none;border-radius:6px}
+
+/* znak kuće SajtPro (26.10.2026): tri trake u bojama tri proizvoda - Vidik,
+   Izlog, Fioka. Isti crtež je favicon u napravi.js. */
+.znak-ikona.znak-kuca{
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23171310'/%3E%3Crect x='7' y='13' width='4.6' height='12' rx='2.3' fill='%23c0522c'/%3E%3Crect x='13.7' y='9' width='4.6' height='16' rx='2.3' fill='%235b8aa6'/%3E%3Crect x='20.4' y='6' width='4.6' height='19' rx='2.3' fill='%233f9a80'/%3E%3C/svg%3E") center/100% 100% no-repeat
+}
+

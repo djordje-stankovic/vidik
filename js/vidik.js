@@ -146,18 +146,42 @@
     stubici.forEach(function (g) { g.style.height = g.dataset.v + '%'; });
   }
 
-  /* ---------- forma: bez servera, samo potvrda ---------- */
+  /* ---------- forma -> Formspree (isti nalog kao stari sajt SajtPro-a) ----------
+     Do 26.10.2026 forma je samo pisala „Hvala" i upit se gubio. Sada ide
+     na Formspree, koji ga prosledi na info@sajtpro.rs; kad ne prođe, kaže to
+     i nudi mejl - nikad lažno „Hvala". */
+  var FORMA_ADRESA = 'https://formspree.io/f/mkoqqjww';
   var forma = document.querySelector('#forma');
   if (forma) {
     forma.addEventListener('submit', function (e) {
       e.preventDefault();
       var poruka = document.querySelector('#formaPoruka');
-      var ime = (forma.querySelector('[name=ime]') || {}).value || '';
+      var dugme = forma.querySelector('button[type=submit], button:not([type])');
+      var polje = function (n) { return ((forma.querySelector('[name=' + n + ']') || {}).value || '').trim(); };
+      var ime = polje('ime');
       poruka.hidden = false;
-      poruka.innerHTML = '<b>Hvala' + (ime ? ', ' + ime.split(' ')[0] : '') + '.</b> ' +
-        'Javljamo se u toku istog radnog dana — obično u roku od dva sata.';
-      forma.reset();
-      poruka.scrollIntoView({ behavior: mirno ? 'auto' : 'smooth', block: 'center' });
+      if (!ime || !polje('firma') || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(polje('mejl'))) {
+        poruka.innerHTML = '<b>Fali nešto.</b> Upišite ime, firmu i ispravan mejl.';
+        return;
+      }
+      if (dugme) { dugme.disabled = true; dugme.dataset.tekst = dugme.textContent; dugme.textContent = 'Šaljem…'; }
+      var podaci = new FormData(forma);
+      podaci.append('_subject', 'SajtPro sajt: ' + polje('proizvod') + ' — ' + polje('firma'));
+      fetch(FORMA_ADRESA, { method: 'POST', body: podaci, headers: { Accept: 'application/json' } })
+        .then(function (o) { if (!o.ok) throw new Error(o.status); })
+        .then(function () {
+          poruka.innerHTML = '<b>Hvala' + (ime ? ', ' + ime.split(' ')[0] : '') + '.</b> ' +
+            'Javljamo se u toku istog radnog dana — obično u roku od dva sata.';
+          forma.reset();
+        })
+        .catch(function () {
+          poruka.innerHTML = '<b>Poruka nije otišla.</b> Pišite nam direktno na ' +
+            '<a href="mailto:info@sajtpro.rs">info@sajtpro.rs</a> ili pozovite 062 102 5376.';
+        })
+        .then(function () {
+          if (dugme) { dugme.disabled = false; dugme.textContent = dugme.dataset.tekst; }
+          poruka.scrollIntoView({ behavior: mirno ? 'auto' : 'smooth', block: 'center' });
+        });
     });
   }
 

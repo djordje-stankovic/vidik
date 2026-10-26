@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vidik — vaš ERP već zna odgovor</title>
-<meta name="description" content="Vidik je upravljački kokpit nad PANTHEON bazom. Odgovori bez otvaranja ERP-a, kontrole koje same nalaze greške u PDV-u i završnom računu, i podaci koji ostaju kod vas.">
-<meta property="og:title" content="Vidik — vaš ERP već zna odgovor">
-<meta property="og:description" content="Vidik je upravljački kokpit nad PANTHEON bazom. Odgovori bez otvaranja ERP-a, kontrole koje same nalaze greške u PDV-u i završnom računu, i podaci koji ostaju kod vas.">
-<meta property="og:image" content="https://djordje-stankovic.github.io/vidik/og.png">
+<title>SajtPro — alati za firme koje rade u PANTHEON-u</title>
+<meta name="description" content="Tri alata nad PANTHEON bazom: Vidik (brojevi i kontrole na telefonu), Izlog (online prodavnica iz PANTHEON-a) i Fioka (računi sa telefona u PANTHEON). Kod vas se instalira jedan konektor za sva tri.">
+<meta property="og:title" content="SajtPro — alati za firme koje rade u PANTHEON-u">
+<meta property="og:description" content="Tri alata nad PANTHEON bazom: Vidik (brojevi i kontrole na telefonu), Izlog (online prodavnica iz PANTHEON-a) i Fioka (računi sa telefona u PANTHEON). Kod vas se instalira jedan konektor za sva tri.">
+<meta property="og:image" content="https://sajtpro.rs/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,593 +16,149 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/stil.css">
 <link rel="stylesheet" href="css/zivo.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><path d='M5.5 11.5 16 24.5 26.5 11.5' fill='none' stroke='%23fbf3e8' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='10.6' r='3.3' fill='%23fbf3e8'/></svg>">
+<link rel="stylesheet" href="css/kuca.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23171310'/><rect x='7' y='13' width='4.6' height='12' rx='2.3' fill='%23c0522c'/><rect x='13.7' y='9' width='4.6' height='16' rx='2.3' fill='%235b8aa6'/><rect x='20.4' y='6' width='4.6' height='19' rx='2.3' fill='%233f9a80'/></svg>">
 </head>
 <body>
-
 <header class="nav">
   <div class="omot nav-red">
-    <a class="znak" href="index.html">
-      <span class="znak-ikona"></span>
-      <span class="znak-ime">Vid<span>ik</span></span>
+    <a class="znak" href="index.html" aria-label="SajtPro — početna">
+      <span class="znak-ikona znak-kuca"></span>
+      <span class="znak-ime">Sajt<span>Pro</span></span>
     </a>
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
       <a href="index.html" class="tu">Početna</a>
-      <a href="mogucnosti.html">Mogućnosti</a>
-      <a href="kontrole.html">Kontrole</a>
-      <a href="kako-radi.html">Kako radi</a>
-      <a href="cene.html">Cene</a>
+      <a href="vidik.html">Vidik</a>
       <a href="prodavnica.html">Izlog</a>
       <a href="fioka.html">Fioka</a>
-      <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
-      <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
-      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
+      <a href="kako-radi.html">Konektor</a>
+      <a href="cene.html">Cene</a>
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <!-- ============================== HERO ============================== -->
-<section class="hero">
+<section class="hero kuca-hero">
   <div class="aureola aureola-1"></div>
   <div class="aureola aureola-2"></div>
   <div class="omot hero-mreza">
     <div class="pojava vidljiv">
-      <span class="nadnaslov">Nadgradnja za PANTHEON</span>
-      <h1>Vaš ERP već zna odgovor. <em>Samo vam ga ne kaže.</em></h1>
+      <span class="nadnaslov">SajtPro · alati za PANTHEON</span>
+      <h1>PANTHEON vodi knjige. <em>Mi pravimo ono oko njih.</em></h1>
       <p class="uvod">
-        Podaci o naplati, marži, zalihama i PDV-u već postoje u vašoj bazi. Do njih se
-        stiže kroz stablo izveštaja, filtere i štampač. Vidik ih iznosi na jedan ekran —
-        i sam javlja kada nešto ne štima.
+        Tri alata nad bazom koju već imate: <b>Vidik</b> iznosi brojeve na telefon,
+        <b>Izlog</b> stavlja artikle na sajt, <b>Fioka</b> unosi račune sa telefona.
+        Kod vas se instalira samo jedan konektor &mdash; za sva tri.
       </p>
       <div class="hero-akcije">
-        <a href="kontakt.html" class="dugme dugme-glavni"
-           data-vidik="demo" data-tekst="Uđite u demo — bez registracije">Zakažite prikaz uživo</a>
-        <a href="kontrole.html" class="dugme dugme-tihi">Vidite kako hvata greške</a>
-      </div>
-      <a class="preuzmi-link" href="#probajte" data-vidik="preuzmi" data-tekst="" hidden>
-        <span class="preuzmi-ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span>
-        <span><b>Preuzmite konektor</b> i probajte na svojoj bazi <small>Windows &middot; jedan fajl &middot; 89 MB</small></span>
-      </a>
-      <div class="hero-sitno">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Baza ostaje kod vas &middot; bez otvaranja portova &middot; svaki upit stoji u dnevniku
+        <a href="#proizvodi" class="dugme dugme-glavni">Pogledajte proizvode</a>
+        <a href="kako-radi.html" class="dugme dugme-tihi">Kako radi konektor</a>
       </div>
     </div>
 
-    <!-- živi mokap: tri scene se smenjuju (pregled → kontrola PDV → novac),
-         a telefon pokazuje isti Vidik u pregledaču sa nalazima koji pristižu.
-         Sve je iz demo baze ili iz teksta koji aplikacija stvarno ispisuje. -->
-    <div class="pojava k1 hero-scena">
-      <div class="panel panel-zivi">
-        <div class="panel-traka">
-          <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
-          <span class="panel-naslov">vidik &middot; <span class="scena-ime">pregled</span></span>
-          <span class="uzivo"><i></i>demo baza</span>
-        </div>
-        <div class="scena-tabovi" role="tablist" aria-label="Ekrani Vidika">
-          <button class="tu" data-scena="0">Pregled</button>
-          <button data-scena="1">Kontrola PDV</button>
-          <button data-scena="2">Novac</button>
-          <span class="scena-traka"></span>
-        </div>
-        <div class="panel-telo scene">
-          <div class="scena aktivna" data-ime="pregled">
-          <div class="kpi-red">
-            <!-- Brojevi su iz demo baze koju otvara dugme u zaglavlju. Namerno:
-                 ko klikne, vidi isto ovo. Izmišljen mokap koji se ne poklapa sa
-                 demoom je prva stvar koju čovek primeti. -->
-            <div class="kpi">
-              <div class="kpi-lab">Promet 12m</div>
-              <div class="kpi-val">40,8 mil</div>
-              <div class="kpi-pod pad">▼ 30,0%</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi-lab">Dospelo</div>
-              <div class="kpi-val">135,9 mil</div>
-              <div class="kpi-pod pad">99% potraživanja</div>
-            </div>
-            <div class="kpi">
-              <div class="kpi-lab">Marža</div>
-              <div class="kpi-val">54,2%</div>
-              <div class="kpi-pod rast">▲ 1,7 p.p.</div>
-            </div>
-          </div>
-
-          <div class="graf-okvir">
-            <div class="graf-vrh"><b>Promet po mesecima</b><span>12 meseci</span></div>
-            <svg viewBox="0 0 320 96" width="100%" height="96" role="img" aria-label="Promet kroz godinu, u padu">
-              <g stroke="#e0d4c3" stroke-width="1">
-                <line x1="0" y1="24" x2="320" y2="24"/>
-                <line x1="0" y1="52" x2="320" y2="52"/>
-                <line x1="0" y1="80" x2="320" y2="80"/>
-              </g>
-              <path class="crtaj" d="M4,20 L30,26 L56,22 L82,34 L108,30 L134,42 L160,38 L186,50 L212,46 L238,58 L264,54 L290,66 L314,70"
-                    fill="none" stroke="#c0522c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="314" cy="70" r="4" fill="#c0522c"/>
-              <circle cx="314" cy="70" r="8" fill="#c0522c" opacity=".18"/>
-            </svg>
-          </div>
-
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;align-items:end;height:66px">
-            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
-              <div class="stub" data-v="8" data-k="0" style="background:#e7c9b6;border-radius:5px 5px 0 0"></div>
-              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">&lt;30</div>
-            </div>
-            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
-              <div class="stub" data-v="5" data-k=".1" style="background:#dda98c;border-radius:5px 5px 0 0"></div>
-              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">30–60</div>
-            </div>
-            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
-              <div class="stub" data-v="4" data-k=".2" style="background:#cf8259;border-radius:5px 5px 0 0"></div>
-              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">60–90</div>
-            </div>
-            <div style="display:flex;flex-direction:column;justify-content:flex-end;height:100%">
-              <div class="stub" data-v="100" data-k=".3" style="background:#c0522c;border-radius:5px 5px 0 0"></div>
-              <div style="font-size:10px;color:#9a8d7f;text-align:center;margin-top:5px">90+</div>
-            </div>
-          </div>
-          </div>
-
-          <!-- scena 2: kontrola PDV (isti primer kao niže na strani) -->
-          <div class="scena" data-ime="kontrola pdv · 2023-12">
-            <div class="mini-vaga">
-              <div class="mini-tas"><span>Knjiga računa</span><b>250</b><small>obračunato 20.02.2024.</small></div>
-              <div class="mini-razlika"><b>−20</b><small>razlika</small></div>
-              <div class="mini-tas star"><span>POPDV</span><b>270</b><small>obračunato 23.01.2024. <em>stariji</em></small></div>
-            </div>
-            <div class="mini-nalaz"><b>POPDV je stariji 28 dana.</b> 28.480,00 PDV-a na 10 dokumenata ne ulazi u oba obračuna.</div>
-            <div class="mini-redovi">
-              <div class="mini-red"><span class="mono">23-1200-000418</span><span>unet posle obračuna</span><b>34.200,00</b></div>
-              <div class="mini-red"><span class="mono">23-1200-000415</span><span>unet posle obračuna</span><b>−12.360,00</b></div>
-              <div class="mini-red"><span class="mono">23-1201-000206</span><span>unet posle obračuna</span><b>840,00</b></div>
-            </div>
-            <div class="mini-akcija">Šta uraditi: <b>ponovi obračun POPDV</b></div>
-          </div>
-
-          <!-- scena 3: novac (imena iz generatora demo baze) -->
-          <div class="scena" data-ime="novac">
-            <div class="mini-starost">
-              <div style="flex:12"><i style="background:#e7c9b6"></i><small>u roku</small></div>
-              <div style="flex:9"><i style="background:#dda98c"></i><small>1–30</small></div>
-              <div style="flex:18"><i style="background:#cf8259"></i><small>31–90</small></div>
-              <div style="flex:31"><i style="background:#c0522c"></i><small>90+</small></div>
-            </div>
-            <div class="mini-redovi">
-              <div class="mini-red glava"><span>Kupac</span><span>Kasni</span><b>Duguje</b></div>
-              <div class="mini-red"><span>Vrelo Trade ad</span><span class="kasni crveno">124 dana</span><b>842.300,00</b></div>
-              <div class="mini-red"><span>Morava Logistika szr</span><span class="kasni crveno">96 dana</span><b>511.480,00</b></div>
-              <div class="mini-red"><span>Dunav Trade doo</span><span class="kasni">41 dan</span><b>318.900,00</b></div>
-              <div class="mini-red"><span>Lipa Grupa szr</span><span class="kasni zeleno">u roku</span><b>205.140,00</b></div>
-            </div>
-          </div>
-        </div>
+    <!-- sema: baza -> jedan konektor -> tri proizvoda. HTML, ne slika. -->
+    <div class="sema pojava vidljiv k1" aria-label="Jedna baza, jedan konektor, tri proizvoda">
+      <div class="sema-baza">
+        <small>vaš server</small>
+        <b>PANTHEON baza</b>
+        <span>ostaje kod vas, ništa se ne seli</span>
       </div>
-
-      <!-- telefon: poenta nije obaveštenje nego to da se isti podaci gledaju
-           sa telefona — PANTHEON je desktop program i tamo to ne ide.
-           Ekran se sam lista kao pod palcem. Brojevi su isti kao na panelu. -->
-      <div class="telefon" aria-hidden="true">
-        <div class="telefon-ekran">
-          <div class="telefon-status"><span class="telefon-sat">9:41</span><span class="telefon-adresa">vidik</span></div>
-          <div class="telefon-okvir">
-            <div class="telefon-lista">
-              <div class="t-naslov">Pregled</div>
-              <div class="t-kpi"><small>Promet 12m</small><b>40,8 mil</b><span class="pad">▼ 30,0%</span></div>
-              <div class="t-kpi"><small>Dospelo</small><b>135,9 mil</b><span class="pad">99% potraživanja</span></div>
-              <div class="t-kpi"><small>Marža</small><b>54,2%</b><span class="rast">▲ 1,7 p.p.</span></div>
-              <div class="t-naslov">Ko duguje</div>
-              <div class="t-red"><span>Vrelo Trade ad</span><b>842.300</b><em class="crveno">124 d</em></div>
-              <div class="t-red"><span>Morava Logistika</span><b>511.480</b><em class="crveno">96 d</em></div>
-              <div class="t-red"><span>Dunav Trade</span><b>318.900</b><em>41 d</em></div>
-              <div class="t-naslov">Kontrola PDV</div>
-              <div class="t-nalaz"><b>POPDV je stariji 28 dana</b>10 dokumenata ne ulazi u oba obračuna</div>
-              <div class="t-red"><span>Lipa Grupa</span><b>205.140</b><em class="zeleno">u roku</em></div>
-            </div>
-          </div>
-          <span class="palac"></span>
-        </div>
+      <div class="sema-veza"><i></i></div>
+      <div class="sema-konektor">
+        <b>konektor</b>
+        <span>jedan program &middot; odlazna veza 443 &middot; bez otvorenih portova</span>
       </div>
-      <!-- Odakle brojevi. Bez ovoga mokap izgleda kao izmišljena ilustracija,
-           a on je jedino mesto na sajtu gde posetilac može da proveri tvrdnju. -->
-      <p class="mokap-izvor">
-        Brojevi su iz demo baze &mdash; prava PANTHEON baza sa izmišljenim imenima.
-        <a href="kontakt.html" data-vidik="demo" data-tekst="Otvorite je i proverite">Zakažite prikaz</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ BROJEVI ============================= -->
-<section class="brojke">
-  <div class="omot brojke-mreza">
-    <div class="brojka pojava">
-      <div class="brojka-val">8 s</div>
-      <div class="brojka-lab">do odgovora na pitanje<br>koje je juče trajalo pola sata</div>
-    </div>
-    <!-- Ovde je ranije stajao nalaz sa žive baze jednog klijenta. Zamenjeno
-         brojem iz demoa: ko klikne na demo, vidi isti taj nalaz. Nijedan broj
-         na sajtu ne sme da dolazi iz tuđe baze. -->
-    <div class="brojka pojava k1">
-      <div class="brojka-val">16 od 18</div>
-      <div class="brojka-lab">perioda u kojima se knjiga računa<br>i POPDV ne slažu &mdash; u demo bazi</div>
-    </div>
-    <div class="brojka pojava k2">
-      <div class="brojka-val">0</div>
-      <div class="brojka-lab">portova otvorenih ka vašoj mreži<br>veza ide samo napolje</div>
-    </div>
-    <!-- Ovde je stajalo „48 baza pod istim krovom". Tačno je, ali govori
-         agencijama, a ostala tri broja govore direktoru jedne firme — pa je u
-         nizu delovalo kao da se obraća nekom drugom. Agencijski deo je sada
-         među pitanjima ispod. -->
-    <div class="brojka pojava k3">
-      <div class="brojka-val">0</div>
-      <div class="brojka-lab">vaših redova sačuvanih kod nas<br>prolaze do pregledača i nestaju</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ PROBLEM ============================= -->
-<section class="blok">
-  <div class="omot">
-    <div class="usko pojava" style="margin-bottom:46px">
-      <span class="nadnaslov">Zašto ovo postoji</span>
-      <h2>Izveštaj postoji. Samo ga niko ne gleda.</h2>
-      <p class="uvod" style="margin-top:16px">
-        ERP je napravljen da se u njega unosi i da se iz njega štampa. Kad direktor
-        hoće da vidi ko duguje, put je uvek isti: otvori program, nađi izveštaj u stablu,
-        podesi filtere, odštampaj. Pet minuta po pitanju — pa se pitanje ne postavi.
-      </p>
-    </div>
-
-    <div class="mreza m-3">
-      <div class="kartica pojava">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        </div>
-        <h3>Odgovor košta previše</h3>
-        <p>Dok se izveštaj nađe i podesi, pitanje je već zastarelo. Ljudi prestanu da pitaju,
-           pa se odluke donose po osećaju.</p>
-      </div>
-      <div class="kartica pojava k1">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <h3>Greška se traži u Excelu</h3>
-        <p>Kad se dva ispisa ne slažu, oba se izvezu u Excel i redovi se upoređuju ručno.
-           Nađe se <em>šta</em> fali, ali ne i <em>zašto</em>.</p>
-      </div>
-      <div class="kartica pojava k2">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3.4"/></svg>
-        </div>
-        <h3>Sve staje na jednom čoveku</h3>
-        <p>Onaj ko zna gde se šta nalazi postaje usko grlo. Kad je na godišnjem,
-           firma ne vidi ništa.</p>
+      <div class="sema-grane"><i></i><i></i><i></i></div>
+      <div class="sema-proizvodi">
+        <a class="sema-p vidik" href="vidik.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#c0522c"/><path d="M5.5 11.5 16 24.5 26.5 11.5" fill="none" stroke="#fbf3e8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="10.6" r="3.3" fill="#fbf3e8"/></svg><b>Vidik</b><small>čita brojeve</small></a>
+        <a class="sema-p izlog" href="prodavnica.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4858"/><path d="M6.5 7.5h19v3.4a2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0z" fill="#fbf3e8"/><rect x="8.4" y="16.2" width="15.2" height="9.6" rx="2.4" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><circle cx="16" cy="21" r="2.3" fill="#fbf3e8"/></svg><b>Izlog</b><small>prodaje na sajtu</small></a>
+        <a class="sema-p fioka" href="fioka.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f6f5c"/><rect x="6" y="8.5" width="20" height="16" rx="3" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><path d="M6 15.5h20" stroke="#fbf3e8" stroke-width="2.4"/><rect x="12.5" y="18.6" width="7" height="2.4" rx="1.2" fill="#fbf3e8"/></svg><b>Fioka</b><small>unosi račune</small></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================ PRE / POSLE ========================= -->
-<section class="blok" style="background:var(--papir2);border-top:1px solid var(--linija);border-bottom:1px solid var(--linija)">
-  <div class="omot">
-    <div class="usko pojava" style="margin-bottom:42px">
-      <span class="nadnaslov">Konkretno</span>
-      <h2>„Zašto mi se knjiga računa i POPDV ne slažu?"</h2>
-    </div>
-
-    <div class="uporedo trka">
-      <div class="strana strana-lose pojava">
-        <span class="strana-oznaka oznaka-lose">Dosadašnji put &middot; ~40 minuta</span>
-        <div class="stoperica lose"><span class="stoperica-vreme" data-do="2400" data-trajanje="9000">00:00</span><small>min</small></div>
-        <div class="korak"><span class="korak-br">1</span><span>Otvori PDV obračun, odštampaj knjigu računa u Excel</span></div>
-        <div class="korak"><span class="korak-br">2</span><span>Otvori POPDV pregled, odštampaj i njega</span></div>
-        <div class="korak"><span class="korak-br">3</span><span>Poređaj oba po broju dokumenta</span></div>
-        <div class="korak"><span class="korak-br">4</span><span>Traži redove kojih ima u jednom a nema u drugom</span></div>
-        <div class="korak"><span class="korak-br">5</span><span>Nađeš deset dokumenata — i dalje ne znaš zašto ispadaju</span></div>
-      </div>
-
-      <div class="strelica pojava k1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </div>
-
-      <div class="strana pojava k2">
-        <span class="strana-oznaka oznaka-dobro">Sa Vidikom &middot; 8 sekundi</span>
-        <div class="stoperica dobro"><span class="stoperica-vreme" data-do="8" data-trajanje="1800">00:00</span><small>s</small><em class="gotovo">gotovo ✓</em></div>
-        <div class="korak"><span class="korak-br">1</span><span>Otvoriš karticu <b>Kontrola PDV</b> i izabereš mesec</span></div>
-        <div class="korak"><span class="korak-br">2</span><span>Ekran kaže: <b>POPDV je stariji 28 dana</b></span></div>
-        <div class="korak"><span class="korak-br">3</span><span>Ispod stoji spisak sa razlogom i iznosom</span></div>
-        <div class="korak"><span class="korak-br">4</span><span>I šta da uradiš: <b>ponovi obračun POPDV</b></span></div>
-        <div class="korak"><span class="korak-br">5</span><span>Klik na dokument otvara sve o njemu</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ KONTROLE ============================ -->
-<section class="blok mrak">
-  <div class="omot">
-    <div class="mreza m-2" style="gap:54px;align-items:center">
-      <div class="pojava">
-        <span class="nadnaslov">Ono što ERP nema</span>
-        <h2>Kontrole koje same traže grešku</h2>
-        <p class="uvod" style="margin:16px 0 26px">
-          Vidik ne prepisuje izveštaje koje već imate. Radi ono što nijedan ispis ne radi:
-          poredi dva obračuna međusobno i sa stvarnim dokumentima, pa kaže gde se razilaze
-          — i, što je važnije, <b style="color:#fdfaf5">zbog čega</b>.
-        </p>
-        <ul class="spisak" style="margin-bottom:30px">
-          <li>Knjiga računa naspram POPDV-a, dokument po dokument</li>
-          <li>Konta koja imaju promet a ne ulaze ni u jedan bilansni obrazac</li>
-          <li>Nalozi koji nisu u ravnoteži i zaključna knjiženja</li>
-          <li>Zalihe u minusu i artikli ispod minimuma</li>
-        </ul>
-        <a href="kontrole.html" class="dugme dugme-svetli">Sve kontrole</a>
-      </div>
-
-      <div class="pojava k1">
-        <div class="panel" style="background:var(--ugalj2);border-color:rgba(240,231,218,.12)">
-          <div class="panel-traka" style="background:rgba(240,231,218,.05);border-color:rgba(240,231,218,.1)">
-            <span class="tacka"></span><span class="tacka"></span><span class="tacka"></span>
-            <span class="panel-naslov">kontrola pdv &middot; 2023-12</span>
-          </div>
-          <!-- Primer je oblik ekrana, ne snimak tuđe baze: brojevi i oznake
-               dokumenata su izmišljeni. Pravi nalaz se vidi u demou. -->
-          <div class="panel-telo" style="background:var(--papir)">
-            <div class="vaga">
-              <div class="tas">
-                <div class="tas-ime">Knjiga računa</div>
-                <div class="tas-broj">250</div>
-                <div class="tas-sub">dokumenata</div>
-                <div class="tas-datum">obračunato 20.02.2024.</div>
-              </div>
-              <div class="vaga-razlika"><b>−20</b><span>razlika</span></div>
-              <div class="tas star">
-                <div class="tas-ime">POPDV</div>
-                <div class="tas-broj">270</div>
-                <div class="tas-sub">dokumenata</div>
-                <div class="tas-datum">obračunato 23.01.2024.<span class="znak-star">stariji</span></div>
-              </div>
-            </div>
-            <div class="nalaz">
-              <b>28.480,00</b>
-              <span>PDV-a na 10 dokumenata koji ne ulaze u oba obračuna</span>
-            </div>
-            <div class="tab-okvir">
-              <table class="tab-kontrola">
-                <thead><tr><th>Dokument</th><th>baza knj popdv</th><th>Razlog</th><th class="desno">PDV</th></tr></thead>
-                <tbody>
-                  <tr>
-                    <td class="kljuc">23-1200-000418</td>
-                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
-                    <td>unet posle obračuna</td>
-                    <td class="desno">34.200,00</td>
-                  </tr>
-                  <tr>
-                    <td class="kljuc">23-1200-000415</td>
-                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
-                    <td>unet posle obračuna</td>
-                    <td class="desno">−12.360,00</td>
-                  </tr>
-                  <tr>
-                    <td class="kljuc">23-1201-000206</td>
-                    <td><span class="mat"><span class="c ima">✓</span><span class="c ima">✓</span><span class="c nema">✗</span></span></td>
-                    <td>unet posle obračuna</td>
-                    <td class="desno">840,00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ MOGUĆNOSTI ========================== -->
-<section class="blok">
-  <div class="omot">
-    <div class="usko pojava" style="margin-bottom:46px">
-      <span class="nadnaslov">Šta dobijate</span>
-      <h2>Sedam ekrana koji pokrivaju ono što se pita svaki dan</h2>
-    </div>
-
-    <div class="mreza m-3">
-      <div class="kartica pojava">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/><path d="M14 7h6v6"/></svg>
-        </div>
-        <h3>Pregled</h3>
-        <p>Projekcija priliva i odliva po dospeću, starost duga i promet — na jednom ekranu,
-           čim se otvori.</p>
-      </div>
-      <div class="kartica pojava k1">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20"/></svg>
-        </div>
-        <h3>Novac</h3>
-        <p>Ko duguje i koliko dugo, šta se plaća ove nedelje, prihodi naspram troškova
-           po godinama.</p>
-      </div>
-      <div class="kartica pojava k2">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7l-8-4-8 4 8 4 8-4z"/><path d="M4 12l8 4 8-4M4 17l8 4 8-4"/></svg>
-        </div>
-        <h3>Zalihe</h3>
-        <p>Negativna stanja koja odaju grešku u knjiženju, artikli ispod minimuma i roba
-           koja stoji.</p>
-      </div>
-      <div class="kartica pojava">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.3L18 20l-6-3.2L6 20l1.5-6.7L3 9l6-1 3-6z"/></svg>
-        </div>
-        <h3>Rizik i prilike</h3>
-        <p>Kupci koji su prestali da kupuju, i oni koji duguju a odavno ništa nisu uzeli.</p>
-      </div>
-      <div class="kartica pojava k1">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-        </div>
-        <h3>Blokada računa</h3>
-        <p>Kupac koji duguje i kasni je jedno; isti kupac sa računom u blokadi 54 dana
-           je sasvim drugo. Vidik to proverava kod NBS-a i upisuje u karton &mdash;
-           podatak koga u ERP-u nema.</p>
-      </div>
-      <div class="kartica pojava k2">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 01-2-2v-3a2 2 0 012-2h16a2 2 0 012 2v3a2 2 0 01-2 2h-2"/></svg>
-        </div>
-        <h3>Ispisi po meri</h3>
-        <p>Jedan širok izvor po oblasti, a ispis je izbor kolona i filtera. Korisnik ga sam
-           sklopi, sačuva i podeli — bez programera.</p>
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:40px" class="pojava">
-      <a href="mogucnosti.html" class="dugme dugme-tihi">Detaljno o svakom ekranu</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================= PITANJA ============================
-     Ovde je ranije stajala preporuka „Milice J." Izmišljena je, a uz to je
-     ponavljala pravi nalaz sa žive baze jednog klijenta. Nemamo nijednu
-     stvarnu preporuku, a izmišljena je gora od nijedne — kad prvi klijent
-     pristane da ga citiramo, ide na ovo mesto.
-
-     U međuvremenu tu stoje pitanja koja stvarno stižu. Duži odgovori su na
-     „Kako radi". -->
-<section class="blok-tanak" style="background:var(--papir2);border-top:1px solid var(--linija)">
-  <div class="omot usko">
-    <div class="pojava" style="margin-bottom:28px">
-      <span class="nadnaslov">Pitanja koja uvek stignu</span>
-      <h2>Ono što IT i računovodstvo pitaju prvo</h2>
-    </div>
-    <div class="pojava">
-      <details class="pitanje" open>
-        <summary>Da li nešto upisujete u našu bazu?</summary>
-        <div class="pitanje-telo">
-          <p>Vidik — ništa. On je čist čitač, pa preporučujemo nalog
-          <code>db_datareader</code> — da to ne bude naše obećanje nego pravilo
-          koje sprovodi vaš SQL Server.</p>
-          <p>Upisuju samo dva proizvoda, i to tek kad ih u panelu konektora sami
-          uključite: <a href="prodavnica.html">online prodavnica</a> narudžbinu kupca
-          („Primaj narudžbine sa sajta") i <a href="fioka.html">Fioka</a> ulazni račun
-          troška („Primaj račune iz Fioke"). Podrazumevano su isključeni. Ako ih ne
-          koristite, te prekidače nikad ne dirate.</p>
-        </div>
-      </details>
-      <details class="pitanje">
-        <summary>Idu li naši podaci kroz vaš server?</summary>
-        <div class="pitanje-telo">
-          <p>Kad otvorite ekran, red koji vidite putuje iz vaše baze kroz naš
-          servis do vašeg pregledača — drugačije se sa telefona ne vidi ništa.
-          Ali se ništa ne čuva: nema kopije vaše baze kod nas, nema noćnog
-          prepisivanja. Kad zatvorite ekran, kod nas ne ostaje nijedan red.</p>
-        </div>
-      </details>
-      <details class="pitanje">
-        <summary>Da li usporava bazu?</summary>
-        <div class="pitanje-telo">
-          <p>Konektor drži najviše dve konekcije i zatvara ih posle deset minuta
-          mirovanja. Opterećenje je manje nego kad jedan korisnik otvori veći
-          ispis u samom ERP-u. Ako želite, pušta se na repliku.</p>
-        </div>
-      </details>
-      <details class="pitanje">
-        <summary>Imamo više firmi u jednoj bazi. Radi li to?</summary>
-        <div class="pitanje-telo">
-          <p>Radi — jedan konektor vidi sve PANTHEON baze na instanci, a vi
-          štiklirate koje delite. Kod nas je na jednoj instanci 48 baza.
-          Knjigovodstvenim agencijama je to i osnovni način rada, pa se i cena
-          računa po firmi a ne po korisniku.</p>
-        </div>
-      </details>
-    </div>
-    <p style="margin-top:22px;font-size:14px;color:var(--tiho)">
-      Više pitanja — o konektor licenci, portovima i tome šta se vidi u dnevniku
-      — stoji na <a href="kako-radi.html#it" style="color:var(--terra)">Kako radi</a>.
-    </p>
-  </div>
-</section>
-
-<!-- =========================== TRI PROIZVODA ======================== -->
-<!-- Isti konektor nosi Vidik, online prodavnicu i Fioku - jedna instalacija,
-     jedna konektor licenca. -->
+<!-- =========================== PROIZVODI ============================ -->
 <section class="blok" id="proizvodi">
   <div class="omot">
     <div class="pojava" style="max-width:760px">
-      <span class="nadnaslov">Tri proizvoda, jedan konektor</span>
-      <h2>Vidik gleda brojeve. Izlog prodaje. Fioka skuplja račune.</h2>
-      <p class="uvod" style="margin-top:14px">Isti program kod vas, isti ključ. Uzmite jedan ili sva tri &mdash;
-        svaki sledeći se dodaje bez nove instalacije i bez druge konektor licence.</p>
+      <span class="nadnaslov">Tri proizvoda</span>
+      <h2>Uzmite jedan, ili sva tri</h2>
+      <p class="uvod" style="margin-top:14px">Svaki odgovara na drugo pitanje. Sledeći se dodaje
+        bez nove instalacije i bez druge konektor licence.</p>
     </div>
-    <div class="mreza m-3" style="margin-top:36px;gap:22px">
-      <div class="kartica pojava">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/></svg>
+    <div class="proizvodi">
+
+      <article class="proizvod vidik pojava ">
+        <div class="proizvod-vrh"><span class="proizvod-znak"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#c0522c"/><path d="M5.5 11.5 16 24.5 26.5 11.5" fill="none" stroke="#fbf3e8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="10.6" r="3.3" fill="#fbf3e8"/></svg></span>
+          <div><h3>Vidik</h3><span class="proizvod-pod">brojevi i kontrole</span></div></div>
+        <p>Za direktora i računovodstvo: ono što PANTHEON zna, na jednom ekranu i na telefonu &mdash; i javi kad nešto ne štima.</p>
+        <ul class="spisak">
+          <li>Novac za 30 dana, ko duguje i ko kasni</li>
+          <li>Knjiga računa naspram POPDV-a, sa razlogom svake razlike</li>
+          <li>Klik na bilo koji broj vodi do dokumenta iza njega</li>
+          <li>Samo čita &mdash; ne upisuje ništa</li>
+        </ul>
+        <div class="proizvod-akcije">
+          <a href="vidik.html" class="dugme dugme-glavni dugme-mali">Više o Vidiku</a>
+          <a href="kontakt.html" class="dugme dugme-tihi dugme-mali" data-vidik="demo" data-tekst="Demo">Zakažite prikaz</a>
         </div>
-        <h3>Vidik</h3>
-        <p>Novac, dugovanja, zalihe, PDV i kontrole &mdash; na telefonu, sa klikom do dokumenta.
-           Samo čita.</p>
-        <div class="cta-akcije" style="justify-content:flex-start;margin-top:18px">
-          <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Uđite u demo">Zakažite prikaz</a>
-          <a href="mogucnosti.html" class="dugme dugme-tihi dugme-mali">Šta ume</a>
+      </article>
+
+      <article class="proizvod izlog pojava k1">
+        <div class="proizvod-vrh"><span class="proizvod-znak"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4858"/><path d="M6.5 7.5h19v3.4a2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0z" fill="#fbf3e8"/><rect x="8.4" y="16.2" width="15.2" height="9.6" rx="2.4" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><circle cx="16" cy="21" r="2.3" fill="#fbf3e8"/></svg></span>
+          <div><h3>Izlog</h3><span class="proizvod-pod">online prodavnica</span></div></div>
+        <p>Prodavnica koja je već popunjena: artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a.</p>
+        <ul class="spisak">
+          <li>Napravi se za pola sata, bez prepisivanja kataloga</li>
+          <li>Zaliha i cena uvek kao u PANTHEON-u</li>
+          <li>Narudžbina ulazi u PANTHEON kao narudžbina kupca, sa rezervacijom robe</li>
+          <li>Fiskalizacija ostaje tamo gde je i sada</li>
+        </ul>
+        <div class="proizvod-akcije">
+          <a href="prodavnica.html" class="dugme dugme-glavni dugme-mali">Više o Izlogu</a>
+          <a href="kontakt.html" class="dugme dugme-tihi dugme-mali" data-shop="demo" data-tekst="Demo prodavnica">Zakažite prikaz</a>
         </div>
-      </div>
-      <div class="kartica pojava k1">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16l-1.5 12a2 2 0 0 1-2 1.8h-9a2 2 0 0 1-2-1.8L4 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+      </article>
+
+      <article class="proizvod fioka pojava k2">
+        <div class="proizvod-vrh"><span class="proizvod-znak"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f6f5c"/><rect x="6" y="8.5" width="20" height="16" rx="3" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><path d="M6 15.5h20" stroke="#fbf3e8" stroke-width="2.4"/><rect x="12.5" y="18.6" width="7" height="2.4" rx="1.2" fill="#fbf3e8"/></svg></span>
+          <div><h3>Fioka</h3><span class="proizvod-pod">računi sa telefona</span></div></div>
+        <p>Račun iz džepa, u PANTHEON-u za minut: zaposleni skenira QR, ostalo se popuni samo.</p>
+        <ul class="spisak">
+          <li>Poreska daje stavke i PDV, APR podatke dobavljača</li>
+          <li>U PANTHEON ide ulazni račun troška &mdash; i dobavljač, ako ga nema</li>
+          <li>Artikal po vrsti troška ili po vašem pravilu</li>
+          <li>Isti račun ne može da uđe dvaput</li>
+        </ul>
+        <div class="proizvod-akcije">
+          <a href="fioka.html" class="dugme dugme-glavni dugme-mali">Više o Fioki</a>
+          <a href="kontakt.html" class="dugme dugme-tihi dugme-mali" data-fioka="otvori" data-tekst="Otvorite Fioku">Zakažite prikaz</a>
         </div>
-        <h3>Izlog <small style="font-weight:500;opacity:.7">· online prodavnica</small></h3>
-        <p>Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina ulazi u PANTHEON
-           kao narudžbina kupca, sa rezervacijom robe.</p>
-        <div class="cta-akcije" style="justify-content:flex-start;margin-top:18px">
-          <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-shop="demo" data-tekst="Pogledajte demo">Zakažite prikaz</a>
-          <a href="prodavnica.html" class="dugme dugme-tihi dugme-mali">Kako radi</a>
-        </div>
-      </div>
-      <div class="kartica pojava k2">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 11h18M10 15h4"/></svg>
-        </div>
-        <h3>Fioka <small style="font-weight:500;opacity:.7">· računi sa telefona</small></h3>
-        <p>Zaposleni skenira QR sa fiskalnog računa, Poreska daje stavke i PDV, a Fioka u
-           PANTHEON-u napravi ulazni račun troška &mdash; i dobavljača iz APR-a.</p>
-        <div class="cta-akcije" style="justify-content:flex-start;margin-top:18px">
-          <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-fioka="otvori" data-tekst="Otvorite Fioku">Zakažite prikaz</a>
-          <a href="fioka.html" class="dugme dugme-tihi dugme-mali">Kako radi</a>
-        </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- =========================== PROBAJTE ============================= -->
-<!-- Preuzimanje je ranije stajalo samo u podnožju i na „Kako radi", pa ga
-     niko nije nalazio. Ovde je ceo put: nalog → konektor → ključ. -->
-<section class="blok mrak" id="probajte">
+<!-- ============================ KONEKTOR ============================ -->
+<section class="blok mrak" id="konektor">
   <div class="omot">
     <div class="mreza m-2" style="gap:60px;align-items:center">
       <div class="pojava">
-        <span class="nadnaslov">Probajte sami</span>
-        <h2>Na svojoj bazi, za jedno popodne</h2>
-        <p class="uvod" style="margin:16px 0 30px">Bez prikaza i bez čekanja na nas. Prvih 30 dana je besplatno, bez kartice.</p>
+        <span class="nadnaslov">Jedan konektor</span>
+        <h2>Instalira se jednom, na serveru gde je baza</h2>
+        <p class="uvod" style="margin:16px 0 30px">Jedan <span class="mono">.exe</span>, veza ide samo napolje.
+          Kod vas se ne otvara nijedan port, nema VPN-a ni javne adrese.</p>
         <ol class="put">
-          <li><b>Napravite nalog</b><span>Mejl i lozinka — minut posla.</span>
-            <a href="kontakt.html" class="put-veza" data-vidik="prijava" data-tekst="Napravite nalog →" hidden>Napravite nalog →</a></li>
-          <li><b>Pustite konektor na server</b><span>Tamo gde je PANTHEON baza. Jedan <span class="mono">.exe</span>, bez instalacije, nalog samo za čitanje.</span>
-            <a href="kako-radi.html" class="dugme dugme-glavni dugme-preuzmi" data-vidik="preuzmi" data-tekst="" hidden>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-              Preuzmite konektor <small>Windows · 89 MB</small></a></li>
-          <li><b>Nalepite ključ</b><span>Konektor pokaže ključ, vi ga nalepite u Vidik — i podaci su tu.</span></li>
+          <li><b>Pustite konektor na server</b><span>Sam nađe SQL instance i PANTHEON baze. Vi štiklirate koje delite.</span></li>
+          <li><b>Nalepite ključ</b><span>U Vidik, Izlog ili Fioku. Ključ pravi vaš server, ne mi.</span></li>
+          <li><b>Uključite šta vam treba</b><span>Vidik samo čita. Upis narudžbine (Izlog) i računa (Fioka) radi tek kad ga uključite u panelu konektora.</span></li>
         </ol>
-        <p style="margin-top:22px;font-size:13px;color:rgba(240,231,218,.55)">Program nije potpisan sertifikatom, pa će Windows prvi put pitati „Ipak pokreni".</p>
+        <a href="kako-radi.html" class="put-veza" style="margin-top:6px">Bezbednost, licenca i pitanja IT službe &rarr;</a>
       </div>
 
-      <!-- konektor: pronađe baze, napravi ključ, poveže se -->
       <div class="pojava k1">
         <div class="panel konektor-prozor" style="background:var(--ugalj2);border-color:rgba(240,231,218,.12)">
           <div class="panel-traka" style="background:rgba(240,231,218,.05);border-color:rgba(240,231,218,.1)">
@@ -614,10 +170,29 @@
             <div class="k-red" data-k="1"><i></i>PANTHEON baze<b class="k-ok">prepoznate</b></div>
             <div class="k-red" data-k="2"><i></i>Nalog<b class="k-ok">samo čitanje</b></div>
             <div class="k-red" data-k="3"><i></i>Veza napolje, 443/TLS<b class="k-ok">aktivna</b></div>
-            <div class="k-kljuc"><small>Vaš ključ — nalepite ga u Vidik</small><code class="k-kljuc-tekst">&nbsp;</code></div>
+            <div class="k-kljuc"><small>Vaš ključ — nalepite ga u Vidik, Izlog ili Fioku</small><code class="k-kljuc-tekst">&nbsp;</code></div>
             <div class="k-status"><span class="k-tacka"></span><span class="k-status-tekst">čeka uparivanje…</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= KO SMO ============================= -->
+<section class="blok-tanak" style="background:var(--papir2);border-bottom:1px solid var(--linija)">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:54px">
+      <div class="pojava">
+        <span class="nadnaslov">Ko to pravi</span>
+        <h2>Iz poziva koje smo godinama primali</h2>
+      </div>
+      <div class="pojava k1">
+        <p class="uvod" style="margin-top:0">Radimo sa PANTHEON-om godinama &mdash; kao programeri i podrška kod
+          klijenata. Sva tri alata su nastala iz istih pitanja: „zašto se ovo ne slaže",
+          „kad će ovo biti na sajtu", „ko će ovo da prekuca".</p>
+        <p>Ne zamenjujemo PANTHEON i ne diramo njegova podešavanja. Sve što pravimo radi
+          pored njega, nad istom bazom, i prestaje da postoji kad se konektor ugasi.</p>
       </div>
     </div>
   </div>
@@ -627,59 +202,56 @@
 <section class="blok">
   <div class="omot cta pojava">
     <span class="nadnaslov" style="justify-content:center">Sledeći korak</span>
-    <h2>Pustite ga na svoju bazu i vidite šta nađe</h2>
-    <p class="uvod">
-      Prikaz traje dvadeset minuta i radi se na vašim podacima, ne na demou.
-      Ako ništa ne nađe, rekli smo vam da je sve u redu — i to je nešto.
-    </p>
+    <h2>Pogledajte na svojim podacima</h2>
+    <p class="uvod">Prikaz traje dvadeset minuta i radi se na vašoj bazi. Recite koji vas
+      proizvod zanima &mdash; ili sva tri.</p>
     <div class="cta-akcije">
-      <a href="kontakt.html" class="dugme dugme-glavni">Zakaži prikaz</a>
-      <a href="cene.html" class="dugme dugme-tihi">Pogledaj cene</a>
+      <a href="kontakt.html" class="dugme dugme-glavni">Zakažite prikaz</a>
+      <a href="cene.html" class="dugme dugme-tihi">Pogledajte cene</a>
     </div>
   </div>
 </section>
 
-<!-- ============================ PODNOŽJE ============================ -->
 <footer class="podnozje">
   <div class="omot">
     <div class="podnozje-mreza">
       <div>
         <a class="znak" href="index.html" style="text-decoration:none">
-          <span class="znak-ikona"></span>
-          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+          <span class="znak-ikona znak-kuca"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Sajt<span style="color:#e08a5f">Pro</span></span>
         </a>
         <p class="podnozje-o">
-          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
-          održavali te iste baze kod klijenata.
+          Alati za firme koje rade u PANTHEON-u. Pravimo ih ljudi koji su
+          godinama održavali te iste baze kod klijenata.
         </p>
       </div>
       <div>
-        <h4>Proizvod</h4>
-        <a href="mogucnosti.html">Mogućnosti</a>
-        <a href="kontrole.html">Kontrole</a>
-        <a href="kako-radi.html">Kako radi</a>
-        <a href="cene.html">Cene</a>
+        <h4>Proizvodi</h4>
+        <a href="vidik.html">Vidik — brojevi i kontrole</a>
         <a href="prodavnica.html">Izlog — online prodavnica</a>
         <a href="fioka.html">Fioka — računi sa telefona</a>
+        <a href="kako-radi.html">Konektor — jedan za sva tri</a>
+        <a href="cene.html">Cene</a>
         <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>
-        <h4>Za koga</h4>
-        <a href="mogucnosti.html#direktor">Direktore</a>
-        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <h4>Vidik</h4>
+        <a href="mogucnosti.html#direktor">Za direktora</a>
+        <a href="mogucnosti.html#knjigovodstvo">Za računovodstvo</a>
+        <a href="kontrole.html">Kontrole</a>
         <a href="cene.html#agencije">Knjigovodstvene agencije</a>
         <a href="kako-radi.html#it">IT službe</a>
       </div>
       <div>
         <h4>Kontakt</h4>
         <a href="kontakt.html">Zakaži prikaz</a>
-        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
-        <a href="tel:+381113456789">011 345 6789</a>
+        <a href="mailto:info@sajtpro.rs">info@sajtpro.rs</a>
+        <a href="tel:+381621025376">062 102 5376</a>
       </div>
     </div>
     <div class="podnozje-dno">
-      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
-      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+      <span>&copy; <span id="godina">2026</span> SajtPro. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. SajtPro je nezavisan proizvođač.</span>
     </div>
   </div>
 </footer>

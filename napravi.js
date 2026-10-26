@@ -3,7 +3,14 @@
 
    Zaglavlje i podnožje su ovde na jednom mestu da se navigacija ne bi
    razišla po stranicama. Pokreće se ručno: `node napravi.js`.
-   Početna (index.html) je pisana zasebno i ovaj skript je ne dira.
+
+   Od 26.10.2026 sajt je SajtPro — kuća sa tri proizvoda nad PANTHEON-om
+   (Vidik, Izlog, Fioka) i jednim konektorom za sva tri. Početna je kuća;
+   dosadašnja početna Vidika je `vidik.html`.
+
+   Ručno pisane strane (vidik, kontakt) generator ne prepisuje, ali im
+   ZAMENI zaglavlje i podnožje (`prepraviRucne`) — inače bi se meni na njima
+   razišao sa ostatkom čim se doda proizvod.
    =========================================================================== */
 const fs = require('fs');
 
@@ -15,17 +22,24 @@ const fs = require('fs');
    `data-vidik`; skripta im promeni adresu i natpis tek kad kokpit dobije
    domen. Nepodešen sajt tako nema nijedan mrtav link. */
 
+const DOMEN = 'https://sajtpro.rs';
+
+/* Meni: kuća, pa tri proizvoda, pa ono što je zajedničko. Podstrane Vidika
+   (mogućnosti, kontrole) pale „Vidik" u meniju. */
 const STRANE = [
   ['index.html', 'Početna'],
-  ['mogucnosti.html', 'Mogućnosti'],
-  ['kontrole.html', 'Kontrole'],
-  ['kako-radi.html', 'Kako radi'],
+  ['vidik.html', 'Vidik', ['mogucnosti.html', 'kontrole.html']],
   ['prodavnica.html', 'Izlog'],
   ['fioka.html', 'Fioka'],
+  ['kako-radi.html', 'Konektor'],
   ['cene.html', 'Cene']
 ];
 
-const glava = (naslov, opis) => `<!doctype html>
+/* Znak kuće: tri trake u bojama tri proizvoda (Vidik terakota, Izlog
+   škriljac, Fioka zelena) na ugljenoj pločici. Isti crtež je favicon. */
+const ZNAK_SVG = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23171310'/><rect x='7' y='13' width='4.6' height='12' rx='2.3' fill='%23c0522c'/><rect x='13.7' y='9' width='4.6' height='16' rx='2.3' fill='%235b8aa6'/><rect x='20.4' y='6' width='4.6' height='19' rx='2.3' fill='%233f9a80'/></svg>`;
+
+const glava = (naslov, opis, dodatak = '') => `<!doctype html>
 <html lang="sr">
 <head>
 <meta charset="utf-8">
@@ -34,31 +48,28 @@ const glava = (naslov, opis) => `<!doctype html>
 <meta name="description" content="${opis}">
 <meta property="og:title" content="${naslov}">
 <meta property="og:description" content="${opis}">
-<meta property="og:image" content="https://djordje-stankovic.github.io/vidik/og.png">
+<meta property="og:image" content="${DOMEN}/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/stil.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23c0522c'/><path d='M5.5 11.5 16 24.5 26.5 11.5' fill='none' stroke='%23fbf3e8' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='16' cy='10.6' r='3.3' fill='%23fbf3e8'/></svg>">
+<link rel="stylesheet" href="css/stil.css">${dodatak}
+<link rel="icon" href="data:image/svg+xml,${ZNAK_SVG}">
 </head>
 <body>`;
 
-const nav = tekuca => `
-<header class="nav">
+const nav = tekuca => `<header class="nav">
   <div class="omot nav-red">
-    <a class="znak" href="index.html">
-      <span class="znak-ikona"></span>
-      <span class="znak-ime">Vid<span>ik</span></span>
+    <a class="znak" href="index.html" aria-label="SajtPro — početna">
+      <span class="znak-ikona znak-kuca"></span>
+      <span class="znak-ime">Sajt<span>Pro</span></span>
     </a>
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
-${STRANE.map(([f, i]) => `      <a href="${f}"${f === tekuca ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
-      <a href="kako-radi.html" class="nav-ulaz nav-preuzmi" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
-      <a href="kontakt.html" class="nav-ulaz" data-vidik="prijava" data-tekst="Prijava" hidden>Prijava</a>
-      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali" data-vidik="demo" data-tekst="Vidi demo">Zakaži prikaz</a>
+${STRANE.map(([f, i, pod]) => `      <a href="${f}"${f === tekuca || (pod || []).includes(tekuca) ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
+      <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Kontakt</a>
     </nav>
   </div>
 </header>`;
@@ -77,52 +88,53 @@ const cta = (naslov, tekst) => `
   </div>
 </section>`;
 
-const podnozje = `
-<footer class="podnozje">
+const podnozje = `<footer class="podnozje">
   <div class="omot">
     <div class="podnozje-mreza">
       <div>
         <a class="znak" href="index.html" style="text-decoration:none">
-          <span class="znak-ikona"></span>
-          <span class="znak-ime" style="color:#fdfaf5">Vid<span style="color:#e08a5f">ik</span></span>
+          <span class="znak-ikona znak-kuca"></span>
+          <span class="znak-ime" style="color:#fdfaf5">Sajt<span style="color:#e08a5f">Pro</span></span>
         </a>
         <p class="podnozje-o">
-          Upravljački kokpit nad ERP bazom. Pravimo ga ljudi koji su godinama
-          održavali te iste baze kod klijenata.
+          Alati za firme koje rade u PANTHEON-u. Pravimo ih ljudi koji su
+          godinama održavali te iste baze kod klijenata.
         </p>
       </div>
       <div>
-        <h4>Proizvod</h4>
-        <a href="mogucnosti.html">Mogućnosti</a>
-        <a href="kontrole.html">Kontrole</a>
-        <a href="kako-radi.html">Kako radi</a>
-        <a href="cene.html">Cene</a>
+        <h4>Proizvodi</h4>
+        <a href="vidik.html">Vidik — brojevi i kontrole</a>
         <a href="prodavnica.html">Izlog — online prodavnica</a>
         <a href="fioka.html">Fioka — računi sa telefona</a>
+        <a href="kako-radi.html">Konektor — jedan za sva tri</a>
+        <a href="cene.html">Cene</a>
         <a href="kako-radi.html" data-vidik="preuzmi" data-tekst="Preuzmi konektor" hidden>Preuzmi konektor</a>
       </div>
       <div>
-        <h4>Za koga</h4>
-        <a href="mogucnosti.html#direktor">Direktore</a>
-        <a href="mogucnosti.html#knjigovodstvo">Računovodstvo</a>
+        <h4>Vidik</h4>
+        <a href="mogucnosti.html#direktor">Za direktora</a>
+        <a href="mogucnosti.html#knjigovodstvo">Za računovodstvo</a>
+        <a href="kontrole.html">Kontrole</a>
         <a href="cene.html#agencije">Knjigovodstvene agencije</a>
         <a href="kako-radi.html#it">IT službe</a>
       </div>
       <div>
         <h4>Kontakt</h4>
         <a href="kontakt.html">Zakaži prikaz</a>
-        <a href="mailto:zdravo@vidik.rs">zdravo@vidik.rs</a>
-        <a href="tel:+381113456789">011 345 6789</a>
+        <a href="mailto:info@sajtpro.rs">info@sajtpro.rs</a>
+        <a href="tel:+381621025376">062 102 5376</a>
       </div>
     </div>
     <div class="podnozje-dno">
-      <span>&copy; <span id="godina">2026</span> Vidik. Sva prava zadržana.</span>
-      <span>PANTHEON je zaštićeni znak kompanije Datalab. Vidik je nezavisan proizvod.</span>
+      <span>&copy; <span id="godina">2026</span> SajtPro. Sva prava zadržana.</span>
+      <span>PANTHEON je zaštićeni znak kompanije Datalab. SajtPro je nezavisan proizvođač.</span>
     </div>
   </div>
-</footer>
+</footer>`;
 
-<script src="js/vidik.js"></script>
+const kraj = (skripte = '') => `
+
+<script src="js/vidik.js"></script>${skripte}
 </body>
 </html>`;
 
@@ -136,11 +148,29 @@ const vrh = (nadnaslov, naslov, uvod) => `
   </div>
 </section>`;
 
-function napravi(fajl, naslovSajta, opis, telo) {
-  fs.writeFileSync(fajl, glava(naslovSajta, opis) + nav(fajl) + telo + podnozje + '\n');
+function napravi(fajl, naslovSajta, opis, telo, { css = '', skripte = '' } = {}) {
+  fs.writeFileSync(fajl, glava(naslovSajta, opis, css) + '\n' + nav(fajl) + telo + '\n\n' + podnozje + kraj(skripte) + '\n');
   console.log('  ' + fajl);
 }
 
-module.exports = { napravi, vrh, cta, STRANE };
+/* Ručno pisane strane: zameni zaglavlje, podnožje, og:image i favicon. */
+function prepraviRucne(fajlovi) {
+  for (const f of fajlovi) {
+    if (!fs.existsSync(f)) continue;
+    let s = fs.readFileSync(f, 'utf8');
+    s = s.replace(/<header class="nav">[\s\S]*?<\/header>/, nav(f))
+         .replace(/<footer class="podnozje">[\s\S]*?<\/footer>/, podnozje)
+         .replace(/<meta property="og:image" content="[^"]*">/, `<meta property="og:image" content="${DOMEN}/og.png">`)
+         .replace(/<link rel="icon" href="[^"]*">/, `<link rel="icon" href="data:image/svg+xml,${ZNAK_SVG}">`);
+    fs.writeFileSync(f, s);
+    console.log('  ' + f + ' (zaglavlje i podnožje)');
+  }
+}
 
-if (require.main === module) require('./strane.js');
+module.exports = { napravi, vrh, cta, STRANE, prepraviRucne };
+
+if (require.main === module) {
+  require('./pocetna.js');
+  require('./strane.js');
+  prepraviRucne(['vidik.html', 'kontakt.html']);
+}

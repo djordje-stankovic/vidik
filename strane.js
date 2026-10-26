@@ -5,7 +5,7 @@ const { napravi, vrh, cta } = require('./napravi.js');
 
 /* ===========================  MOGUĆNOSTI  ============================== */
 napravi('mogucnosti.html',
-  'Mogućnosti — Vidik',
+  'Mogućnosti — Vidik · SajtPro',
   'Sedam ekrana koji pokrivaju naplatu, prodaju, zalihe, rizike, blokade računa i ispise po meri — nad podacima koji već postoje u ERP-u.',
   vrh('Mogućnosti',
       'Sve što se pita svaki dan, na jednom mestu',
@@ -177,7 +177,7 @@ napravi('mogucnosti.html',
 
 /* =============================  KONTROLE  ============================== */
 napravi('kontrole.html',
-  'Kontrole — Vidik',
+  'Kontrole — Vidik · SajtPro',
   'Kontrole koje porede knjigu računa sa POPDV-om, konta sa bilansnim obrascima i module sa glavnom knjigom — i uvek kažu razlog razlike.',
   vrh('Kontrole',
       'Ne pokazuje samo <em style="font-style:normal;color:var(--terra)">šta</em> ne štima, nego i zašto',
@@ -320,11 +320,11 @@ napravi('kontrole.html',
 
 /* =============================  KAKO RADI  ============================= */
 napravi('kako-radi.html',
-  'Kako radi — Vidik',
-  'Konektor kod klijenta, odlazna veza na 443, bez otvaranja portova. Nalog samo za čitanje, i dnevnik u kom vidite svaki izvršeni upit.',
-  vrh('Kako radi',
+  'Konektor — jedan za Vidik, Izlog i Fioku · SajtPro',
+  'Jedan konektor kod klijenta za sva tri proizvoda, odlazna veza na 443, bez otvaranja portova. Nalog samo za čitanje, i dnevnik u kom vidite svaki izvršeni upit.',
+  vrh('Konektor · zajednički za sva tri proizvoda',
       'Ne morate nam verovati na reč',
-      'Najčešće pitanje nije „šta ume" nego „gde su nam podaci". Odgovor nije obećanje nego tri stvari koje možete da proverite sami: nalog koji ne sme da piše, program koji odbija svaki upis, i dnevnik u kom stoji svaki upit koji je izvršen.') + `
+      'Vidik, Izlog i Fioka do vaše baze idu kroz isti program &mdash; instalira se jednom, a svaki sledeći proizvod se samo uključi. Najčešće pitanje nije „šta ume" nego „gde su nam podaci". Odgovor nije obećanje nego tri stvari koje možete da proverite sami: nalog koji ne sme da piše, program koji odbija svaki upis, i dnevnik u kom stoji svaki upit koji je izvršen.') + `
 
 <section class="blok-tanak" id="it">
   <div class="omot">
@@ -368,14 +368,14 @@ napravi('kako-radi.html',
         <span class="nadnaslov">Postavljanje</span>
         <h2>Radi isto popodne</h2>
         <p class="uvod" style="margin:16px 0 22px">
-          Nema migracije, nema promene u načinu rada, nema dodatnog unosa. Vidik čita
-          ono što vaši ljudi ionako unose svakog dana.
+          Nema migracije, nema promene u načinu rada, nema dodatnog unosa. Sva tri proizvoda
+          rade nad onim što vaši ljudi ionako unose svakog dana.
         </p>
         <ul class="spisak">
           <li>Jedan <code>.exe</code> &mdash; nema instalacije Node-a, baze ni servera</li>
           <li>Sam pronalazi SQL instance na mašini i prepoznaje PANTHEON baze</li>
           <li>Vi štiklirate koje baze delite; ostale ne postoje za nas</li>
-          <li>Konektor vam pokaže ključ, vi ga nalepite u Vidik &mdash; i to je sve.
+          <li>Konektor vam pokaže ključ, vi ga nalepite u Vidik, Izlog ili Fioku &mdash; i to je sve.
               Ključ pravi vaš server, ne mi</li>
           <li>Razlike među klijentima (druga konta, drugi tipovi dokumenata) rešavaju se
               podešavanjem, ne izmenom programa</li>
@@ -490,7 +490,7 @@ napravi('kako-radi.html',
           sa DataLab-om &mdash; a to bi se videlo prvog dana kad partner dođe na
           održavanje.</p>
           <p>Ono što radimo umesto toga jeste da veza bude <b>jedna</b>: jedan konektor
-          po firmi, bez obzira koliko ljudi gleda Vidik sa telefona. Trošak licence
+          po firmi, bez obzira koliko ljudi gleda Vidik sa telefona i koliko proizvoda koristite. Trošak licence
           ulazi u ponudu otvoreno i dogovara se sa vašim PANTHEON partnerom.</p>
         </div>
       </details>
@@ -509,8 +509,8 @@ napravi('kako-radi.html',
 
 /* ===============================  CENE  ================================ */
 napravi('cene.html',
-  'Cene — Vidik',
-  'Mesečna pretplata po firmi, bez naplate po korisniku. Prvi mesec je besplatan i služi da se vidi šta Vidik nađe u vašim podacima.',
+  'Cene — SajtPro',
+  'Mesečna pretplata po firmi, bez naplate po korisniku. Prvi mesec Vidika je besplatan i služi da se vidi šta nađe u vašim podacima.',
   vrh('Cene',
       'Po firmi, ne po glavi',
       'Naplata po korisniku tera firme da štede na pristupu podacima — a to je tačno suprotno od onoga zbog čega se ovakav alat uvodi. Zato: jedna cena, svi zaposleni unutra.') + `
@@ -570,6 +570,24 @@ napravi('cene.html',
     <p style="text-align:center;margin-top:30px;color:var(--tise);font-size:14px" class="pojava">
       Cene su bez PDV-a. Postavljanje konektora se ne naplaćuje. Ugovor je mesečni — otkazuje se kad god.
     </p>
+  </div>
+</section>
+
+<!-- Izlog i Fioka jos nemaju cenovnik - ne izmisljati iznose (26.10.2026) -->
+<section class="blok-tanak" style="background:var(--papir2);border-top:1px solid var(--linija)">
+  <div class="omot">
+    <div class="mreza m-2" style="gap:22px">
+      <div class="kartica pojava">
+        <h3>Izlog i Fioka</h3>
+        <p>Ista logika kao Vidik: po firmi, ne po glavi. Cenu dajemo uz prikaz, dok su u
+           probnom radu kod prvih firmi &mdash; <a href="kontakt.html">javite se</a>.</p>
+      </div>
+      <div class="kartica pojava k1">
+        <h3>Jedan konektor, jedna licenca</h3>
+        <p>Drugi i treći proizvod se samo uključe na istom konektoru. Nema nove
+           instalacije i nema druge PANTHEON konektor licence.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -670,8 +688,8 @@ const shopDugmad = (glavni) => `
       </div>`;
 
 napravi('prodavnica.html',
-  'Izlog — online prodavnica nad PANTHEON-om',
-  'Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik.',
+  'Izlog — online prodavnica nad PANTHEON-om · SajtPro',
+  'Artikli, slike, cene i zalihe iz PANTHEON-a na sajtu; narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Napravite je sami za pola sata, preko istog konektora kao Vidik i Fioka.',
   vrh('<svg class="znak-izlog" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2f4858"/><path d="M6.5 7.5h19v3.4a2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0 2.375 2.375 0 0 1-4.75 0z" fill="#fbf3e8"/><rect x="8.4" y="16.2" width="15.2" height="9.6" rx="2.4" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><circle cx="16" cy="21" r="2.3" fill="#fbf3e8"/></svg>Drugi proizvod · Izlog',
       'Online prodavnica koja je već popunjena',
       'Artikli, slike, cene i zalihe dolaze pravo iz PANTHEON-a &mdash; bez izvoza, CSV-a i prepisivanja. Narudžbina sa sajta ulazi u PANTHEON kao narudžbina kupca. Prodavnicu pravite sami, bez nas: uputstvo je ispod, korak po korak.') + `
@@ -891,7 +909,7 @@ const fiokaDugmad = (sredina) => `
       </div>`;
 
 napravi('fioka.html',
-  'Fioka — računi sa telefona pravo u PANTHEON',
+  'Fioka — računi sa telefona pravo u PANTHEON · SajtPro',
   'Zaposleni skenira QR sa fiskalnog računa, Poreska daje ceo račun, a Fioka u PANTHEON-u napravi ulazni račun troška — i dobavljača iz APR-a ako ga nema. Bez prekucavanja.',
   vrh('<svg class="znak-izlog" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f6f5c"/><rect x="6" y="8.5" width="20" height="16" rx="3" fill="none" stroke="#fbf3e8" stroke-width="2.4"/><path d="M6 15.5h20" stroke="#fbf3e8" stroke-width="2.4"/><rect x="12.5" y="18.6" width="7" height="2.4" rx="1.2" fill="#fbf3e8"/></svg>Treći proizvod · Fioka',
       'Račun iz džepa, u PANTHEON-u za minut',
@@ -939,7 +957,8 @@ napravi('fioka.html',
       <li class="pojava">
         <h3>Zaposleni skenira</h3>
         <p>Uperi telefon u QR na dnu računa i Fioka ga pročita sama, ili slika račun pa
-           pročita sa slike. Ima i mesto za sliku iz galerije, a na računaru prevuci sliku u prozor.</p>
+           pročita sa slike. Ima i mesto za sliku iz galerije, a na računaru prevuci sliku u prozor.
+           Kad ga ništa ne uhvati, skeniraj QR kamerom telefona i nalepi link.</p>
       </li>
       <li class="pojava">
         <h3>Izabere šta je to</h3>
@@ -968,7 +987,7 @@ napravi('fioka.html',
         <h2>Kao da ga je knjigovođa uneo</h2>
         <ul class="spisak" style="margin-top:20px">
           <li><b>Tip dokumenta, skladište, PDV šifre</b> &mdash; predlog iz onoga što firma već koristi na računima troškova; vi potvrdite jednom</li>
-          <li><b>Svaka stavka posebno</b> &mdash; naziv, količina, cena i stopa sa računa, sa artiklom vrste troška; niko ništa ne povezuje ručno</li>
+          <li><b>Svaka stavka posebno</b> &mdash; naziv, količina, cena i stopa sa računa. Artikal po vrsti troška, ili po vašem pravilu (sve sa „BMB 95&rdquo; ide na gorivo) &mdash; pravilo se pravi jednim klikom na samom računu</li>
           <li><b>Broj računa</b> &mdash; PFR broj, pa isti račun ne može da uđe dvaput</li>
           <li><b>Novi dobavljač</b> &mdash; naziv, adresa, PIB i matični iz APR-a, šifra po pravilu vaše baze</li>
         </ul>
@@ -1003,8 +1022,9 @@ napravi('fioka.html',
         <p>Ne. Fioka se otvara u pregledaču na telefonu i može da se doda na početni ekran
            kao aplikacija. Ništa se ne instalira i ne ažurira ručno.</p></div>
       <div><h3>A račun bez QR-a?</h3>
-        <p>Svaki fiskalni račun od 2022. ima QR. Kad je papir toliko oštećen ili izbledeo da se
-           QR ne čita ni sa slike, takav račun za sada unosite u PANTHEON kao i do sada.</p></div>
+        <p>Svaki fiskalni račun od 2022. ima QR. Ako ga Fioka ne čita, a kamera telefona ili druga
+           aplikacija čita &mdash; kopirajte link i nalepite ga u Fioku. Kad je papir toliko oštećen da
+           QR ne čita ništa, takav račun za sada unosite u PANTHEON kao i do sada.</p></div>
       <div><h3>Prodavac još nije poslao stavke Poreskoj?</h3>
         <p>Dešava se kad kasa radi bez veze sa Poreskom. Fioka uzme zaglavlje i iznos, a stopu
            PDV-a birate sami. Posle sama proverava svaki dan i javi samo ako se PDV ne slaže.</p></div>
