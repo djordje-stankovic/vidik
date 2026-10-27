@@ -189,3 +189,55 @@
 .put-js .put-opis{display:block}
 .put-kontrole{display:none}
 .put-js .put-kontrole{display:flex}
+
+/* --- šest kartica „šta konektor radi" ---------------------------------- */
+.konektor-kartice .kartica{display:flex;flex-direction:column}
+.kk-br{font:500 12px "JetBrains Mono",monospace;color:var(--terra);letter-spacing:.08em;margin:2px 0 6px}
+.konektor-kartice .kartica p + p{margin-top:10px}
+.konektor-kartice .kartica .kk-teh{margin-top:auto;padding-top:12px;border-top:1px dashed var(--linija);font-size:12.5px;color:var(--tise)}
+.kk-teh code{font-size:11.5px}
+.konektor-kartice .mreza{row-gap:22px}
+
+/* --- sigurnost ----------------------------------------------------------- */
+.sig-vrh{max-width:720px;margin-bottom:clamp(28px,4vw,40px)}
+.sig-vrh .uvod{margin-top:16px}
+.sig-nikad{
+  border-radius:18px;padding:clamp(20px,3vw,28px);margin-bottom:clamp(26px,4vw,40px);
+  background:var(--ugalj);color:#f0e7da
+}
+.sig-nikad-naslov{font:600 12px "Inter",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#e08a5f;margin-bottom:16px}
+.sig-nikad ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.sig-nikad li{display:flex;flex-direction:column;gap:4px;padding-left:14px;border-left:2px solid #ef8a76}
+.sig-nikad li b{font:600 1.08rem/1.25 "Fraunces",Georgia,serif;color:#fdfaf5;text-decoration:line-through;text-decoration-color:rgba(239,138,118,.75);text-decoration-thickness:2px}
+.sig-nikad li span{font-size:13.5px;color:#b9ac9c;line-height:1.45}
+
+.sig-lista{display:grid;gap:10px}
+.sig-red{border:1px solid var(--linija);border-radius:14px;background:#fffdfa;transition:border-color .25s,box-shadow .25s}
+.sig-red[open]{border-color:var(--papir3);box-shadow:var(--senka)}
+.sig-red summary{
+  list-style:none;cursor:pointer;padding:16px 52px 16px 20px;position:relative;
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;align-items:center
+}
+.sig-red summary::-webkit-details-marker{display:none}
+.sig-red summary::after{
+  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font:500 22px/1 "Inter",sans-serif;color:var(--terra);transition:transform .25s
+}
+.sig-red[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.sig-pit{font:600 1.08rem/1.3 "Fraunces",Georgia,serif;color:var(--tekst)}
+.sig-kratko{font-size:14px;color:var(--masl);font-weight:600}
+.sig-telo{padding:0 20px 18px;max-width:780px}
+.sig-telo p{color:var(--tiho);font-size:15.5px}
+.sig-telo .sig-teh{font-size:13px;color:var(--tise);margin:0}
+
+.sig-posteno{margin-top:clamp(28px,4vw,44px);padding:clamp(20px,3vw,28px);border-radius:16px;background:var(--papir2);border:1px solid var(--linija)}
+.sig-posteno h3{margin-bottom:12px}
+.sig-posteno .spisak li{font-size:15px}
+
+@media (max-width:900px){ .sig-nikad ul{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){
+  .sig-red summary{grid-template-columns:1fr;gap:4px}
+  .sig-nikad ul{grid-template-columns:1fr}
+}
+.sig-posteno .spisak li::before{background:none;border:0;content:"";width:6px;height:6px;border-radius:50%;background-color:var(--tise);margin:9px 9px 0 8px;flex:none}
+@media (max-width:560px){.sig-posteno .spisak li::before{top:6px;margin:0 0 0 8px}}

@@ -326,6 +326,86 @@ napravi('kako-radi.html',
       'Ne morate nam verovati na reč',
       'Vidik, Izlog i Fioka do vaše baze idu kroz isti program &mdash; instalira se jednom, a svaki sledeći proizvod se samo uključi. Najčešće pitanje nije „šta ume" nego „gde su nam podaci". Odgovor nije obećanje nego tri stvari koje možete da proverite sami: nalog koji ne sme da piše, program koji odbija svaki upis, i dnevnik u kom stoji svaki upit koji je izvršen.') + `
 
+<section class="blok-tanak konektor-kartice" id="it">
+  <div class="omot">
+    <div class="pojava" style="max-width:720px;margin-bottom:clamp(30px,4vw,44px)">
+      <span class="nadnaslov">Šta konektor radi</span>
+      <h2>Šest stvari koje treba da znate</h2>
+      <p class="uvod" style="margin-top:16px">Svaka kartica ima objašnjenje za vlasnika i jedan red za vašeg IT čoveka.
+        Ispod je animacija koja sve to pokaže na jednom pitanju.</p>
+    </div>
+    <div class="mreza m-3">
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <span class="kk-br">01</span>
+        <h3>Mali program kod vas</h3>
+        <p>Jedan fajl koji pokrenete na serveru gde je PANTHEON baza. Ne instalira se ništa
+           uz njega, ne dira se PANTHEON i ne menja se način rada. Može da radi kao Windows
+           servis, pa se sam podigne posle restarta servera.</p>
+        <p class="kk-teh">IT: jedan <code>.exe</code>, Node ugrađen; podešavanja u panelu na <code>localhost</code></p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </div>
+        <span class="kk-br">02</span>
+        <h3>On zove nas, ne mi njega</h3>
+        <p>Konektor sam otvori vezu ka našem servisu i drži je otvorenu. Ka vašoj mreži se
+           ne otvara nijedan port, nema VPN-a ni prosleđivanja na ruteru. Ako veza padne,
+           sam se ponovo javi čim se internet vrati.</p>
+        <p class="kk-teh">IT: samo odlazna veza, 443/TLS (WebSocket), ping na 30 s</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></svg>
+        </div>
+        <span class="kk-br">03</span>
+        <h3>Ključ pravi vaš server</h3>
+        <p>Konektor vam pokaže ključ, vi ga nalepite u Vidik, Izlog ili Fioku i time ih
+           povežete. Ključ nastaje kod vas, ne kod nas. Lozinka za bazu ostaje na vašem
+           serveru, zaključana tako da na drugom računaru ne vredi ništa.</p>
+        <p class="kk-teh">IT: lozinka u <code>konektor.json</code>, zaštićena Windows DPAPI-jem</p>
+      </div>
+      <div class="kartica pojava">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.8"/><path d="M5 5.5v13c0 1.55 3.13 2.8 7 2.8s7-1.25 7-2.8v-13"/><path d="M9 12.5l2 2 4-4"/></svg>
+        </div>
+        <span class="kk-br">04</span>
+        <h3>Vi birate šta delite</h3>
+        <p>Konektor sam pronađe SQL Server i PANTHEON baze na mašini. Vi štiklirate koje
+           firme delite. Za ostale baze naš servis ne zna ni da postoje, pa nema ni kako da
+           ih pita.</p>
+        <p class="kk-teh">IT: spisak dozvoljenih baza proverava konektor, ne servis</p>
+      </div>
+      <div class="kartica pojava k1">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        </div>
+        <span class="kk-br">05</span>
+        <h3>Dve brave protiv upisa</h3>
+        <p>Prva brava je nalog u bazi koji sme samo da čita. To sprovodi vaš SQL Server,
+           ne mi. Druga je sam konektor: odbije svako pitanje koje bi da menja podatke,
+           pre nego što stigne do baze. Upis narudžbine iz Izloga i računa iz Fioke radi
+           samo ako ga vi uključite u panelu.</p>
+        <p class="kk-teh">IT: preporuka <code>db_datareader</code>; upisi su imenovane operacije, podrazumevano isključene</p>
+      </div>
+      <div class="kartica pojava k2">
+        <div class="kartica-ikona">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+        </div>
+        <span class="kk-br">06</span>
+        <h3>Sve piše u dnevniku</h3>
+        <p>Svako pitanje koje je konektor postavio bazi stoji u dnevniku, u panelu na vašem
+           serveru. Kad niko ne gleda, konektor posle deset minuta pusti bazu. Dugme
+           „Prekini pristup" gasi vezu odmah, bez nas.</p>
+        <p class="kk-teh">IT: najviše 4 SQL konekcije po bazi, zatvaraju se posle 10 min mirovanja</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="blok mrak put" id="put">
   <div class="omot">
     <div class="put-vrh pojava">
@@ -450,37 +530,94 @@ napravi('kako-radi.html',
   </div>
 </section>
 
-<section class="blok-tanak" id="it">
+<section class="blok sig" id="sigurnost">
   <div class="omot">
-    <div class="mreza m-3">
-      <div class="kartica pojava">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    <div class="sig-vrh pojava">
+      <span class="nadnaslov">Sigurnost</span>
+      <h2>Najveća briga, pa i najduži odgovor</h2>
+      <p class="uvod">Ne tražimo da nam verujete. Zato je konektor napravljen tako da i u
+        najgorem slučaju ostane malo toga što bi neko mogao da uradi. Evo pitanja koja
+        bismo i mi postavili na vašem mestu.</p>
+    </div>
+
+    <div class="sig-nikad pojava k1">
+      <div class="sig-nikad-naslov">Kod nas nikad ne postoji</div>
+      <ul>
+        <li><b>Lozinka vaše baze</b><span>ostaje na vašem serveru, zaključana za tu mašinu</span></li>
+        <li><b>Kopija vaše baze</b><span>nema noćnog prepisivanja ni skladišta izveštaja</span></li>
+        <li><b>Ulaz u vašu mrežu</b><span>nijedan otvoren port, nijedan VPN</span></li>
+        <li><b>Lozinka za Vidik kao tekst</b><span>čuva se samo njen otisak (scrypt), iz kog se ne može vratiti</span></li>
+      </ul>
+    </div>
+
+    <div class="sig-lista">
+      <details class="sig-red pojava" open>
+        <summary><span class="sig-pit">Šta ako neko provali vaš servis?</span><span class="sig-kratko">Dobio bi samo ono što konektor dozvoli</span></summary>
+        <div class="sig-telo">
+          <p>Naš servis do vaše baze ne ide sam: može samo da pita konektor, a konektor
+          odgovara samo na pitanja koja <b>čitaju</b>, samo za baze koje ste <b>vi
+          štiklirali</b>, i svako zapiše u dnevnik na vašem serveru. Lozinku vaše baze
+          servis nema, pa ne može da se poveže mimo konektora. Vi prekinete vezu jednim
+          klikom, bez nas.</p>
+          <p class="sig-teh">Granice postavljaju vaš SQL Server (<code>db_datareader</code>) i konektor kod vas &mdash; ne naš kod.</p>
         </div>
-        <h3>1. Konektor kod vas</h3>
-        <p>Jedan program na serveru gde je već baza &mdash; jedini koji je uopšte
-           dodiruje. Preporučeni nalog je <code>db_datareader</code>: pravo čitanja
-           i ništa više. To sprovodi sam SQL Server, pa važi i ako nama nešto pukne.</p>
-      </div>
-      <div class="kartica pojava k1">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </details>
+      <details class="sig-red pojava">
+        <summary><span class="sig-pit">Može li neko da upadne u našu mrežu preko konektora?</span><span class="sig-kratko">Nema na šta da pokuca</span></summary>
+        <div class="sig-telo">
+          <p>Konektor ne sluša spolja. On sam zove nas, kao kad otvorite veb stranicu, i
+          kroz tu vezu prima samo pitanja za bazu. Na ruteru se ništa ne otvara i ništa
+          ne prosleđuje. Za firewall je to isti saobraćaj kao kad neko u firmi čita mejl.</p>
+          <p class="sig-teh">Samo odlazna veza na 443, šifrovana (TLS). Dolaznih portova: 0.</p>
         </div>
-        <h3>2. Veza ide napolje</h3>
-        <p>Konektor sam otvara odlaznu vezu na portu 443. Ka vašoj mreži se ne otvara
-           nijedan port, nema VPN-a ni probijanja zaštite.</p>
-      </div>
-      <div class="kartica pojava k2">
-        <div class="kartica-ikona">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-8"/></svg>
+      </details>
+      <details class="sig-red pojava">
+        <summary><span class="sig-pit">Može li neko nešto da obriše ili promeni?</span><span class="sig-kratko">Ne &mdash; čuvaju ga dve nezavisne brave</span></summary>
+        <div class="sig-telo">
+          <p>Prva brava je nalog u bazi koji sme samo da čita. To sprovodi Microsoftov SQL
+          Server, pa važi čak i kad bi naš program pogrešio. Druga brava je konektor:
+          pitanje koje bi da menja podatke odbije pre nego što ga pošalje bazi.</p>
+          <p>Jedini upisi koji postoje su narudžbina iz Izloga i ulazni račun iz Fioke. To
+          nisu pitanja koja stižu spolja, nego tačno opisane radnje ugrađene u konektor, i
+          rade tek kad ih vi uključite. Sa nalogom koji samo čita ne rade uopšte.</p>
         </div>
-        <h3>3. Svaki upit stoji u dnevniku</h3>
-        <p>Konektor zapisuje svaki upit koji je izvršio &mdash; vidite ga u svom panelu,
-           na svom serveru. Odbija sve što pokušava da piše &mdash; izuzeci su narudžbina sa
-           <a href="prodavnica.html">online prodavnice</a> i ulazni račun iz <a href="fioka.html">Fioke</a>,
-           i to samo ako ih sami uključite. Kad hoćete da prestane,
-           „Prekini pristup" gasi vezu odmah, bez nas.</p>
-      </div>
+      </details>
+      <details class="sig-red pojava">
+        <summary><span class="sig-pit">Šta ako neko ukrade direktoru telefon?</span><span class="sig-kratko">Promena lozinke ga izbaci sa svih uređaja</span></summary>
+        <div class="sig-telo">
+          <p>Kad promenite lozinku, sve prijave na svim uređajima padaju odmah. Nalog uz
+          to radi na najviše tri uređaja; četvrta prijava izbaci najstariju. Telefon sam
+          ne čuva podatke, samo prijavu.</p>
+          <p class="sig-teh">Prijave se kod nas čuvaju kao otisak (SHA-256); u pregledaču je samo slučajan niz.</p>
+        </div>
+      </details>
+      <details class="sig-red pojava">
+        <summary><span class="sig-pit">Šta ako neko dođe do ključa konektora?</span><span class="sig-kratko">Ključ ne otvara bazu</span></summary>
+        <div class="sig-telo">
+          <p>Ključ samo povezuje vaš konektor sa vašim nalogom. Sam po sebi ne daje pristup
+          bazi, jer lozinka baze i dalje stoji na vašem serveru. Ako se isti ključ pojavi
+          na drugom mestu, servis zatvori jednu od veza, a vi u panelu napravite nov ključ.</p>
+        </div>
+      </details>
+      <details class="sig-red pojava">
+        <summary><span class="sig-pit">Da li vi vidite naše podatke?</span><span class="sig-kratko">Prolaze kroz servis, ali se ne čuvaju</span></summary>
+        <div class="sig-telo">
+          <p>Red koji vidite na telefonu prođe kroz naš servis &mdash; drugačije se sa
+          telefona ne može videti ništa. Ali kod nas ne ostaje: nema kopije baze, nema
+          arhive ekrana, nema sačuvanih izveštaja. Svako pitanje koje je ikad postavljeno
+          vašoj bazi stoji u dnevniku <b>kod vas</b>, pa možete da proverite šta je pitano
+          i kada.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="sig-posteno pojava">
+      <h3>Šta ne tvrdimo</h3>
+      <ul class="spisak">
+        <li>Program još nije potpisan sertifikatom, pa Windows prvi put pita „Ipak pokreni". Kažemo to unapred.</li>
+        <li>Nismo prošli spoljnu bezbednosnu sertifikaciju. Zato je sve iznad napravljeno tako da možete da proverite sami: nalog u bazi, dnevnik i prekidač su kod vas.</li>
+        <li>Ako vaš IT ima pitanje na koje ovde nema odgovora, dovedite ga na prikaz. To su nam najdraži razgovori.</li>
+      </ul>
     </div>
   </div>
 </section>
