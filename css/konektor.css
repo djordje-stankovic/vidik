@@ -1,0 +1,191 @@
+/* ===========================================================================
+   Konektor — „Put jednog broja" (kako-radi.html)
+   Animacija pokazuje tok, ne ukrašava: pitanje sa telefona → naš servis →
+   kroz vezu koju je konektor SAM otvorio → baza → nazad. Svaki korak ima
+   rečenicu za čoveka bez tehničkog znanja. Uz prefers-reduced-motion nema
+   samohoda; koraci se biraju klikom i paketi se pojavljuju bez leta.
+   =========================================================================== */
+
+.put{overflow:hidden}
+.put .omot{position:relative}
+.put-vrh{max-width:720px;margin-bottom:clamp(34px,5vw,54px)}
+.put-vrh .uvod{margin-top:16px}
+
+/* --- scena ------------------------------------------------------------- */
+.put-scena{
+  position:relative;
+  display:grid;grid-template-columns:1fr 1fr 2.25fr;gap:clamp(18px,3vw,44px);
+  align-items:center;
+  padding:clamp(28px,4vw,46px) clamp(14px,2.4vw,30px);
+  border-radius:22px;
+  background:
+    radial-gradient(120% 90% at 85% 10%,rgba(224,138,95,.09),transparent 60%),
+    linear-gradient(180deg,#1d1814,#171310);
+  border:1px solid #2e2620
+}
+.put-linije{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.put-linije path{fill:none;stroke-linecap:round}
+.put-linije .l-osnova{stroke:#3a3029;stroke-width:2}
+.put-linije .l-tunel{stroke:#7fae5f;stroke-width:2.5;stroke-dasharray:6 9;opacity:0;transition:opacity .5s}
+.put-scena.veza .l-tunel{opacity:1;animation:put-tok 1.1s linear infinite}
+.put-linije .l-tunel-sjaj{stroke:#7fae5f;stroke-width:9;opacity:0;filter:blur(5px);transition:opacity .6s}
+.put-scena.veza .l-tunel-sjaj{opacity:.18}
+@keyframes put-tok{to{stroke-dashoffset:-30}}
+
+/* stanice */
+.put-stanica{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;
+  padding:18px 12px 16px;border-radius:16px;
+  background:#241e19;border:1px solid #3a3029;
+  transition:border-color .4s,box-shadow .4s,transform .4s cubic-bezier(.22,.61,.36,1)
+}
+.put-stanica.tu{border-color:#e08a5f;box-shadow:0 0 0 4px rgba(224,138,95,.12),0 18px 40px rgba(0,0,0,.35);transform:translateY(-3px)}
+.put-ikona{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:#2e2620;color:#e9ddcd}
+.put-ikona svg{width:24px;height:24px}
+.put-stanica.tu .put-ikona{background:#e08a5f;color:#171310}
+.put-ime{font:600 15px/1.25 "Inter",sans-serif;color:#fdfaf5}
+.put-gde{font-size:12.5px;line-height:1.4;color:#9d907f}
+.put-stanje{
+  min-height:22px;margin-top:2px;
+  font:500 11.5px/1.35 "JetBrains Mono",ui-monospace,Consolas,monospace;color:#b9ac9c;
+  transition:color .3s
+}
+.put-stanje b{color:#fdfaf5;font-weight:600}
+.put-stanje .ok{color:#9ccc7c}
+.put-stanje .ne{color:#ef8a76}
+
+/* zona „vaša firma" sa zidom */
+.put-zona{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);align-items:center;
+  padding:clamp(30px,3.4vw,38px) clamp(12px,2vw,24px) clamp(14px,2vw,22px);
+  border:1.5px dashed #6b5646;border-radius:18px;
+  background:rgba(255,255,255,.015);
+  transition:border-color .3s,box-shadow .3s
+}
+.put-zona-ime{
+  position:absolute;top:-11px;left:18px;padding:0 10px;
+  font:600 11px "Inter",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e08a5f;
+  background:#1b1612
+}
+.put-zid{
+  position:absolute;top:-11px;right:18px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;
+  font:500 11px "JetBrains Mono",monospace;color:#9d907f;background:#1b1612
+}
+.put-zid i{width:7px;height:7px;border-radius:50%;background:#ef8a76}
+.put-zona.udar{border-color:#ef8a76;box-shadow:0 0 0 5px rgba(239,138,118,.12)}
+
+/* značke koje konektor „zalepi" na pitanje */
+.put-znacke{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;min-height:24px}
+.put-znacka{
+  font:600 10.5px "Inter",sans-serif;padding:3px 8px;border-radius:999px;
+  background:rgba(127,174,95,.14);color:#9ccc7c;border:1px solid rgba(127,174,95,.35);
+  opacity:0;transform:translateY(5px) scale(.96);transition:opacity .35s,transform .4s cubic-bezier(.22,.61,.36,1)
+}
+.put-znacka.ne{background:rgba(239,138,118,.12);color:#ef8a76;border-color:rgba(239,138,118,.35)}
+.put-znacka.vidi{opacity:1;transform:none}
+
+/* paketi koji putuju */
+.put-paket{
+  position:absolute;left:0;top:0;z-index:5;pointer-events:none;
+  padding:6px 11px;border-radius:999px;white-space:nowrap;
+  font:600 12px/1.2 "Inter",sans-serif;
+  background:#fdfaf5;color:#171310;box-shadow:0 8px 24px rgba(0,0,0,.4);
+  opacity:0;will-change:transform,opacity
+}
+.put-paket.odgovor{background:#e08a5f;color:#171310}
+.put-paket.mali{padding:4px 9px;font-size:11px;background:#7fae5f;color:#10200a}
+.put-paket.uljez{background:#3a1f1a;color:#ef8a76;border:1px solid #ef8a76;box-shadow:none}
+.put-paket.upis{background:#3a1f1a;color:#ef8a76;border:1px solid #ef8a76;font-family:"JetBrains Mono",monospace;font-weight:500}
+
+/* telefon pokaže odgovor */
+.put-ekran{
+  width:100%;max-width:150px;margin-top:2px;padding:9px 10px;border-radius:10px;
+  background:#171310;border:1px solid #3a3029;text-align:left;
+  font-size:11px;color:#9d907f;line-height:1.35
+}
+.put-ekran b{display:block;font:600 19px/1.15 "Fraunces",Georgia,serif;color:#fdfaf5;margin-top:3px;transition:color .3s}
+.put-ekran.svez b{color:#e08a5f}
+
+/* --- koraci ispod -------------------------------------------------------- */
+.put-dno{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:clamp(26px,3.5vw,40px);align-items:start}
+.put-opis{min-height:150px}
+.put-opis .br{font:500 12px "JetBrains Mono",monospace;color:#e08a5f;letter-spacing:.06em}
+.put-opis h3{margin:8px 0 10px;font-size:clamp(1.35rem,2.2vw,1.7rem)}
+.put-opis p{font-size:16.5px;line-height:1.6;color:#cbbfaf;margin:0}
+.put-opis .put-tekst{transition:opacity .3s,transform .35s}
+.put-opis .put-tekst.menja{opacity:0;transform:translateY(6px)}
+
+.put-koraci{list-style:none;margin:0;padding:0;display:grid;gap:4px;counter-reset:k}
+.put-koraci button{
+  width:100%;display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:center;text-align:left;
+  padding:8px 12px;border-radius:10px;border:0;background:none;cursor:pointer;
+  font:500 14px "Inter",sans-serif;color:#9d907f;position:relative;overflow:hidden;
+  transition:color .25s,background .25s
+}
+.put-koraci button::before{
+  counter-increment:k;content:counter(k);
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font:600 11px "JetBrains Mono",monospace;border:1px solid #3a3029;color:#9d907f;transition:all .25s
+}
+.put-koraci button:hover{color:#f0e7da;background:rgba(255,255,255,.03)}
+.put-koraci button.tu{color:#fdfaf5;background:rgba(224,138,95,.08)}
+.put-koraci button.tu::before{background:#e08a5f;border-color:#e08a5f;color:#171310}
+.put-koraci button.bio::before{border-color:#6b5646;color:#cbbfaf}
+.put-koraci button .tok{position:absolute;left:0;bottom:0;height:2px;width:100%;background:#e08a5f;transform:scaleX(0);transform-origin:left;opacity:.7}
+.put-koraci button.tu .tok.tece{animation:put-traka var(--trajanje,4s) linear forwards}
+@keyframes put-traka{to{transform:scaleX(1)}}
+
+.put-kontrole{display:flex;gap:10px;align-items:center;margin-top:14px;padding-left:12px}
+.put-dugme{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;cursor:pointer;
+  font:600 12.5px "Inter",sans-serif;color:#f0e7da;background:#241e19;border:1px solid #3a3029;transition:border-color .2s
+}
+.put-dugme:hover{border-color:#6b5646}
+.put-dugme svg{width:13px;height:13px}
+.put-kontrole span{font-size:12.5px;color:#7d7064}
+
+/* poređenje za ljude bez tehničkog znanja */
+.put-poredjenje{
+  margin-top:clamp(38px,5vw,60px);padding:clamp(22px,3vw,30px) clamp(22px,3vw,34px);
+  border-radius:18px;background:#211b17;border:1px solid #2e2620;
+  display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start
+}
+.put-poredjenje .put-ikona{width:50px;height:50px;background:#e08a5f;color:#171310}
+.put-poredjenje h3{font-size:1.25rem;margin:2px 0 8px}
+.put-poredjenje p{margin:0;color:#cbbfaf;font-size:16px}
+.put-poredjenje p + p{margin-top:10px}
+
+/* --- telefon / uži ekran: scena ide odozgo nadole ------------------------ */
+@media (max-width:820px){
+  .put-scena{grid-template-columns:1fr;gap:34px;padding:26px 16px}
+  .put-zona{grid-template-columns:1fr;gap:34px;padding-top:34px}
+  .put-stanica{flex-direction:row;text-align:left;align-items:center;gap:12px;padding:12px 14px}
+  .put-stanica > div:not(.put-ikona){flex:1;min-width:0}
+  .put-ikona{flex:none}
+  .put-znacke{justify-content:flex-start}
+  .put-ekran{max-width:none}
+  .put-dno{grid-template-columns:1fr}
+  .put-opis{min-height:0}
+  .put-zid{right:12px}
+  .put-zona-ime{left:12px}
+}
+@media (max-width:420px){
+  .put-zid{top:auto;bottom:-11px;right:12px}
+  .put-poredjenje{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .put-scena.veza .l-tunel{animation:none}
+  .put-stanica,.put-znacka,.put-opis .put-tekst{transition:none}
+  .put-koraci button.tu .tok.tece{animation:none}
+}
+
+/* bez JS-a koraci stoje kao obična lista sa tekstom; sa JS-om tekst ide gore */
+.put-koraci p{margin:2px 0 12px 48px;font-size:14.5px;color:#b9ac9c}
+.put-js .put-koraci p{display:none}
+.put-opis{display:none}
+.put-js .put-opis{display:block}
+.put-kontrole{display:none}
+.put-js .put-kontrole{display:flex}
