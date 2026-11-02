@@ -818,10 +818,10 @@ napravi('cene.html',
       <div class="cena pojava ">
         <div class="cena-ime">Fioka</div>
         <div class="cena-opis">Računi sa telefona pravo u PANTHEON.</div>
-        <div class="cena-iznos"><b>29</b><span>EUR / mesec</span></div>
+        <div class="cena-iznos"><b>19</b><span>EUR / mesec</span></div>
         <div class="cena-nota">jedna firma &middot; neograničeno zaposlenih</div>
         <ul class="spisak">
-          <li>Neograničeno računa</li>
+          <li>Neograničeno računa i telefona &mdash; ne plaća se po uređaju</li>
           <li>Stavke i PDV od Poreske, dobavljač iz APR-a</li>
           <li>Ulazni račun troška u PANTHEON-u</li>
           <li>Pravila za artikal po stavci</li>
@@ -845,7 +845,7 @@ napravi('cene.html',
         <div class="cena-ime">Dva proizvoda</div>
         <div class="cena-opis">Bilo koja dva &mdash; npr. Vidik i Fioka, ili Izlog i Fioka.</div>
         <div class="cena-iznos"><b>&minus;15%</b><span>popusta</span></div>
-        <div class="cena-nota">na zbir dve cene &middot; Vidik + Fioka = 75 umesto 88</div>
+        <div class="cena-nota">na zbir dve cene &middot; Vidik + Fioka = 66 umesto 78</div>
         <ul class="spisak">
           <li>Oba proizvoda u punom obimu</li>
           <li>Jedan konektor, jedan ključ</li>
@@ -857,8 +857,8 @@ napravi('cene.html',
         <span class="cena-znacka">Najviše za cenu</span>
         <div class="cena-ime">Sva tri</div>
         <div class="cena-opis">Vidik, Izlog i Fioka &mdash; ceo SajtPro nad jednom firmom.</div>
-        <div class="cena-iznos"><b>99</b><span>EUR / mesec</span></div>
-        <div class="cena-nota">umesto 127 &middot; jedna firma</div>
+        <div class="cena-iznos"><b>89</b><span>EUR / mesec</span></div>
+        <div class="cena-nota">umesto 117 &middot; jedna firma</div>
         <ul class="spisak">
           <li>Vidik sa svim kontrolama</li>
           <li>Izlog sa narudžbinama u PANTHEON</li>
