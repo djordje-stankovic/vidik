@@ -140,6 +140,14 @@ const nav = tekuca => `<header class="nav">
     <button class="meni-dugme" aria-label="Meni" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-veze">
 ${STRANE.map(([f, i, pod]) => `      <a href="${f}"${f === tekuca || (pod || []).includes(tekuca) ? ' class="tu"' : ''}>${i}</a>`).join('\n')}
+      <details class="nav-prijava">
+        <summary>Prijava</summary>
+        <div class="nav-prijava-meni">
+          <a href="kontakt.html" data-vidik="prijava"><b>Vidik</b><small>brojevi i kontrole</small></a>
+          <a href="kontakt.html" data-shop="napravi"><b>Izlog</b><small>administracija prodavnice</small></a>
+          <a href="kontakt.html" data-fioka="otvori"><b>Fioka</b><small>računi sa telefona</small></a>
+        </div>
+      </details>
       <a href="kontakt.html" class="dugme dugme-glavni dugme-mali">Kontakt</a>
     </nav>
   </div>

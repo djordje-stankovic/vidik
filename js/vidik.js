@@ -87,7 +87,15 @@
       meniDugme.setAttribute('aria-expanded', otvoren ? 'true' : 'false');
     };
     veze.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') veze.classList.remove('otvoren');
+      if (e.target.closest('a')) veze.classList.remove('otvoren');
+    });
+  }
+
+  /* padajuca „Prijava" se zatvara klikom bilo gde van nje */
+  var prijava = document.querySelector('.nav-prijava');
+  if (prijava) {
+    document.addEventListener('click', function (e) {
+      if (prijava.open && !prijava.contains(e.target)) prijava.open = false;
     });
   }
 
